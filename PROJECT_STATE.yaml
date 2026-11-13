@@ -30,10 +30,21 @@ milestone_history:
       - "test/e2e/test_site_e2e.py"
     validation: "make verify"
 
+  - id: "M3.1"
+    name: "Standalone kitaev-mf research hub and companion-note roadmap"
+    status: "completed"
+    acceptance: "Expository hub has independently checked MathJax equations, canonical source links, five substantive sections, and no unpublished note links; 24 website tests pass"
+    evidence:
+      - "site/content/feed/06-kitaev-mf.md"
+      - "doc/FEED_KITAEV_MF_SERIES.md"
+      - "test/e2e/test_site_e2e.py"
+    validation: "make verify (24 tests), branch-only GitHub Actions"
+
 active_milestone:
-  id: "M3.0"
-  description: "Develop remaining project notes individually and keep unpublished drafts hidden"
+  id: "M3.2"
+  description: "Develop one additional kitaev-mf companion note at a time"
   status: "ready"
   active_tasks:
-    - "Review and publish KitaevDerivation.jl note when technically complete"
-    - "Review and publish bosonize-lean note when technically complete"
+    - "Resolve the exact-perturbation physical-parity and Feshbach-resolvent assumptions for KM-01"
+    - "Reconcile solver benchmark provenance before publishing numerical performance claims"
+    - "Keep the KitaevDerivation.jl and bosonize-lean drafts unpublished until independently reviewed"
