@@ -1,0 +1,136 @@
+# Canonical Single-Source Publication & Reference Inventory
+# Authored publications are strictly separated from influential external references.
+
+authored_publications:
+  - id: "bauer2024spinflip"
+    year: 2024
+    title: "Local spin-flip transitions induced by magnetic quantum impurities in two-dimensional magnets"
+    authors: "Tim Bauer, L. R. D. Freitas, Eric C. Andrade, Reinhold Egger, and Rodrigo G. Pereira"
+    journal: "Physical Review B"
+    volume_pages: "110, L220403"
+    doi: "10.1103/PhysRevB.110.L220403"
+    doi_url: "https://doi.org/10.1103/PhysRevB.110.L220403"
+    arxiv_id: "2405.19962"
+    arxiv_url: "https://arxiv.org/abs/2405.19962"
+    category: "2D Quantum Magnets & Kitaev-Heisenberg Systems"
+    featured_on_home: true
+    question_and_scope: >-
+      How do quantum magnetic impurities modify local spin configurations and low-energy
+      excitations in field-polarized two-dimensional van der Waals magnets such as CrI3
+      and alpha-RuCl3? Combining linear spin-wave / T-matrix methods with exact diagonalization
+      on the Kitaev-Heisenberg honeycomb model, this work characterizes local spin-flip
+      transitions triggered when a magnon bound state crosses zero energy as a function of
+      the external magnetic field, and identifies their scanning tunneling spectroscopy signatures.
+
+  - id: "freitas2024polarization"
+    year: 2024
+    title: "Electric polarization near vortices in the extended Kitaev model"
+    authors: "L. R. D. Freitas, Tim Bauer, Reinhold Egger, and Rodrigo G. Pereira"
+    journal: "npj Quantum Materials"
+    volume_pages: "9, 33"
+    doi: "10.1038/s41535-024-00643-5"
+    doi_url: "https://doi.org/10.1038/s41535-024-00643-5"
+    arxiv_id: "2311.15750"
+    arxiv_url: "https://arxiv.org/abs/2311.15750"
+    category: "Kitaev Spin Liquids, Vortices & Anyon Manipulation"
+    featured_on_home: true
+    question_and_scope: >-
+      Can Z2 gauge vortices and the Ising anyons they bind in a Kitaev spin liquid be
+      detected and manipulated by purely electrical means? Using a real-space Majorana
+      mean-field formulation for the extended JK-Gamma honeycomb model in an arbitrary
+      Zeeman field (exact in the pure Kitaev limit), this study computes the inhomogeneous
+      charge redistribution and electric quadrupole moment around vortices, showing how
+      biased scanning probe tips can trap or nucleate vortices at preselected positions.
+
+  - id: "bauer2023sts"
+    year: 2023
+    title: "Scanning tunneling spectroscopy of Majorana zero modes in a Kitaev spin liquid"
+    authors: "Tim Bauer, L. R. D. Freitas, Rodrigo G. Pereira, and Reinhold Egger"
+    journal: "Physical Review B"
+    volume_pages: "107, 054432"
+    doi: "10.1103/PhysRevB.107.054432"
+    doi_url: "https://doi.org/10.1103/PhysRevB.107.054432"
+    arxiv_id: "2209.12930"
+    arxiv_url: "https://arxiv.org/abs/2209.12930"
+    category: "Kitaev Spin Liquids & Dynamical Spin Correlations"
+    featured_on_home: false
+    question_and_scope: >-
+      What distinguishes the scanning tunneling conductance signature of a genuine Majorana
+      zero mode bound to a Z2 vortex from competing low-energy bound states in a Kitaev
+      material? Evaluating exact dynamical spin correlations in the solvable limit alongside
+      spin-anisotropic cotunneling form factors, this paper demonstrates a characteristic
+      staircase voltage dependence near vortices and contrasts it against topological magnon
+      bound states near defects or magnetic impurities.
+
+  - id: "freitas2022linedefects"
+    year: 2022
+    title: "Gapless excitations in non-Abelian Kitaev spin liquids with line defects"
+    authors: "L. R. D. Freitas and Rodrigo G. Pereira"
+    journal: "Physical Review B"
+    volume_pages: "105, L041104"
+    doi: "10.1103/PhysRevB.105.L041104"
+    doi_url: "https://doi.org/10.1103/PhysRevB.105.L041104"
+    arxiv_id: "2108.04320"
+    arxiv_url: "https://arxiv.org/abs/2108.04320"
+    category: "Kitaev Spin Liquids & Extended Lattice Defects"
+    featured_on_home: true
+    question_and_scope: >-
+      When does a one-dimensional structural line defect embedded in a gapped non-Abelian
+      Kitaev spin liquid host gapless counterpropagating Majorana modes? Treating the weak
+      exchange coupling across the defect within a self-consistent mean-field approximation
+      and low-energy effective field theory, this work determines the critical defect
+      coupling as a function of magnetic field and predicts a T^3 nuclear spin-lattice
+      relaxation rate (1/T1) near the defect.
+
+  - id: "freitas2019entropy"
+    year: 2019
+    title: "Total entropy variation for an object in contact with heat reservoirs: the path to reversibility"
+    authors: "L. R. D. Freitas and Luiz Felipe C. Pereira"
+    journal: "Revista Brasileira de Ensino de Física"
+    volume_pages: "41(4), e20180331"
+    doi: "10.1590/1806-9126-RBEF-2018-0331"
+    doi_url: "https://doi.org/10.1590/1806-9126-rbef-2018-0331"
+    arxiv_id: null
+    arxiv_url: null
+    category: "Thermodynamics & Physics Pedagogy"
+    featured_on_home: false
+    question_and_scope: >-
+      How does a sequence of finite thermal equilibrations with N intermediate heat
+      reservoirs approach a reversible quasi-static process? This paper analyzes the
+      exact finite-N total entropy production and its monotonic approach to zero in the
+      continuum limit N -> infinity, illustrating how a concrete classroom question can
+      turn into a clean analytical and numerical exercise.
+
+influential_external_works:
+  - id: "kitaev2006anyons"
+    citation: "Alexei Kitaev, 'Anyons in an exactly solved model and beyond', Annals of Physics 321, 2–111 (2006)"
+    url: "https://arxiv.org/abs/cond-mat/0506438"
+    role_in_narrative: "Formative 2019 reading during the first master's year; showed how Majorana fermions, Z2 gauge structure, and the algebraic theory of anyons work together inside a concrete honeycomb spin model."
+  - id: "kitaev2009periodic"
+    citation: "Alexei Kitaev, 'Periodic table for topological insulators and superconductors', AIP Conf. Proc. 1134, 22–30 (2009)"
+    url: "https://arxiv.org/abs/0901.2686"
+    role_in_narrative: "Reference example for how symmetry and K-theory organize gapped non-interacting fermionic phases—and why the admitted class of systems and equivalence relation matter."
+  - id: "fidkowski2011topological"
+    citation: "Lukasz Fidkowski and Alexei Kitaev, 'Topological phases of fermions in one dimension', Phys. Rev. B 83, 075103 (2011)"
+    url: "https://arxiv.org/abs/1008.4138"
+    role_in_narrative: "Benchmark example of how interactions alter free-fermion classifications (reducing the 1D BDI classification from Z to Z8)."
+  - id: "mross2016duality"
+    citation: "David F. Mross, Jason Alicea, and Olexei I. Motrunich, 'Explicit derivation of duality between a free Dirac cone and quantum electrodynamics in (2+1) dimensions', Phys. Rev. Lett. 117, 016802 (2016)"
+    url: "https://arxiv.org/abs/1510.08455"
+    role_in_narrative: "Studied closely during undergraduate training as an explicit coupled-wire route to (2+1)D dualities."
+  - id: "ferraz2019spinchain"
+    citation: "Gabriel Ferraz, Flavia B. Ramos, Reinhold Egger, and Rodrigo G. Pereira, 'Spin chain network construction of chiral spin liquids', Phys. Rev. Lett. 123, 137202 (2019)"
+    url: "https://arxiv.org/abs/1906.00807"
+    role_in_narrative: "External reference from the UFRN group demonstrating how spin-1/2 chain networks with junction interactions yield controlled 2D chiral spin liquids."
+  - id: "oliviero2024majorana"
+    citation: "Fabrizio G. Oliviero, Weslei B. Fontana, and Rodrigo G. Pereira, 'Majorana Fermi surface state in a network of quantum spin chains', Phys. Rev. B 109, 075135 (2024)"
+    url: "https://arxiv.org/abs/2310.09582"
+    role_in_narrative: "External reference illustrating how critical spin-1 chain junctions form a 2D honeycomb network with a Majorana Fermi surface."
+  - id: "thurston1994proof"
+    citation: "William P. Thurston, 'On proof and progress in mathematics', Bulletin of the American Mathematical Society 30, 161–177 (1994)"
+    url: "https://arxiv.org/abs/math/9404236"
+    role_in_narrative: "Influential reflection on how mathematical understanding develops and is communicated beyond a purely mechanical definition–theorem–proof (DTP) pipeline."
+  - id: "longino1990science"
+    citation: "Helen E. Longino, Science as Social Knowledge: Values and Objectivity in Scientific Inquiry (Princeton University Press, 1990)"
+    url: "https://press.princeton.edu/books/paperback/9780691020518/science-as-social-knowledge"
+    role_in_narrative: "Current reading in social epistemology and feminist philosophy of science on how intersubjective criticism, shared standards, and diverse perspectives shape scientific knowledge."

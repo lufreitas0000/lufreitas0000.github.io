@@ -1,0 +1,28 @@
+---
+title: "[VALIDATION FIXTURE] Why a Uniform Single-Sublattice Ansatz Fails Near a Z2 Vortex"
+subtitle: "Fixture validating the obstructed-attempt evidentiary status badge"
+author: "Lu Freitas"
+date: "2026-11-09"
+revised_at: "2026-11-09"
+lang: "en"
+draft: false
+article_type: "unsuccessful-approach"
+evidence_status: "obstructed-attempt"
+series: null
+tags:
+  - "kitaev-model"
+  - "vortices"
+  - "unsuccessful-approach"
+prerequisites: "Real-space Majorana mean-field theory, Z2 gauge flux around a plaquette vortex."
+conventions: "Plaquette flux W_p = -1 at vortex core; translation invariance broken in real space."
+source_links:
+  - label: "npj Quantum Materials 9, 33 (2024)"
+    url: "https://arxiv.org/abs/2311.15750"
+notebook_path: null
+---
+
+> **Fixture Notice (`dev-fixtures/`):** Demonstrates how an `unsuccessful-approach` note with `evidence_status: obstructed-attempt` states the exact hypothesis that failed without claiming a general no-go theorem.
+
+## Obstruction Summary
+
+Attempting to parameterize the bond expectations $U_{ij}^{\mu\nu} = \langle i c_i^\mu c_j^\nu \rangle$ around an isolated $W_p = -1$ vortex using a uniform asymptotic value without radial and angular bond-type relaxation violates local self-consistency of the electric quadrupole profile ([Freitas et al. 2024](https://arxiv.org/abs/2311.15750)). This records the breakdown of a restricted ansatz, not a theorem that analytical asymptotic approximations cannot be constructed.

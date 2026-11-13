@@ -1,0 +1,21 @@
+<div class="feed-controls-wrapper" role="search" aria-label="Filter and search blog posts">
+  <div class="feed-toolbar">
+    <div class="feed-filter-group" role="region" aria-label="Filter feed entries by content type (multi-select)">
+      <span class="feed-filter-label">Filter:</span>
+      {{FILTER_BUTTONS}}
+    </div>
+    <div class="feed-search-box">
+      <input type="search" id="feed-search-input" class="feed-search-input" placeholder="Search keywords or #tags..." aria-label="Search posts by keyword or tag" oninput="applyFeedSearchAndFilters()">
+      <span id="feed-count-status" class="feed-count-status" aria-live="polite">Showing {{TOTAL_COUNT}} of {{TOTAL_COUNT}} posts</span>
+    </div>
+  </div>
+  <div id="feed-active-tag-banner" class="feed-active-tag-banner" style="display:none;">
+    <span>Active tags: <strong id="feed-active-tag-label"></strong></span>
+    <button type="button" class="feed-clear-btn" onclick="clearFeedTags()">Clear tags ×</button>
+  </div>
+</div>
+<div class="feed-card-list" data-index-url="{{SEARCH_INDEX_URL}}">
+{{FEED_CARDS}}
+</div>
+<p id="feed-empty-notice" style="display:none;color:var(--ink-muted);margin-top:0.8rem;">No posts match your search or filter. <button type="button" class="feed-clear-btn" onclick="resetFeedSearchAndFilters()">Reset all filters</button></p>
+<script src="{{FEED_JS_URL}}" defer></script>

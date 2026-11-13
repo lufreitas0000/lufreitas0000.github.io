@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="124.57pt" height="120.14pt" viewBox="0 0 124.57 120.14" version="1.2">
+<defs>
+<clipPath id="svg_res5_clip1">
+ <path d="M 46 55 L 123.91 55 L 123.91 116 L 46 116 Z M 46 55 "/>
+</clipPath>
+<clipPath id="svg_res5_clip2">
+ <path d="M 0.23 55 L 79 55 L 79 116 L 0.23 116 Z M 0.23 55 "/>
+</clipPath>
+<clipPath id="svg_res5_clip3">
+ <path d="M 43 94 L 81 94 L 81 119.28 L 43 119.28 Z M 43 94 "/>
+</clipPath>
+<clipPath id="svg_res5_clip4">
+ <path d="M 11 34 L 113 34 L 113 119.28 L 11 119.28 Z M 11 34 "/>
+</clipPath>
+<clipPath id="svg_res5_clip5">
+ <path d="M 9 14 L 115 14 L 115 119.28 L 9 119.28 Z M 9 14 "/>
+</clipPath>
+</defs>
+<g id="svg_res5_surface1">
+<path style="fill:none;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M -0.00 0.00 L -0.00 58.21 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#2B2B2B;fill-opacity:1;" d="M 62.18 7.72 C 61.87 9.36 60.95 12.02 59.88 13.87 L 64.48 13.87 C 63.41 12.02 62.49 9.36 62.18 7.72 "/>
+<g clip-path="url(#svg_res5_clip1)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M -0.00 0.00 L 50.41 -29.10 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+</g>
+<path style=" stroke:none;fill-rule:nonzero;fill:#2B2B2B;fill-opacity:1;" d="M 117.02 102.71 C 115.75 101.62 113.91 99.49 112.85 97.64 L 110.54 101.63 C 112.68 101.62 115.45 102.15 117.02 102.71 "/>
+<g clip-path="url(#svg_res5_clip2)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M -0.00 0.00 L -50.41 -29.10 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+</g>
+<path style=" stroke:none;fill-rule:nonzero;fill:#2B2B2B;fill-opacity:1;" d="M 7.34 102.71 C 8.91 102.15 11.68 101.62 13.82 101.63 L 11.51 97.64 C 10.45 99.49 8.61 101.62 7.34 102.71 "/>
+<path style="fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M 5.64 0.00 C 5.64 3.11 3.11 5.64 -0.00 5.64 C -3.11 5.64 -5.63 3.11 -5.63 0.00 C -5.63 -3.11 -3.11 -5.64 -0.00 -5.64 C 3.11 -5.64 5.64 -3.11 5.64 0.00 Z M 5.64 0.00 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+<path style="fill-rule:nonzero;fill:rgb(100%,50%,0%);fill-opacity:1;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M 39.64 21.26 C 39.64 22.82 38.38 24.08 36.82 24.08 C 35.27 24.08 34.00 22.82 34.00 21.26 C 34.00 19.70 35.27 18.44 36.82 18.44 C 38.38 18.44 39.64 19.70 39.64 21.26 Z M 39.64 21.26 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+<path style="fill-rule:nonzero;fill:rgb(100%,50%,0%);fill-opacity:1;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M 2.82 42.52 C 2.82 44.08 1.56 45.34 -0.00 45.34 C -1.55 45.34 -2.82 44.08 -2.82 42.52 C -2.82 40.97 -1.55 39.70 -0.00 39.70 C 1.56 39.70 2.82 40.97 2.82 42.52 Z M 2.82 42.52 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+<path style="fill-rule:nonzero;fill:rgb(100%,50%,0%);fill-opacity:1;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M -34.00 21.26 C -34.00 22.82 -35.27 24.08 -36.82 24.08 C -38.38 24.08 -39.64 22.82 -39.64 21.26 C -39.64 19.70 -38.38 18.44 -36.82 18.44 C -35.27 18.44 -34.00 19.70 -34.00 21.26 Z M -34.00 21.26 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+<path style="fill-rule:nonzero;fill:rgb(100%,50%,0%);fill-opacity:1;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M -34.00 -21.26 C -34.00 -19.71 -35.27 -18.44 -36.82 -18.44 C -38.38 -18.44 -39.64 -19.71 -39.64 -21.26 C -39.64 -22.82 -38.38 -24.08 -36.82 -24.08 C -35.27 -24.08 -34.00 -22.82 -34.00 -21.26 Z M -34.00 -21.26 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,50%,0%);fill-opacity:1;" d="M 64.98 113.26 C 64.98 111.71 63.73 110.46 62.18 110.46 C 60.64 110.46 59.38 111.71 59.38 113.26 C 59.38 114.81 60.64 116.06 62.18 116.06 C 63.73 116.06 64.98 114.81 64.98 113.26 Z M 64.98 113.26 "/>
+<g clip-path="url(#svg_res5_clip3)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M 2.82 -42.52 C 2.82 -40.96 1.56 -39.70 -0.00 -39.70 C -1.55 -39.70 -2.82 -40.96 -2.82 -42.52 C -2.82 -44.08 -1.55 -45.34 -0.00 -45.34 C 1.56 -45.34 2.82 -44.08 2.82 -42.52 Z M 2.82 -42.52 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+</g>
+<path style="fill-rule:nonzero;fill:rgb(100%,50%,0%);fill-opacity:1;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M 39.64 -21.26 C 39.64 -19.71 38.38 -18.44 36.82 -18.44 C 35.27 -18.44 34.00 -19.71 34.00 -21.26 C 34.00 -22.82 35.27 -24.08 36.82 -24.08 C 38.38 -24.08 39.64 -22.82 39.64 -21.26 Z M 39.64 -21.26 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+<g clip-path="url(#svg_res5_clip4)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(20.00%,20.00%,20.00%);stroke-opacity:0.4;stroke-dasharray:2.99,1.99;stroke-miterlimit:10;" d="M 33.44 21.26 L -33.44 21.26 M -35.13 18.33 L -1.69 -39.59 M 1.69 -39.59 L 35.13 18.33 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+</g>
+<path style="fill:none;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M -1.69 39.59 L -35.13 -18.33 M -33.44 -21.26 L 33.44 -21.26 M 35.13 -18.33 L 1.69 39.59 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+<g clip-path="url(#svg_res5_clip5)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:1.13;stroke-linecap:butt;stroke-linejoin:miter;stroke:#2B2B2B;stroke-opacity:1;stroke-miterlimit:10;" d="M -2.93 40.83 L -33.89 22.95 M -36.82 17.88 L -36.82 -17.88 M -33.89 -22.95 L -2.93 -40.83 M 2.93 -40.83 L 33.89 -22.95 M 36.82 -17.88 L 36.82 17.88 M 33.89 22.95 L 2.93 40.83 " transform="matrix(0.99,0,0,-0.99,62.18,71.04)"/>
+</g>
+</g>
+</svg>

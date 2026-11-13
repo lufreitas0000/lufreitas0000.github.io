@@ -1,0 +1,36 @@
+---
+title: "[VALIDATION FIXTURE] Path to Reversibility with N Heat Reservoirs"
+subtitle: "Static notebook verification fixture based on Freitas & Pereira (RBEF, 2019)"
+author: "Lu Freitas"
+date: "2026-11-09"
+revised_at: "2026-11-09"
+lang: "en"
+draft: false
+article_type: "notebook-study"
+evidence_status: "exact-analytical"
+series: null
+tags:
+  - "thermodynamics"
+  - "reversibility"
+  - "notebook-fixture"
+prerequisites: "Classical equilibrium thermodynamics, constant heat capacity C, Clausius entropy."
+conventions: "Reservoir temperatures T_k = T_0 + k(T_N - T_0)/N for k = 0, ..., N; T_0 = 300 K, T_N = 600 K."
+source_links:
+  - label: "Rev. Bras. Ensino Fís. 41(4), e20180331 (2019)"
+    url: "https://doi.org/10.1590/1806-9126-rbef-2018-0331"
+notebook_path: "../notebooks/successive_heat_reservoirs.ipynb"
+---
+
+> **Fixture Notice:** This file resides in `dev-fixtures/` outside the public `site/` tree. It verifies that static `.ipynb` code cells, precomputed stdout outputs, MathJax equations, and bibliography links render cleanly without executing code during the website build.
+
+## Motivating Question
+
+When a body with constant heat capacity $C$ at initial temperature $T_0$ is placed in contact with a sequence of $N$ thermal reservoirs at equally spaced temperatures $T_k = T_0 + k\,\Delta T$ up to $T_N$, how rapidly does the total entropy variation
+
+$$\frac{\Delta S_{\text{tot}}(N)}{C} = \sum_{k=1}^{N} \left( \frac{T_{k-1}}{T_k} - 1 + \ln\frac{T_k}{T_{k-1}} \right)$$
+
+decay as $N \to \infty$?
+
+## Asymptotic Expansion vs. Precomputed Finite-$N$ Sum
+
+Expanding each step to second order in $\Delta T / T_k$ shows that $\Delta S_{\text{tot}}(N) / C = \mathcal{O}(N^{-1})$ as $N \to \infty$, recovering thermodynamic reversibility in the quasi-static continuum limit ([Freitas & Pereira 2019](https://doi.org/10.1590/1806-9126-rbef-2018-0331)).

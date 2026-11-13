@@ -1,0 +1,62 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - research.qmd
+    - about.qmd
+    - about/working-with-me.qmd
+    - notes/index.qmd
+    - notes/series/papers-worth-understanding.qmd
+    - "notes/posts/**/*.qmd"
+    - "!dev-fixtures/**"
+    - "!templates/**"
+
+# Non-executing publishing contract:
+# Routine website builds NEVER execute scientific Python/Julia/Lean code or call cloud APIs.
+execute:
+  enabled: false
+  freeze: true
+
+website:
+  title: "Lu Freitas"
+  description: "Theoretical quantum-matter physics, mathematical foundations, worked derivations, and research notes."
+  site-url: "https://lufreitas0000.github.io"
+  navbar:
+    background: light
+    search: false
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Notes"
+        href: notes/index.qmd
+  page-footer:
+    left: "Lu Freitas · Theoretical quantum-matter physics · PhD, UFRN, 2024"
+    right:
+      - text: "lu.rdf@icloud.com"
+        href: "mailto:lu.rdf@icloud.com"
+      - text: "ORCID"
+        href: "https://orcid.org/0000-0002-4491-8492"
+      - text: "GitHub"
+        href: "https://github.com/lufreitas0000"
+      - text: "Scholar"
+        href: "https://scholar.google.com/citations?user=VhXKP_YAAAAJ"
+      - text: "RSS"
+        href: "notes/index.xml"
+
+bibliography: references.bib
+
+format:
+  html:
+    lang: en
+    theme: default
+    css: styles/custom.css
+    toc: true
+    toc-depth: 3
+    html-math-method: mathjax
+    anchor-sections: true
+    smooth-scroll: false

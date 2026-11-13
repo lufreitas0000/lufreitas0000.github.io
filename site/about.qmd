@@ -1,0 +1,132 @@
+---
+title: "About Me"
+subtitle: ""
+page_id: "about"
+lang: "en"
+hide_page_title: false
+toc: false
+---
+
+<div class="tufte-section page-section" id="biography-and-motivation">
+  <div class="tufte-main page-main">
+    <h2>Mathematics, Physics &amp; Scientific Orientation</h2>
+    <p>I am <strong>Lu Freitas</strong>, a theoretical quantum-matter physicist. I completed my PhD (<code>2020–2024</code>), MSc (<code>2019–2021</code>), and BSc (<code>2015–2018</code>, <em>cum laude</em>) in Physics at the Universidade Federal do Rio Grande do Norte (UFRN, Natal, Brazil) under the supervision of Prof. Rodrigo G. Pereira, including a Visiting Doctoral Research period (<code>2022–2023</code>) at <strong>Heinrich-Heine-Universität Düsseldorf</strong> (Germany) hosted by Prof. Reinhold Egger.</p>
+<p>My interest in theoretical physics comes from a love of both physical reality and pure mathematics. Since before entering university, I have felt that mathematics and physics are art forms as well as ways of understanding nature. Attending mathematics courses at IMPA (Instituto de Matemática Pura e Aplicada) and pursuing independent study in algebra, topology, analysis, quantum field theory, and conformal field theory helped cultivate that perspective alongside my training in condensed-matter physics.</p>
+<p>A decisive turning point came in 2019, during the first year of my master's degree, when I read Alexei Kitaev's 2006 paper on anyons in an exactly solved honeycomb model. Seeing a concrete lattice spin Hamiltonian lead naturally into Majorana fermions, \(\mathbb{Z}_2\) gauge structures, and the algebraic theory of anyonic excitations showed me how structural mathematical reasoning illuminates concrete many-body mechanisms. The books and papers of Hal Tasaki, Xiao-Gang Wen, and Masaki Oshikawa—together with Pedro Vieira's lectures and <em>Beautiful Papers</em> approach—have similarly shaped the clarity and physical grounding I value in theoretical work.</p>
+  </div>
+  <aside class="tufte-margin page-margin">
+    <div class="margin-note-item quiet-note" id="name-continuity">
+      <span class="margin-pill quiet">Name continuity</span>
+      <div>I use the name Lu Freitas. Earlier records appear under Lucas R. D. Freitas; those records refer to the same author, <a href="https://orcid.org/0000-0002-4491-8492">ORCID (0000-0002-4491-8492)</a>.</div>
+    </div>
+  </aside>
+</div>
+
+<div class="tufte-section page-section" id="future-horizons">
+  <div class="tufte-main page-main">
+    <h2>Broader Interests &amp; Postdoctoral Research Horizons</h2>
+    <p>My published research is a concrete subset of a wider intellectual orientation. While my established research experience is in quantum spin systems, effective low-energy operators, dynamical correlations, and self-consistent mean-field and exact-diagonalization calculations, I am actively developing broader mathematical and structural interests where substantive connections across fields produce new physical understanding:</p>
+<p><strong>Operator Algebras, Locality &amp; Joining Formal AQFT to QIQM:</strong> I am interested in how microscopic locality, symmetry, and low-energy projection constraints shape emergent universality classes, boundary and defect phenomena, and entanglement structure. In particular, I want to understand how the algebraic formulation of local observables (von Neumann algebras and algebraic quantum field theory, AQFT) connects to quantum information and quantum matter (QIQM), and how coupling to an environment or conditioning on measurements reshapes many-body correlations and Lieb–Robinson propagation bounds.</p>
+<p><strong>Phase Classification, Coupled-Wire Dualities &amp; Formalization in Lean 4:</strong> Frameworks such as the Altland–Zirnbauer and Kitaev periodic tables, interaction-driven classification reductions, and coupled-wire or spin-chain network constructions show how the scope of a classification depends on the admitted class of systems and equivalence relation. I am interested in using <strong>Lean 4</strong> to formulate quantum-matter definitions with explicit assumptions that keep finite-matrix identities, local families of finite systems with uniform bounds, and infinite-volume statements distinct.</p>
+  </div>
+  <aside class="tufte-margin page-margin">
+    <div class="margin-note-item">
+      <span class="margin-pill pink">Scope & provenance</span>
+      <div>Separates demonstrated competence in quantum spin systems (<a href="research.html">Research</a>) from broader mathematical and cross-field directions of active study.</div>
+    </div>
+    <div class="margin-note-item">
+      <span class="margin-pill blue">Collaboration profile</span>
+      <div>See <a href="about/working-with-me.html">Working With Me</a> for my computational stack (Python, Julia, Lean 4) and scientific conventions.</div>
+    </div>
+  </aside>
+</div>
+
+<div class="tufte-section page-section" id="github-projects">
+  <div class="tufte-main page-main">
+    <h2>Open-Source Scientific Software &amp; GitHub Projects</h2>
+    <p>Alongside analytical derivations, I develop and maintain scientific software and reproducible research workflows on <a href="https://github.com/lufreitas0000">GitHub (<code>@lufreitas0000</code>)</a>, currently undergoing a modular architectural overhaul around explicit mathematical contracts, domain/service separation, and automated verification:</p>
+<ul>
+<li><strong>Real-Space Majorana Mean-Field &amp; Lattice Geometry (<code>kitaev-mf</code>, <code>kitaev-walk-geometry</code>):</strong> Self-consistent Bogoliubov–de Gennes solvers, \(\mathbb{Z}_2\) gauge-flux and vortex-sector builders, and honeycomb lattice walk and plaquette geometry modules developed during and after my doctoral research.</li>
+<li><strong>Formalization &amp; Reproducible Research Tooling (<code>projects-hub</code>, <code>project-governance</code>):</strong> Modular workspace tooling, test-driven verification pipelines, and exploratory Lean 4 formalization drafts for low-dimensional quantum spin systems and bosonization notes. Detailed project write-ups will appear as project entries in the <a href="notes/index.html">Notes &amp; Feed</a> section as each repository overhaul is completed.</li>
+</ul>
+  </div>
+  <aside class="tufte-margin page-margin">
+    <div class="margin-note-item">
+      <span class="margin-pill blue">GitHub profile</span>
+      <div>Repositories and scientific computing tools on <a href="https://github.com/lufreitas0000">GitHub (@lufreitas0000)</a>.</div>
+    </div>
+  </aside>
+</div>
+
+<div class="tufte-section page-section" id="philosophy-of-science">
+  <div class="tufte-main page-main">
+    <h2>History, Philosophy &amp; Social Dimensions of Science</h2>
+    <p>A final-year undergraduate course in History and Philosophy of Science in 2018 became my favorite course of the degree. Exploring demarcation, confirmation holism, the interpretation of evidence, and scientific realism sparked a lasting interest in <strong>social epistemology</strong> and <strong>feminist epistemology</strong>.</p>
+<p>I am currently reading Helen E. Longino's <em>Science as Social Knowledge: Values and Objectivity in Scientific Inquiry</em> (Princeton University Press, 1990), which examines how scientific objectivity arises not from isolated individuals free of perspective, but from communities practicing transformative criticism under shared public standards and diverse perspectives. William P. Thurston's essay <em>On proof and progress in mathematics</em> similarly informs how I view the interplay between formal proof, numerical computation, and human understanding.</p>
+  </div>
+  <aside class="tufte-margin page-margin">
+    <div class="margin-note-item quiet-note">
+      <span class="margin-pill quiet">Epistemology & craft</span>
+      <div>A model-specific calculation becomes most meaningful when it reveals the physical mechanism, the assumptions responsible for it, and its domain of validity.</div>
+    </div>
+  </aside>
+</div>
+
+<div class="tufte-section page-section" id="outreach-and-climbing">
+  <div class="tufte-main page-main">
+    <h2>Science Communication &amp; Rock Climbing</h2>
+    <p><strong>Science Communication (<a href="https://www.instagram.com/lu.scientist/"><code>@lu.scientist</code></a>):</strong> I share reflections, visual explanations, and short-form videos on mathematical physics, quantum matter, and the philosophy and sociology of science on Instagram at <a href="https://www.instagram.com/lu.scientist/"><code>@lu.scientist</code></a>, with companion written commentary and video notes indexed in the <a href="notes/index.html">Feed</a> as new episodes are published.</p>
+<p><strong>Rock Climbing (<a href="https://www.instagram.com/luescaladora/"><code>@luescaladora</code></a>):</strong> Outside theoretical physics, rock climbing and bouldering are central to my daily routine and community life. I share climbing progression, outdoor routes, and movement notes on my personal public climbing profile <a href="https://www.instagram.com/luescaladora/"><code>@luescaladora</code></a>.</p>
+  </div>
+  <aside class="tufte-margin page-margin">
+    <div class="margin-note-item">
+      <span class="margin-pill pink">Public profiles</span>
+      <div><strong>Science:</strong> <a href="https://www.instagram.com/lu.scientist/">@lu.scientist</a><br><strong>Climbing:</strong> <a href="https://www.instagram.com/luescaladora/">@luescaladora</a></div>
+    </div>
+  </aside>
+</div>
+
+<div class="tufte-section page-section" id="cv">
+  <div class="tufte-main page-main">
+    <h2>Academic Chronology, Methods &amp; Open CV</h2>
+    <p><strong>Methods &amp; Scientific Computing:</strong> My analytical and numerical toolkit spans exact diagonalization, real-space self-consistent Bogoliubov–de Gennes / Majorana mean-field solvers on torus geometries, spin-wave and \(T\)-matrix impurity scattering, perturbative Schrieffer–Wolff low-energy projections, and continuum bosonization / boundary conformal field theory (BCFT), complemented by a <strong>Postgraduate Certificate in AI &amp; Machine Learning</strong> (XP Educação, <code>2026</code>).</p>
+<p>All degree records and international research appointments are summarized below:</p>
+    <div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Degree / Appointment</th>
+        <th>Institution</th>
+        <th>Period</th>
+        <th>Thesis / Research Focus &amp; Supervisor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>PhD in Physics (Condensed Matter Theory)</strong></td><td>Universidade Federal do Rio Grande do Norte (UFRN), Natal, Brazil</td><td>2020–2024</td><td><em>Majorana mean-field theory with \(\mathbb{Z}_2\) vortices: Electrical tests in the extended Kitaev model</em><br><span style="color:var(--ink-secondary);font-size:0.86rem;">Supervisor: Prof. Rodrigo G. Pereira · <a href="https://repositorio.ufrn.br/items/4aad438d-e5eb-4d25-834e-13c9c8ac8edc">UFRN Repository</a></span></td></tr><tr><td><strong>Visiting Doctoral Researcher (Sandwich PhD in Condensed Matter Theory)</strong></td><td>Heinrich-Heine-Universität Düsseldorf, Germany</td><td>2022–2023</td><td><em>Scanning tunneling spectroscopy of Majorana zero modes and local spin-flip impurity transitions in Kitaev spin liquids</em><br><span style="color:var(--ink-secondary);font-size:0.86rem;">Host: Prof. Reinhold Egger</span></td></tr><tr><td><strong>MSc in Physics (Condensed Matter Theory)</strong></td><td>Universidade Federal do Rio Grande do Norte (UFRN), Natal, Brazil</td><td>2019–2021</td><td><em>Gapless excitations in Kitaev materials with defects</em><br><span style="color:var(--ink-secondary);font-size:0.86rem;">Supervisor: Prof. Rodrigo G. Pereira · <a href="https://repositorio.ufrn.br/items/3aa40767-b797-40bd-b7f9-aa19d56b0dfc">UFRN Repository</a></span></td></tr><tr><td><strong>BSc in Physics, cum laude</strong></td><td>Universidade Federal do Rio Grande do Norte (UFRN), Natal, Brazil</td><td>2015–2018</td><td><em>Duality in Dirac theories via Bosonization</em><br><span style="color:var(--ink-secondary);font-size:0.86rem;">Supervisor: Prof. Rodrigo G. Pereira · <a href="https://repositorio.ufrn.br/items/1acbe528-ab65-4baf-bd36-e96171fd9149">UFRN Repository</a></span></td></tr>
+    </tbody>
+  </table>
+</div>
+    <h3>External Works Referenced in Narrative</h3>
+    <p>Foundational and external papers mentioned in my intellectual background above are listed separately from my authored publications:</p>
+    <ul>
+<li><a href="https://arxiv.org/abs/cond-mat/0506438">Alexei Kitaev, &#x27;Anyons in an exactly solved model and beyond&#x27;, Annals of Physics 321, 2–111 (2006)</a> — Formative 2019 reading during the first master&#x27;s year; showed how Majorana fermions, Z2 gauge structure, and the algebraic theory of anyons work together inside a concrete honeycomb spin model.</li>
+<li><a href="https://arxiv.org/abs/0901.2686">Alexei Kitaev, &#x27;Periodic table for topological insulators and superconductors&#x27;, AIP Conf. Proc. 1134, 22–30 (2009)</a> — Reference example for how symmetry and K-theory organize gapped non-interacting fermionic phases—and why the admitted class of systems and equivalence relation matter.</li>
+<li><a href="https://arxiv.org/abs/1008.4138">Lukasz Fidkowski and Alexei Kitaev, &#x27;Topological phases of fermions in one dimension&#x27;, Phys. Rev. B 83, 075103 (2011)</a> — Benchmark example of how interactions alter free-fermion classifications (reducing the 1D BDI classification from Z to Z8).</li>
+<li><a href="https://arxiv.org/abs/1510.08455">David F. Mross, Jason Alicea, and Olexei I. Motrunich, &#x27;Explicit derivation of duality between a free Dirac cone and quantum electrodynamics in (2+1) dimensions&#x27;, Phys. Rev. Lett. 117, 016802 (2016)</a> — Studied closely during undergraduate training as an explicit coupled-wire route to (2+1)D dualities.</li>
+<li><a href="https://arxiv.org/abs/1906.00807">Gabriel Ferraz, Flavia B. Ramos, Reinhold Egger, and Rodrigo G. Pereira, &#x27;Spin chain network construction of chiral spin liquids&#x27;, Phys. Rev. Lett. 123, 137202 (2019)</a> — External reference from the UFRN group demonstrating how spin-1/2 chain networks with junction interactions yield controlled 2D chiral spin liquids.</li>
+<li><a href="https://arxiv.org/abs/2310.09582">Fabrizio G. Oliviero, Weslei B. Fontana, and Rodrigo G. Pereira, &#x27;Majorana Fermi surface state in a network of quantum spin chains&#x27;, Phys. Rev. B 109, 075135 (2024)</a> — External reference illustrating how critical spin-1 chain junctions form a 2D honeycomb network with a Majorana Fermi surface.</li>
+<li><a href="https://arxiv.org/abs/math/9404236">William P. Thurston, &#x27;On proof and progress in mathematics&#x27;, Bulletin of the American Mathematical Society 30, 161–177 (1994)</a> — Influential reflection on how mathematical understanding develops and is communicated beyond a purely mechanical definition–theorem–proof (DTP) pipeline.</li>
+<li><a href="https://press.princeton.edu/books/paperback/9780691020518/science-as-social-knowledge">Helen E. Longino, Science as Social Knowledge: Values and Objectivity in Scientific Inquiry (Princeton University Press, 1990)</a> — Current reading in social epistemology and feminist philosophy of science on how intersubjective criticism, shared standards, and diverse perspectives shape scientific knowledge.</li>
+</ul>
+  </div>
+  <aside class="tufte-margin page-margin">
+    <div class="margin-note-item">
+      <span class="margin-pill neutral">Technical stack</span>
+      <div><strong>Computing:</strong> Python, Julia, Lean 4, LaTeX/TikZ.<br><strong>Certificate:</strong> Postgraduate Certificate in AI &amp; Machine Learning (XP Educação, 2026).<br><strong>Languages:</strong> Portuguese (native), English (fluent).</div>
+    </div>
+    <div class="margin-note-item quiet-note">
+      <span class="margin-pill quiet">Teaching & references</span>
+      <div><strong>Teaching assistantships (UFRN):</strong> Quantum Mechanics (2022), General Physics I (2020).<br>Academic references available on request.</div>
+    </div>
+  </aside>
+</div>

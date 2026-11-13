@@ -1,0 +1,26 @@
+schema_version: 1
+project_name: "personal-website"
+active_phase: "Phase 2: Content Finalization & Public Deployment"
+current_milestone: "M2.0"
+
+milestone_history:
+  - id: "M1.0"
+    name: "Initial v6 handoff baseline"
+    status: "completed"
+    acceptance: "28 baseline verification tests pass on static build"
+  - id: "M1.1"
+    name: "Hexagonal refactor, governance scaffolding, and Feed multi-filter + right search + search-index.json"
+    status: "completed"
+    acceptance: "make verify passes (9 public pages, 4 feed posts, 20 unit/integration/e2e tests)"
+    evidence:
+      - "src/web_engine/"
+      - "site/templates/"
+      - "site/assets/js/feed_filter.js"
+      - ".github/workflows/deploy_pages.yml"
+    validation: "make verify"
+
+active_milestone:
+  id: "M2.0"
+  description: "Finalize degree date conventions, align public academic profiles, and deploy to lufreitas0000.github.io"
+  status: "ready"
+  active_tasks: []

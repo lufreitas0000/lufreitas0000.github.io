@@ -1,0 +1,32 @@
+---
+title: "Series: Papers worth understanding"
+subtitle: "Close readings of formative papers in quantum matter, mathematical physics, and methodology"
+page_id: "notes"
+lang: "en"
+toc: true
+---
+
+Some papers do more than report a calculation: they reorganize how a field thinks about a physical problem, introduce a mathematical language that clarifies previously scattered phenomena, or expose an assumption that everyone had taken for granted.
+
+This series—**Papers worth understanding**—is dedicated to reading such works slowly and constructively. The idea is directly inspired by [Pedro Vieira](https://perimeterinstitute.ca/people/pedro-vieira)'s lecture style and his [*Beautiful Papers* course at Perimeter Institute](https://events.perimeterinstitute.ca/category/132/) (crediting the pedagogical inspiration; I did not attend the course, and notes here are independent commentary and worked derivations rather than course transcripts or rehosted PDFs).
+
+## What Each Reading Note Covers {#structure}
+
+Rather than summarizing an abstract, each note in this series is structured around six concrete questions:
+
+1. **The Motivating Problem:** What physical or mathematical puzzle was open before the paper, and why were standard approaches insufficient?
+2. **The Central Structural Insight:** What change of variables, algebraic representation, duality, or conceptual framing makes the problem tractable?
+3. **One Illuminating Derivation in Full:** A self-contained, step-by-step reconstruction of a key calculation from the paper, stating local conventions, indices, and boundary conditions explicitly.
+4. **Assumptions & Regime of Validity:** Which idealizations carry the proof or approximation (e.g., finite vs. infinite volume, zero flux, non-interacting limit, or perturbative window), and where does the argument break down?
+5. **Why the Argument Is Beautiful:** What makes the interplay between the physical mechanism and the mathematical structure compelling?
+6. **Connections & Open Questions:** How did later work extend or challenge the paper, and how does it connect to ongoing questions in quantum matter, operator algebras, or formalization?
+
+## Planned Reading Threads (In Preparation) {#planned-threads}
+
+In keeping with the site's no-fabrication rule, entries appear in the archive below only when their full worked derivations and source checks are complete. Initial readings in preparation draw from papers that shaped my research trajectory:
+
+- **Alexei Kitaev (2006),** [*Anyons in an exactly solved model and beyond*](https://arxiv.org/abs/cond-mat/0506438) — Majorana representation on the honeycomb lattice, $\mathbb{Z}_2$ gauge flux sectors, and the passage from a concrete spin Hamiltonian to non-Abelian Ising anyons.
+- **David F. Mross, Jason Alicea & Olexei I. Motrunich (2016),** [*Explicit derivation of duality between a free Dirac cone and quantum electrodynamics in (2+1) dimensions*](https://arxiv.org/abs/1510.08455) — coupled-wire bosonization as a controlled microscopic bridge to $(2+1)$D dualities.
+- **William P. Thurston (1994),** [*On proof and progress in mathematics*](https://arxiv.org/abs/math/9404236) — mathematical understanding, social communication, and the scope of the definition–theorem–proof (DTP) model alongside modern formal verification.
+
+[← Return to the Notes index](../index.html)

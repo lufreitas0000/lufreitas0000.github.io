@@ -1,0 +1,882 @@
+/* Lu Freitas Personal Research Website — Bitstream Charter & Tufte Margin Architecture (v5)
+ * Typeface: Bitstream Charter / Charis SIL (designed by Matthew Carter, 1987)
+ * Surface: Warm Parchment Vellum (#FAF6EE) & Deep Charcoal Ink (#2B2B2B)
+ * Kitaev RGB Bonds: x = Scarlet Red (#E41A1C), y = Leaf Green (#4DAF4A), z = Cobalt Blue (#00639A)
+ * Attention Accents: Soft Light Pink (#FFCCD7) & Softened Translucent Light Blue (rgba(91, 206, 250, 0.34))
+ * Zero beige boxes, zero italics in headings, zero ALL CAPS, zero horizontal-scrolling equations.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-paper: #FAF6EE;
+  --ink-primary: #2B2B2B;
+  --ink-secondary: #484848;
+  --ink-muted: #6E6A63;
+  --ink-quiet: #7A756D;
+  --bond-x-red: #E41A1C;
+  --bond-y-green: #3B8E38;
+  --bond-z-blue: #00639A;
+  --normal-slate: #374151;
+  --accent-pink: #FFCCD7;
+  --accent-blue: rgba(91, 206, 250, 0.34);
+  --accent-blue-border: rgba(91, 206, 250, 0.68);
+  --rule-stone: #D5CBB9;
+  --rule-soft: #E5DECFE6;
+  --focus-ring: #00639A;
+  --font-body: "Bitstream Charter", "Charis SIL", "Charter", "ITC Charter", Georgia, serif;
+  --font-mono: "JetBrains Mono", "DejaVu Sans Mono", Consolas, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  background-color: var(--bg-paper);
+  color: var(--ink-primary);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.58;
+  background-color: var(--bg-paper);
+  color: var(--ink-primary);
+}
+
+/* Accessible Skip Link */
+.skip-link {
+  position: absolute;
+  top: -3.5rem;
+  left: 1rem;
+  background: var(--bond-z-blue);
+  color: #FFFFFF;
+  padding: 0.45rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 3px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+  outline: 3px solid var(--bond-z-blue);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--bond-z-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Minimal Top Header (Strictly 4 Primary Links: Home / Research / About Me / Notes) */
+.site-header {
+  border-bottom: 1px solid var(--rule-stone);
+  background-color: var(--bg-paper);
+  padding: 0.85rem 1.5rem;
+}
+
+.site-header-inner {
+  max-width: 66rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-brand-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.75rem;
+}
+
+.site-brand {
+  font-family: var(--font-body);
+  font-size: 1.26rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.site-brand:hover {
+  color: var(--bond-z-blue);
+}
+
+.site-brand-subtitle {
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.site-nav a {
+  color: var(--ink-secondary);
+  text-decoration: none;
+  padding: 0.15rem 0.05rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--bond-z-blue);
+  border-bottom-color: var(--rule-stone);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--bond-z-blue);
+  border-bottom-color: var(--bond-z-blue);
+  font-weight: 700;
+}
+
+/* DAG Breadcrumb Navigation Bar (Shown on Child Nodes) */
+.breadcrumb-nav {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  margin: 0 0 0.85rem 0;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.breadcrumb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.breadcrumb-list a {
+  color: var(--bond-z-blue);
+  text-decoration: none;
+}
+
+.breadcrumb-list a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  color: var(--ink-quiet);
+}
+
+/* Tufte Asymmetrical Page Shell */
+.page-shell {
+  max-width: 66rem;
+  margin: 0 auto;
+  padding: 1.35rem 1.5rem 2.2rem;
+}
+
+.page-shell.single-col {
+  max-width: 66rem;
+}
+
+main.reading-column {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Tufte Two-Column Section Grid (64% Main Column + 33% Right Margin Column) */
+.tufte-section {
+  display: grid;
+  grid-template-columns: minmax(0, 64%) minmax(0, 33%);
+  gap: 3%;
+  align-items: start;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.tufte-section:last-of-type {
+  border-bottom: none;
+}
+
+.tufte-main {
+  min-width: 0;
+}
+
+.tufte-margin {
+  border-left: 1px solid var(--rule-soft);
+  padding-left: 1.1rem;
+  font-size: 0.89rem;
+  line-height: 1.46;
+  color: var(--ink-secondary);
+}
+
+/* Headings: Upright Bitstream Charter Bold, Reduced Size Contrast, Squished Vertical Proportions */
+h1, h2, h3, h4 {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  color: var(--ink-primary);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 1.56rem;
+  line-height: 1.18;
+  margin: 0 0 0.35rem 0;
+  transform: scaleY(0.94);
+  transform-origin: left bottom;
+}
+
+h2 {
+  font-size: 1.2rem;
+  line-height: 1.24;
+  margin: 1.2rem 0 0.4rem 0;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--rule-stone);
+  transform: scaleY(0.95);
+  transform-origin: left bottom;
+}
+
+.tufte-main > h2:first-child {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.06rem;
+  line-height: 1.26;
+  margin: 0.95rem 0 0.3rem 0;
+  transform: scaleY(0.95);
+  transform-origin: left bottom;
+}
+
+p {
+  margin: 0 0 0.8rem 0;
+}
+
+a {
+  color: var(--bond-z-blue);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: #00456B;
+  text-decoration-thickness: 2px;
+}
+
+.credential-line {
+  font-size: 0.96rem;
+  color: var(--ink-secondary);
+  margin: 0.1rem 0 0.7rem 0;
+}
+
+/* Double-Hairline Typographic Colophon Strip (No Beige Fill) */
+.colophon-strip {
+  border-top: 2px solid var(--ink-primary);
+  border-bottom: 1px solid var(--rule-stone);
+  padding: 0.42rem 0;
+  margin: 0.55rem 0 1.05rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.95rem;
+  font-size: 0.92rem;
+  color: var(--ink-secondary);
+}
+
+.colophon-strip a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--bond-z-blue);
+}
+
+.colophon-strip a:hover {
+  text-decoration: underline;
+}
+
+/* Compact README Directory List on Home */
+.readme-directory {
+  margin: 0.95rem 0 0.2rem 0;
+  border-top: 1px solid var(--rule-stone);
+}
+
+.readme-dir-row {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.52rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 0.96rem;
+  line-height: 1.48;
+}
+
+.readme-dir-row a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.readme-dir-row a:hover {
+  text-decoration: underline;
+}
+
+/* Publication & Note Metadata Lines */
+.paper-citation-line {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.paper-citation-line a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.paper-citation-line a:hover {
+  text-decoration: underline;
+}
+
+/* Margin Pills — ONLY Soft Pink (#FFCCD7), Softened Sky Blue (rgba(91,206,250,0.34)), or Clean Unboxed Quiet Label (NO BEIGE BOXES!) */
+.margin-pill {
+  display: inline-block;
+  padding: 0.12rem 0.52rem;
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0 0.35rem 0.3rem 0;
+}
+
+.margin-pill.pink {
+  background-color: var(--accent-pink);
+  color: var(--ink-primary);
+}
+
+.margin-pill.blue {
+  background-color: var(--accent-blue);
+  border: 1px solid var(--accent-blue-border);
+  color: var(--ink-primary);
+}
+
+/* Unboxed, quiet typographic label instead of a beige box! */
+.margin-pill.neutral,
+.margin-pill.quiet {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 0 0.2rem 0;
+  display: block;
+  color: var(--ink-quiet);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.margin-note-item {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px dashed var(--rule-stone);
+}
+
+.margin-note-item.quiet-note {
+  color: var(--ink-quiet);
+  font-size: 0.84rem;
+  line-height: 1.42;
+}
+
+.margin-note-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.margin-figure {
+  margin-bottom: 0.85rem;
+}
+
+.margin-figure.vibe-art img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.65rem auto;
+  border: none;
+  background: transparent;
+}
+
+.margin-figure.labeled-svg img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 0.35rem;
+  border: 1px solid var(--rule-soft);
+  background: var(--bg-paper);
+}
+
+.margin-figcaption {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--ink-secondary);
+  margin-top: 0.35rem;
+}
+
+/* Unified Feed Filter Bar & Feed Cards (No Beige Boxes!) */
+.feed-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0;
+  margin: 0.6rem 0 1.1rem 0;
+  border-top: 2px solid var(--ink-primary);
+  border-bottom: 1px solid var(--rule-stone);
+}
+
+.feed-filter-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  margin-right: 0.25rem;
+}
+
+.feed-filter-btn {
+  background: transparent;
+  color: var(--ink-secondary);
+  border: 1px solid var(--rule-stone);
+  border-radius: 3px;
+  padding: 0.16rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+
+.feed-filter-btn:hover {
+  border-color: var(--bond-z-blue);
+  color: var(--bond-z-blue);
+}
+
+.feed-filter-btn.active {
+  background: var(--accent-blue);
+  border-color: var(--bond-z-blue);
+  color: var(--ink-primary);
+  font-weight: 700;
+}
+
+.feed-card {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.feed-card:last-child {
+  border-bottom: none;
+}
+
+.feed-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.feed-card-title {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.feed-card-title a {
+  text-decoration: none;
+}
+
+.feed-card-title a:hover {
+  text-decoration: underline;
+}
+
+.feed-tag-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.feed-tag {
+  color: var(--ink-muted);
+}
+
+/* Callouts & Equations — Transparent Warm Parchment Surface with Left Accent Rule (No Beige Fill!) */
+.scope-panel,
+.continuity-box,
+.note-metadata-box {
+  background-color: transparent;
+  border-left: 3px solid var(--accent-blue-border);
+  padding: 0.45rem 0 0.45rem 0.95rem;
+  margin: 0.85rem 0;
+  font-size: 0.95rem;
+}
+
+.scope-panel.epistemic-warning {
+  border-left-color: var(--accent-pink);
+}
+
+.scope-panel-title {
+  font-weight: 700;
+  font-size: 0.94rem;
+  color: var(--ink-primary);
+  margin-bottom: 0.2rem;
+}
+
+.math-scroll,
+mjx-container[display="true"] {
+  overflow-x: visible;
+  overflow-y: visible;
+  max-width: 100%;
+  padding: 0.3rem 0 0.3rem 0.85rem;
+  background-color: transparent;
+  border-left: 3px solid var(--accent-blue-border);
+  margin: 0.65rem 0;
+  font-size: 0.96rem;
+}
+
+pre, code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+pre {
+  background-color: transparent;
+  border: 1px solid var(--rule-stone);
+  border-radius: 3px;
+  padding: 0.7rem 0.9rem;
+  overflow-x: auto;
+  max-width: 100%;
+  line-height: 1.46;
+}
+
+code {
+  background-color: transparent;
+  padding: 0;
+  color: var(--ink-secondary);
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0.85rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid var(--rule-stone);
+  vertical-align: top;
+}
+
+th {
+  font-weight: 700;
+  color: var(--ink-primary);
+  background-color: transparent;
+  border-top: 2px solid var(--ink-primary);
+  border-bottom: 1px solid var(--ink-primary);
+}
+
+aside.page-toc {
+  display: none;
+}
+
+/* Footer with Expandable/Visible DAG Sitemap Tree */
+.site-footer {
+  border-top: 1px solid var(--rule-stone);
+  padding: 1rem 1.5rem 1.4rem;
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+  background-color: var(--bg-paper);
+}
+
+.site-footer-inner {
+  max-width: 66rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.6rem 1.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.95rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.sitemap-details {
+  max-width: 66rem;
+  margin: 0.55rem auto 0;
+  font-size: 0.84rem;
+  color: var(--ink-secondary);
+}
+
+.sitemap-details summary {
+  cursor: pointer;
+  color: var(--bond-z-blue);
+  font-weight: 700;
+  user-select: none;
+}
+
+.sitemap-tree {
+  margin: 0.5rem 0 0 0;
+  padding: 0.6rem 0 0.2rem 0;
+  border-top: 1px dashed var(--rule-stone);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 0.75rem 1.25rem;
+}
+
+.sitemap-branch-title {
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 0.25rem;
+}
+
+.sitemap-branch-title a {
+  text-decoration: none;
+}
+
+.sitemap-children {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0.75rem;
+  border-left: 1px solid var(--rule-stone);
+}
+
+.sitemap-children li {
+  margin: 0.2rem 0;
+}
+
+.sitemap-children a {
+  text-decoration: none;
+}
+
+.sitemap-children a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+  .tufte-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.9rem;
+  }
+  .tufte-margin {
+    border-left: none;
+    border-top: 1px dashed var(--rule-stone);
+    padding-left: 0;
+    padding-top: 0.65rem;
+  }
+  .readme-dir-row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+@media print {
+  html, body {
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 10.5pt;
+  }
+  .site-header, .skip-link, .sitemap-details {
+    display: none !important;
+  }
+}
+
+/* v6 Unified Blog Feed: Live Keyword Search Input & Clickable #Tag Pills */
+.feed-controls-wrapper {
+  margin: 0.75rem 0 1.15rem 0;
+  padding: 0.7rem 0;
+  border-top: 2px solid var(--ink-primary);
+  border-bottom: 1px solid var(--rule-stone);
+}
+
+.feed-search-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.6rem;
+}
+
+.feed-search-input {
+  flex: 1 1 18rem;
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  color: var(--ink-primary);
+  background-color: transparent;
+  border: 1px solid var(--rule-stone);
+  border-radius: 3px;
+  padding: 0.36rem 0.7rem;
+}
+
+.feed-search-input:focus {
+  outline: 2px solid var(--bond-z-blue);
+  border-color: var(--bond-z-blue);
+}
+
+.feed-count-status {
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+}
+
+.feed-filter-bar {
+  border-top: none;
+  border-bottom: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feed-tag-btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.77rem;
+  color: var(--bond-z-blue);
+  background: transparent;
+  border: 1px solid var(--rule-stone);
+  border-radius: 3px;
+  padding: 0.08rem 0.42rem;
+  cursor: pointer;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.feed-tag-btn:hover {
+  background-color: var(--accent-blue);
+  border-color: var(--bond-z-blue);
+}
+
+.feed-tag-btn.active-tag {
+  background-color: var(--accent-pink);
+  border-color: #D48A9B;
+  color: var(--ink-primary);
+  font-weight: 700;
+}
+
+.feed-active-tag-banner {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feed-clear-btn {
+  background: transparent;
+  border: 1px solid var(--rule-stone);
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--bond-z-blue);
+  padding: 0.1rem 0.45rem;
+  cursor: pointer;
+}
+
+.feed-clear-btn:hover {
+  border-color: var(--bond-z-blue);
+  background: var(--accent-blue);
+}
+
+.feed-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.55rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+}
+
+/* Feed Toolbar: Multi-option Filter (Left) + Search Box (Right) */
+.feed-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem 1.25rem;
+  flex-wrap: wrap;
+  padding: 0.65rem 0;
+  margin: 0.6rem 0 1.1rem 0;
+  border-top: 2px solid var(--ink-primary);
+  border-bottom: 1px solid var(--rule-stone);
+}
+
+.feed-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1 1 320px;
+}
+
+.feed-search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  flex: 0 1 300px;
+  min-width: 240px;
+}
+
+.feed-search-input {
+  width: 100%;
+  padding: 0.34rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--ink-primary);
+  background: #FFFFFF;
+  border: 1px solid var(--rule-stone);
+  border-radius: 3px;
+}
+
+.feed-search-input:focus {
+  outline: 2px solid var(--bond-z-blue);
+  border-color: var(--bond-z-blue);
+}
+
+.feed-count-status {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 720px) {
+  .feed-search-box {
+    flex: 1 1 100%;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,101 @@
+# Canonical Single-Source Public Profile & Contact Metadata
+# Reused across Home, Research, About Me, Feed, Footer, and /about/working-with-me.{html,md}.
+# Privacy boundary: ONLY approved public facts appear here. Never add private email or legal ID fields.
+
+display_name: "Lu Freitas"
+Earlier_publication_names:
+  - "Lucas R. D. Freitas"
+  - "L. R. D. Freitas"
+  - "Lucas Rodrigues Delgado de Freitas"
+  - "Lucas Freitas"
+name_continuity_note: >-
+  I use the name Lu Freitas. Earlier records appear under Lucas R. D. Freitas;
+  those records refer to the same author, ORCID (0000-0002-4491-8492).
+
+credential_line: "Theoretical quantum-matter physicist · PhD in Physics, UFRN, 2024"
+current_affiliation_status: "Independent researcher in theoretical quantum-matter physics (PhD completed in 2024 at Universidade Federal do Rio Grande do Norte)"
+current_affiliation_short: "Independent researcher"
+public_email: "lu.rdf@icloud.com"
+retired_email_policy: "Former UFRN institutional email is retired and must not be used as current contact."
+pronouns_policy: "Not specified publicly; use Lu or first-person phrasing."
+
+canonical_base_url: "https://lufreitas0000.github.io"
+base_url_verified: true
+nav_notes_label: "Feed"
+
+identifiers:
+  orcid:
+    label: "ORCID"
+    id: "0000-0002-4491-8492"
+    url: "https://orcid.org/0000-0002-4491-8492"
+  github:
+    label: "GitHub"
+    handle: "lufreitas0000"
+    url: "https://github.com/lufreitas0000"
+  google_scholar:
+    label: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=VhXKP_YAAAAJ"
+  arxiv_search:
+    label: "arXiv Author Record"
+    url: "https://arxiv.org/search/cond-mat?searchtype=author&query=Freitas,+L+R+D"
+
+education:
+  - degree: "PhD in Physics (Condensed Matter Theory)"
+    institution: "Universidade Federal do Rio Grande do Norte (UFRN), Natal, Brazil"
+    period_orcid: "2020–2024"
+    thesis_title: "Majorana mean-field theory with $\\mathbb{Z}_2$ vortices: Electrical tests in the extended Kitaev model"
+    supervisor: "Supervisor: Prof. Rodrigo G. Pereira"
+    repository_item_url: "https://repositorio.ufrn.br/items/4aad438d-e5eb-4d25-834e-13c9c8ac8edc"
+    is_ufrn_thesis: true
+  - degree: "Visiting Doctoral Researcher (Sandwich PhD in Condensed Matter Theory)"
+    institution: "Heinrich-Heine-Universität Düsseldorf, Germany"
+    period_orcid: "2022–2023"
+    thesis_title: "Scanning tunneling spectroscopy of Majorana zero modes and local spin-flip impurity transitions in Kitaev spin liquids"
+    supervisor: "Host: Prof. Reinhold Egger"
+    repository_item_url: ""
+    is_ufrn_thesis: false
+  - degree: "MSc in Physics (Condensed Matter Theory)"
+    institution: "Universidade Federal do Rio Grande do Norte (UFRN), Natal, Brazil"
+    period_orcid: "2019–2021"
+    thesis_title: "Gapless excitations in Kitaev materials with defects"
+    supervisor: "Supervisor: Prof. Rodrigo G. Pereira"
+    repository_item_url: "https://repositorio.ufrn.br/items/3aa40767-b797-40bd-b7f9-aa19d56b0dfc"
+    is_ufrn_thesis: true
+  - degree: "BSc in Physics, cum laude"
+    institution: "Universidade Federal do Rio Grande do Norte (UFRN), Natal, Brazil"
+    period_orcid: "2015–2018"
+    thesis_title: "Duality in Dirac theories via Bosonization"
+    supervisor: "Supervisor: Prof. Rodrigo G. Pereira"
+    repository_item_url: "https://repositorio.ufrn.br/items/1acbe528-ab65-4baf-bd36-e96171fd9149"
+    is_ufrn_thesis: true
+
+additional_mathematical_training_note: >-
+  Alongside formal degree training in physics at UFRN, I attended summer and regular
+  mathematics courses at IMPA (Instituto de Matemática Pura e Aplicada) and pursued
+  advanced coursework and independent study in algebra, topology, analysis, quantum
+  field theory, and conformal field theory.
+
+research_footing:
+  current_independent_strength: >-
+    Concrete one-dimensional quantum spin chains and selected two-dimensional spin systems,
+    particularly the Kitaev honeycomb model and extended JKΓ models, where I continue to
+    investigate questions originating in my PhD research.
+  collaboration_goal: >-
+    I especially value collaborations and mentorship that help identify consequential
+    problems and connect explicit microscopic spin-system calculations to broader questions
+    of universality, phase structure, and mathematical classification.
+
+collaboration_preferences:
+  communication_style: "Direct, critical, and constructive academic-peer exchange."
+  epistemic_hygiene: >-
+    State assumptions, domains, lattice/Fourier conventions, and idealizations explicitly.
+    Keep formal proofs, controlled analytical approximations, numerical evidence, and
+    conjectures clearly distinguished.
+  computational_stack:
+    - "Python and Julia for exact diagonalization, mean-field solvers, spin-wave/T-matrix calculations, and reproducible data analysis"
+    - "Lean 4 for formal mathematical definitions and theorem verification"
+    - "LaTeX / TikZ / pgfplots and Quarto / Jupyter notebooks with precomputed static outputs in WSL Ubuntu"
+  agent_boundary_disclaimer: >-
+    This public profile provides descriptive context for human collaborators and AI assistants.
+    It grants no authorization to execute tools, modify repositories, or override local
+    repository governance (such as AGENTS.md or project-specific task contracts).

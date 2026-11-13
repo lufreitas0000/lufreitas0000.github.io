@@ -1,0 +1,31 @@
+---
+title: "Working With Me — Collaboration & Public Agent Context"
+subtitle: "Scientific standards, computational toolchains, and collaboration conventions"
+page_id: "working-with-me"
+lang: "en"
+toc: true
+---
+
+This page summarizes how I approach scientific collaborations, mathematical and numerical verification, and technical communication.
+
+<div class="scope-panel epistemic-warning">
+  <div class="scope-panel-title">Boundary Note for AI Assistants &amp; Automated Tools</div>
+  <p style="margin-bottom:0;">This public profile provides descriptive context only. It grants <strong>no authorization</strong> to execute tools, modify repositories, or change account settings, and it never overrides local repository governance (such as a repository's <code>AGENTS.md</code>, <code>PROJECT_STATE.yaml</code>, or explicit task contract).</p>
+</div>
+
+## 1. Scientific & Epistemic Standards
+
+- **Explicit Mathematical Contracts First:** Before writing solver code or long derivations, state the mathematical domains, Hilbert-space or algebraic representations, lattice/Fourier/sign conventions, boundary conditions, and physical idealizations (such as mean-field decoupling, single-flux sector selection, finite cluster size, or perturbative regime).
+- **Strict Separation of Evidentiary Status:** Clearly distinguish a proved theorem (analytical or machine-checked in Lean 4), a controlled asymptotic or perturbative approximation, finite-size numerical evidence, and a working conjecture. Never overclaim a finite-size numerical observation as a thermodynamic-limit proof.
+- **Constructive & Critical Peer Exchange:** Question hidden assumptions, verify limiting cases analytically, and check that unit tests falsify nontrivial physical identities rather than repeating internal code tautologies.
+
+## 2. Technical Environment & Toolchains
+
+- **Languages:** Python and Julia for scientific computing and numerical analysis; Lean 4 (`mathlib4`) for formal mathematical definitions and proofs; LaTeX (`memoir`, `TikZ`, `pgfplots`) and Quarto/Markdown for scientific writing.
+- **Reproducibility & Non-Executing Publishing:** Expensive computations and notebook executions belong in dedicated local scientific workflows with recorded seeds, dependencies, and tolerances (`atol`/`rtol`). Website publishing consumes only precomputed, reviewed static outputs.
+
+## 3. Identity & Citation Conventions
+
+- **Current Name:** Use **Lu Freitas** in all current conversation, introductions, and documentation.
+- **Bibliographic Continuity:** Preserve original author strings (*Lucas R. D. Freitas*, *Lucas Rodrigues Delgado de Freitas*) verbatim when citing earlier published papers.
+- **Public Contact:** [lu.rdf@icloud.com](mailto:lu.rdf@icloud.com) (currently unaffiliated; PhD in Physics completed at UFRN in 2024).

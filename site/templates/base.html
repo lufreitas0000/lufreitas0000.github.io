@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{PAGE_TITLE}} — Lu Freitas</title>
+  <meta name="author" content="Lu Freitas">
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <meta property="og:title" content="{{PAGE_TITLE}} — Lu Freitas">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{CANONICAL_HREF}}">
+  <link rel="canonical" href="{{CANONICAL_HREF}}">
+  <link rel="stylesheet" href="{{CSS_REL_PATH}}">
+  <link rel="alternate" type="application/rss+xml" title="Lu Freitas — Feed RSS" href="{{RSS_HREF}}">
+  {{JSON_LD}}
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-brand-group">
+        {{BRAND_EL}}
+        <span class="site-brand-subtitle">{{BRAND_SUBTITLE}}</span>
+      </div>
+      <nav aria-label="Primary">
+        <ul class="site-nav">
+          {{NAV_ITEMS}}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="page-shell single-col">
+    <main id="main-content" class="reading-column" tabindex="-1">
+{{HEADER_BLOCK}}
+{{BODY_HTML}}
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>Lu Freitas · Theoretical quantum-matter physics · PhD, UFRN, 2024</div>
+      <div class="footer-links">
+        <a href="mailto:{{PUBLIC_EMAIL}}">{{PUBLIC_EMAIL}}</a>
+        <a href="{{ORCID_URL}}" rel="me">ORCID</a>
+        <a href="{{GITHUB_URL}}" rel="me">GitHub</a>
+        <a href="{{SCHOLAR_URL}}">Google Scholar</a>
+        <a href="https://www.instagram.com/lu.scientist/" rel="me">@lu.scientist</a>
+        <a href="https://www.instagram.com/luescaladora/" rel="me">@luescaladora</a>
+        <a href="{{RSS_HREF}}">RSS Feed</a>
+      </div>
+    </div>
+    {{SITEMAP_HTML}}
+  </footer>
+</body>
+</html>

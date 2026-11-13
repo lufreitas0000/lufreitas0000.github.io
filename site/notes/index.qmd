@@ -1,0 +1,82 @@
+---
+title: "Feed"
+subtitle: ""
+page_id: "notes"
+lang: "en"
+hide_page_title: false
+toc: false
+---
+
+<p>This unified blog feed collects my unpublished academic notes, reflections on academic and pop-culture texts, explanations of my open-source projects on <a href="https://github.com/lufreitas0000">GitHub</a>, and video scripts for <a href="https://www.instagram.com/lu.scientist/"><code>@lu.scientist</code></a>.</p>
+<div class="feed-controls-wrapper" role="search" aria-label="Filter and search blog posts">
+  <div class="feed-toolbar">
+    <div class="feed-filter-group" role="region" aria-label="Filter feed entries by content type (multi-select)">
+      <span class="feed-filter-label">Filter:</span>
+      <button type="button" class="feed-filter-btn active" data-filter="all" onclick="setFeedCategory('all')">All posts</button>
+      <button type="button" class="feed-filter-btn" data-filter="note" onclick="setFeedCategory('note')">Research Notes</button>
+      <button type="button" class="feed-filter-btn" data-filter="expository-note" onclick="setFeedCategory('expository-note')">Expository Notes</button>
+      <button type="button" class="feed-filter-btn" data-filter="reading" onclick="setFeedCategory('reading')">Readings &amp; Reflections</button>
+    </div>
+    <div class="feed-search-box">
+      <input type="search" id="feed-search-input" class="feed-search-input" placeholder="Search keywords or #tags..." aria-label="Search posts by keyword or tag" oninput="applyFeedSearchAndFilters()">
+      <span id="feed-count-status" class="feed-count-status" aria-live="polite">Showing 4 of 4 posts</span>
+    </div>
+  </div>
+  <div id="feed-active-tag-banner" class="feed-active-tag-banner" style="display:none;">
+    <span>Active tags: <strong id="feed-active-tag-label"></strong></span>
+    <button type="button" class="feed-clear-btn" onclick="clearFeedTags()">Clear tags ×</button>
+  </div>
+</div>
+<div class="feed-card-list" data-index-url="search-index.json">
+<article class="feed-card" data-kind="note" data-tags="kitaev-model,line-defects,bcft,vortices,operator-realizability" data-search="open follow-up questions on line defects, operator realizability, and vortex dynamics unpublished questions and exploratory calculations extending published work in kitaev spin liquids why low-energy projection ($o \mapsto p_{\text{low}} o p_{\text{low}}$) is non-multiplicative, how finite-length line defects and endpoint boundary conditions behave under scattering and conformal boundary conditions (bcft), and what separates static $\mathbb{z}_2$ vortex gap reduction from selective dynamical control. kitaev-model line-defects bcft vortices operator-realizability note">
+  <div class="feed-card-header">
+    <h3 class="feed-card-title"><a href="feed/open-followups-kitaev-defects-and-vortices.html">Open follow-up questions on line defects, operator realizability, and vortex dynamics</a></h3>
+  </div>
+  <div class="feed-card-meta">
+    <span class="margin-pill pink" style="margin-bottom:0;">Research Note</span>
+    <span>2026-11</span>
+    <span class="feed-tag-list"><button type="button" class="feed-tag-btn" data-tag="kitaev-model" onclick="toggleFeedTag('kitaev-model')" title="Filter posts by #kitaev-model">#kitaev-model</button> <button type="button" class="feed-tag-btn" data-tag="line-defects" onclick="toggleFeedTag('line-defects')" title="Filter posts by #line-defects">#line-defects</button> <button type="button" class="feed-tag-btn" data-tag="bcft" onclick="toggleFeedTag('bcft')" title="Filter posts by #bcft">#bcft</button> <button type="button" class="feed-tag-btn" data-tag="vortices" onclick="toggleFeedTag('vortices')" title="Filter posts by #vortices">#vortices</button> <button type="button" class="feed-tag-btn" data-tag="operator-realizability" onclick="toggleFeedTag('operator-realizability')" title="Filter posts by #operator-realizability">#operator-realizability</button></span>
+  </div>
+  <p style="margin-bottom:0.4rem;">Why low-energy projection (\(O \mapsto P_{\text{low}} O P_{\text{low}}\)) is non-multiplicative, how finite-length line defects and endpoint boundary conditions behave under scattering and conformal boundary conditions (BCFT), and what separates static \(\mathbb{Z}_2\) vortex gap reduction from selective dynamical control.</p>
+  <div><a href="feed/open-followups-kitaev-defects-and-vortices.html" style="font-size:0.9rem;font-weight:700;text-decoration:none;">Read post →</a></div>
+</article>
+<article class="feed-card" data-kind="expository-note" data-tags="kitaev-model,superexchange,electric-polarization,z2-vortices,quadrupole" data-search="microscopic $t_{2g}^5$ superexchange and electric polarization around $\mathbb{z}_2$ vortices self-contained derivation of how virtual hopping in spin-orbit coupled honeycomb magnets generates spin-dependent charge dipoles and orbital quadrupoles in edge-sharing $d^5$ transition-metal compounds with a $t_{2g}^5$ ($j_{\text{eff}} = 1/2$) configuration such as $\alpha\text{-rucl}_3$, virtual electron hopping across ligand bridges dresses magnetic exchange with local charge redistribution $\delta n_l$ and orbital quadrupole moments $q_{\alpha\beta}$ around $\mathbb{z}_2$ vortices. kitaev-model superexchange electric-polarization z2-vortices quadrupole expository-note">
+  <div class="feed-card-header">
+    <h3 class="feed-card-title"><a href="feed/microscopic-superexchange-and-electric-polarization.html">Microscopic \(t_{2g}^5\) superexchange and electric polarization around \(\mathbb{Z}_2\) vortices</a></h3>
+  </div>
+  <div class="feed-card-meta">
+    <span class="margin-pill blue" style="margin-bottom:0;">Expository Note</span>
+    <span>2026-10</span>
+    <span class="feed-tag-list"><button type="button" class="feed-tag-btn" data-tag="kitaev-model" onclick="toggleFeedTag('kitaev-model')" title="Filter posts by #kitaev-model">#kitaev-model</button> <button type="button" class="feed-tag-btn" data-tag="superexchange" onclick="toggleFeedTag('superexchange')" title="Filter posts by #superexchange">#superexchange</button> <button type="button" class="feed-tag-btn" data-tag="electric-polarization" onclick="toggleFeedTag('electric-polarization')" title="Filter posts by #electric-polarization">#electric-polarization</button> <button type="button" class="feed-tag-btn" data-tag="z2-vortices" onclick="toggleFeedTag('z2-vortices')" title="Filter posts by #z2-vortices">#z2-vortices</button> <button type="button" class="feed-tag-btn" data-tag="quadrupole" onclick="toggleFeedTag('quadrupole')" title="Filter posts by #quadrupole">#quadrupole</button></span>
+  </div>
+  <p style="margin-bottom:0.4rem;">In edge-sharing \(d^5\) transition-metal compounds with a \(t_{2g}^5\) (\(J_{\text{eff}} = 1/2\)) configuration such as \(\alpha\text{-RuCl}_3\), virtual electron hopping across ligand bridges dresses magnetic exchange with local charge redistribution \(\delta n_l\) and orbital quadrupole moments \(Q_{\alpha\beta}\) around \(\mathbb{Z}_2\) vortices.</p>
+  <div><a href="feed/microscopic-superexchange-and-electric-polarization.html" style="font-size:0.9rem;font-weight:700;text-decoration:none;">Read post →</a></div>
+</article>
+<article class="feed-card" data-kind="expository-note" data-tags="kitaev-model,majorana-fermions,z2-gauge,mean-field,tikz" data-search="exact solution, $\mathbb{z}_2$ gauge fluxes, and real-space majorana mean-field theory on a torus from kitaev&#x27;s four-majorana parton projection and topological wilson loops to inhomogeneous bogoliubov–de gennes decoupling self-contained expository notes with native vector tikz diagrams covering the $\mathbb{z}_2$ plaquette flux operators $w_p$, the physical gauge projector $d_i = b_i^x b_i^y b_i^z c_i$, non-contractible torus wilson loops $w^{(1,2)}$, and real-space bogoliubov–de gennes decoupling around $\mathbb{z}_2$ vortices. kitaev-model majorana-fermions z2-gauge mean-field tikz expository-note">
+  <div class="feed-card-header">
+    <h3 class="feed-card-title"><a href="thesis-chapters.html">Exact solution, \(\mathbb{Z}_2\) gauge fluxes, and real-space Majorana mean-field theory on a torus</a></h3>
+  </div>
+  <div class="feed-card-meta">
+    <span class="margin-pill blue" style="margin-bottom:0;">Expository Note</span>
+    <span>2026-09</span>
+    <span class="feed-tag-list"><button type="button" class="feed-tag-btn" data-tag="kitaev-model" onclick="toggleFeedTag('kitaev-model')" title="Filter posts by #kitaev-model">#kitaev-model</button> <button type="button" class="feed-tag-btn" data-tag="majorana-fermions" onclick="toggleFeedTag('majorana-fermions')" title="Filter posts by #majorana-fermions">#majorana-fermions</button> <button type="button" class="feed-tag-btn" data-tag="z2-gauge" onclick="toggleFeedTag('z2-gauge')" title="Filter posts by #z2-gauge">#z2-gauge</button> <button type="button" class="feed-tag-btn" data-tag="mean-field" onclick="toggleFeedTag('mean-field')" title="Filter posts by #mean-field">#mean-field</button> <button type="button" class="feed-tag-btn" data-tag="tikz" onclick="toggleFeedTag('tikz')" title="Filter posts by #tikz">#tikz</button></span>
+  </div>
+  <p style="margin-bottom:0.4rem;">Self-contained expository notes with native vector TikZ diagrams covering the \(\mathbb{Z}_2\) plaquette flux operators \(W_p\), the physical gauge projector \(D_i = b_i^x b_i^y b_i^z c_i\), non-contractible torus Wilson loops \(W^{(1,2)}\), and real-space Bogoliubov–de Gennes decoupling around \(\mathbb{Z}_2\) vortices.</p>
+  <div><a href="thesis-chapters.html" style="font-size:0.9rem;font-weight:700;text-decoration:none;">Read post →</a></div>
+</article>
+<article class="feed-card" data-kind="reading" data-tags="reading-series,pedro-vieira-inspiration,kitaev-2006,social-epistemology" data-search="series: papers worth understanding — close readings in quantum matter and methodology constructive readings of foundational papers inspired by pedro vieira&#x27;s beautiful papers course inspired by pedro vieira&#x27;s beautiful papers course at perimeter institute, this series collects slow, constructive readings of foundational academic and philosophical texts—stating the motivating puzzle, the core mathematical mechanism, one self-contained derivation, and the exact assumptions on which the result rests. reading-series pedro-vieira-inspiration kitaev-2006 social-epistemology reading">
+  <div class="feed-card-header">
+    <h3 class="feed-card-title"><a href="series/papers-worth-understanding.html">Series: Papers worth understanding — Close readings in quantum matter and methodology</a></h3>
+  </div>
+  <div class="feed-card-meta">
+    <span class="margin-pill blue" style="margin-bottom:0;">Reading &amp; Reflection</span>
+    <span>2026-08</span>
+    <span class="feed-tag-list"><button type="button" class="feed-tag-btn" data-tag="reading-series" onclick="toggleFeedTag('reading-series')" title="Filter posts by #reading-series">#reading-series</button> <button type="button" class="feed-tag-btn" data-tag="pedro-vieira-inspiration" onclick="toggleFeedTag('pedro-vieira-inspiration')" title="Filter posts by #pedro-vieira-inspiration">#pedro-vieira-inspiration</button> <button type="button" class="feed-tag-btn" data-tag="kitaev-2006" onclick="toggleFeedTag('kitaev-2006')" title="Filter posts by #kitaev-2006">#kitaev-2006</button> <button type="button" class="feed-tag-btn" data-tag="social-epistemology" onclick="toggleFeedTag('social-epistemology')" title="Filter posts by #social-epistemology">#social-epistemology</button></span>
+  </div>
+  <p style="margin-bottom:0.4rem;">Inspired by Pedro Vieira's Beautiful Papers course at Perimeter Institute, this series collects slow, constructive readings of foundational academic and philosophical texts—stating the motivating puzzle, the core mathematical mechanism, one self-contained derivation, and the exact assumptions on which the result rests.</p>
+  <div><a href="series/papers-worth-understanding.html" style="font-size:0.9rem;font-weight:700;text-decoration:none;">Read post →</a></div>
+</article>
+</div>
+<p id="feed-empty-notice" style="display:none;color:var(--ink-muted);margin-top:0.8rem;">No posts match your search or filter. <button type="button" class="feed-clear-btn" onclick="resetFeedSearchAndFilters()">Reset all filters</button></p>
+<script src="../assets/js/feed_filter.js" defer></script>
+

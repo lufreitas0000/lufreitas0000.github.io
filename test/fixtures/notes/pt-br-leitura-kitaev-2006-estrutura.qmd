@@ -1,0 +1,34 @@
+---
+title: "[FIXTURE PT-BR] Estrutura Algébrica e Fluxos Z2 no Modelo de Kitaev (2006)"
+subtitle: "Fixture de validação em português para a série Papers worth understanding"
+author: "Lu Freitas"
+date: "2026-11-09"
+revised_at: "2026-11-09"
+lang: "pt-BR"
+draft: false
+article_type: "paper-reading"
+evidence_status: "exact-analytical"
+series: "Papers worth understanding"
+tags:
+  - "beautiful-papers"
+  - "kitaev-model"
+  - "majorana-fermions"
+prerequisites: "Álgebras de Clifford, operadores de Pauli em redes bipartidas, teorema de Lieb."
+conventions: "{c_i^alpha, c_j^beta} = 2 delta_{ij} delta_{alpha,beta}; D_i = b_i^x b_i^y b_i^z c_i."
+source_links:
+  - label: "arXiv:cond-mat/0506438"
+    url: "https://arxiv.org/abs/cond-mat/0506438"
+notebook_path: null
+---
+
+> **Aviso de Fixture (`dev-fixtures/`):** Este arquivo valida a renderização de notas em português (`lang: pt-BR`), equações MathJax longas e metadados da série *Papers worth understanding*, permanecendo fora da árvore pública `site/`.
+
+## 1. O Problema Motivador
+
+No artigo seminal [*Anyons in an exactly solved model and beyond*](https://arxiv.org/abs/cond-mat/0506438), Alexei Kitaev introduz o hamiltoniano de spin-$1/2$ na rede favo de mel:
+
+$$H = -J_x \sum_{\langle ij \rangle_x} \sigma_i^x \sigma_j^x - J_y \sum_{\langle ij \rangle_y} \sigma_i^y \sigma_j^y - J_z \sum_{\langle ij \rangle_z} \sigma_i^z \sigma_j^z.$$
+
+## 2. Operadores de Plaqueta e Fatoração de Majorana
+
+Os operadores de fluxo de plaqueta $W_p = \prod_{\langle ij \rangle_\gamma \in \partial p} \sigma_i^\gamma \sigma_j^\gamma$ comutam entre si ($[W_p, W_{p'}] = 0$) e com o hamiltoniano ($[H, W_p] = 0$), decompondo o espaço de Hilbert físico $\mathcal{H}_{\text{phys}} = \{ |\psi\rangle \in \mathcal{H}_{\text{ext}} : D_i |\psi\rangle = |\psi\rangle \}$ em setores estáticos de calibre $\mathbb{Z}_2$.

@@ -1,0 +1,33 @@
+---
+title: "Lu Freitas"
+subtitle: "Theoretical quantum-matter physicist · PhD in Physics, UFRN, 2024"
+page_id: "home"
+lang: "en"
+hide_page_title: true
+toc: false
+---
+
+<div class="tufte-section page-section" id="intro">
+  <div class="tufte-main page-main">
+    <p>My interest in quantum many-body physics centers on how microscopic interactions and structural constraints organize collective behavior—connecting concrete lattice models in quantum spin systems and Kitaev spin liquids to emergent low-energy descriptions and mathematical principles that constrain which phases, excitations, and responses nature can support, while approaching science as social knowledge shaped by open reasoning and diverse perspectives.</p>
+    <div class="readme-directory" role="navigation" aria-label="Site directory">
+      <div class="readme-dir-row">
+        <div><a href="research.html">Research →</a></div>
+        <div>Published studies on vortex electric polarization, Majorana tunneling spectroscopy, magnetic quantum impurities, line defects, and UFRN theses.</div>
+      </div>
+      <div class="readme-dir-row">
+        <div><a href="notes/index.html">Feed →</a></div>
+        <div>Unified blog feed collecting unpublished academic notes, reflections on academic and pop-culture texts, explanations of open-source projects on GitHub, and video scripts for <code>@lu.scientist</code>.</div>
+      </div>
+      <div class="readme-dir-row">
+        <div><a href="about.html">About Me &amp; CV →</a></div>
+        <div>Mathematical and philosophical motivations, broader research horizons joining algebraic quantum field theory to quantum information and quantum matter, Lean 4 formalization, social and feminist epistemology, open-source projects, and my academic CV.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="tufte-margin page-margin">
+    <div class="margin-figure vibe-art">
+      <img src="assets/img/flagship-vortex-charge.svg" alt="Real-space electric charge redistribution around a Z2 vortex in the extended Kitaev model" loading="lazy" decoding="async" style="max-width:245px;">
+    </div>
+  </aside>
+</div>
