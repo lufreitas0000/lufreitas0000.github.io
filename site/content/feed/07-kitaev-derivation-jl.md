@@ -6,7 +6,7 @@ date: "2026-11"
 order: 60
 visible: true
 kind: "project"
-evidence_status: "paused"
+evidence_status: "expository-synthesis"
 external_url: "https://github.com/lufreitas0000/KitaevDerivation.jl"
 tags:
   - "hubbard-kanamori"

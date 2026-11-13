@@ -6,7 +6,7 @@ date: "2026-11"
 order: 70
 visible: true
 kind: "project"
-evidence_status: "active-research"
+evidence_status: "expository-synthesis"
 external_url: "https://github.com/lufreitas0000/bosonize-lean"
 tags:
   - "bosonization"
