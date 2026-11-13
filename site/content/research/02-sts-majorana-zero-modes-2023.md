@@ -5,7 +5,7 @@ order: 20
 visible: true
 publication_id: "bauer2023sts"
 figures:
-  - src: "assets/img/flagship-sts-staircase.svg"
+  - src: "assets/img/gallery/research/majorana-sts-staircase.svg"
     alt: "Staircase voltage dependence of the differential tunneling conductance near a vortex-bound Majorana zero mode"
     kind: "flagship"
     max_width: "100%"

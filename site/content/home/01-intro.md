@@ -4,8 +4,8 @@ title: ""
 order: 10
 visible: true
 figures:
-  - src: "assets/img/flagship-sts-map.svg"
-    alt: "Spatial tunneling response near a vortex-bound Majorana mode in a Kitaev spin liquid"
+  - src: "assets/img/gallery/home/kitaev-vortex-gauge-string.svg"
+    alt: "Honeycomb Kitaev lattice with a central Z2 vortex and a gauge string of flipped links"
     kind: "flagship"
     max_width: "300px"
 directory_rows:
@@ -20,4 +20,4 @@ directory_rows:
     description: ""
 ---
 
-I study quantum many-body physics, with interests in symmetry, locality, and emergent phenomena.
+I am passionate about understanding nature through theory and mathematics. In quantum many-body physics, I study how microscopic interactions, symmetry, and locality give rise to collective phenomena, particularly in quantum spin systems and Kitaev models.

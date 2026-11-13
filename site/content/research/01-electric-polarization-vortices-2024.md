@@ -5,7 +5,7 @@ order: 10
 visible: true
 publication_id: "freitas2024polarization"
 figures:
-  - src: "assets/img/res-vortex-polarization-clean.svg"
+  - src: "assets/img/gallery/research/vortex-electric-polarization.svg"
     alt: "Vortex-induced electric polarization in the extended Kitaev model"
     kind: "flagship"
     max_width: "100%"
