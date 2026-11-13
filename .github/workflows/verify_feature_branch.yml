@@ -16,4 +16,6 @@ jobs:
         with:
           python-version: "3.11"
       - run: python -m pip install PyYAML Markdown beautifulsoup4
+      - run: node --check site/assets/js/feed_filter.js
+      - run: node --check site/assets/js/site_navigation.js
       - run: make verify
