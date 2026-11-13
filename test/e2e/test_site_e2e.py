@@ -68,6 +68,63 @@ class TestSiteE2E(unittest.TestCase):
         self.assertEqual(search_index[0]["kind"], "project")
         self.assertTrue(search_index[0]["keywords"])
 
+    def test_kitaev_mf_hub_is_standalone_and_future_notes_are_not_linked(self) -> None:
+        path = PUBLIC_OUT / "notes" / "feed" / "kitaev-mf.html"
+        soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+        self.assertEqual(len(soup.find_all("h1")), 1)
+
+        headings = soup.select("main h2")
+        section_ids = {heading.get("id") for heading in headings}
+        self.assertGreaterEqual(len(headings), 5)
+        self.assertTrue(
+            {"majorana", "fixed-point", "benchmarks", "directions", "series"}.issubset(section_ids),
+            section_ids,
+        )
+        text = soup.get_text(" ", strip=True)
+        for phrase in (
+            "quasifree",
+            "fixed-point",
+            "self-consistent",
+            "anisotropic",
+            "perturbation theory",
+            "Gaussian",
+            "physical",
+            "planned",
+        ):
+            self.assertIn(phrase.lower(), text.lower())
+
+        note_html = str(soup)
+        self.assertIn(r"\Phi", note_html)
+        self.assertIn(r"\bar U", note_html)
+        self.assertIn(r"\mathbf 1", note_html)
+        self.assertIsNotNone(
+            soup.find("a", href="https://lufreitas0000.github.io/kitaev-mf/kitaev-mf-labbook.pdf")
+        )
+        self.assertIsNotNone(
+            soup.find("a", href="https://github.com/lufreitas0000/kitaev-mf/blob/main/doc/MILESTONE_ROADMAP.md")
+        )
+
+        for link in soup.select("main a[href]"):
+            href = link.get("href", "")
+            if href.startswith(("http:", "https:", "mailto:", "#")):
+                continue
+            self.assertTrue(
+                (path.parent / href).resolve().exists(),
+                f"Broken internal article link: {href}",
+            )
+        self.assertEqual(len(soup.select(".note-provenance:not([hidden])")), 0)
+        self.assertFalse(
+            any(
+                path.name in link.get("href", "")
+                for path in (
+                    Path("kitaev-mf-fixed-point-map.html"),
+                    Path("kitaev-mf-exact-reference.html"),
+                    Path("kitaev-mf-solver-acceleration.html"),
+                )
+                for link in soup.select("main a[href]")
+            )
+        )
+
     def test_home_personal_intro_and_gallery(self) -> None:
         import yaml
 
