@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import posixpath
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -249,14 +250,14 @@ toc: false
             aria = ' aria-current="page"' if pid == page.page_id else ""
             nav_lis.append(f'<li><a href="{href}"{aria}>{label}</a></li>')
 
-        breadcrumb_html = self._render_breadcrumbs_html(site_graph, page.node_id, root_rel_prefix) if site_graph else ""
+        breadcrumb_html = self._render_breadcrumbs_html(site_graph, page.node_id, page.output_rel_path) if site_graph else ""
         sitemap_html = self._render_sitemap_html(site_graph, root_rel_prefix) if site_graph else ""
 
         header_block = ""
         if not page.hide_page_title:
             sub_html = f'<p class="credential-line">{html.escape(page.subtitle)}</p>' if page.subtitle else ""
             header_block = f"""      <header class="article-header">
-        <h1>{html.escape(page.title)}</h1>
+        <h1>{format_escaped_tex(page.title)}</h1>
         {sub_html}
       </header>"""
 
@@ -300,6 +301,7 @@ toc: false
             .replace("{{GITHUB_URL}}", profile["identifiers"]["github"]["url"])
             .replace("{{SCHOLAR_URL}}", profile["identifiers"]["google_scholar"]["url"])
             .replace("{{SITEMAP_HTML}}", sitemap_html)
+            .replace("{{NAV_JS_SRC}}", f"{root_rel_prefix}assets/js/site_navigation.js")
         )
 
     def render_section_html(self, section: ContentSection, partials: dict[str, str]) -> str:
@@ -392,44 +394,37 @@ toc: false
         conventions: str,
         source_links: tuple[tuple[str, str], ...],
     ) -> str:
-        lang_label = "PT-BR" if lang.lower().startswith("pt") else "EN"
-        series_badge = f'<span class="margin-pill blue">Series: {html.escape(series)}</span>' if series else ""
-        details = []
-        if prerequisites:
-            details.append(f"<div><strong>Prerequisites:</strong> {html.escape(prerequisites)}</div>")
-        if conventions:
-            details.append(f"<div><strong>Conventions:</strong> {html.escape(conventions)}</div>")
-        if source_links:
-            links_html = ", ".join(f'<a href="{html.escape(url)}">{html.escape(lbl)}</a>' for lbl, url in source_links)
-            details.append(f"<div><strong>Primary Sources:</strong> {links_html}</div>")
-        return f"""<div class="note-metadata-box" role="region" aria-label="Article epistemic metadata">
-  <div style="margin-bottom:0.4rem;">
-    <span class="margin-pill blue">Language: {lang_label}</span>
-    <span class="margin-pill blue">Type: {html.escape(article_type)}</span>
-    <span class="margin-pill pink">Status: {html.escape(evidence_status)}</span>
-    {series_badge}
-    <span class="margin-pill quiet" style="display:inline-block;margin-right:0.5rem;">Published: {html.escape(pub_date)} · Revised: {html.escape(rev_date)}</span>
-  </div>
-  {"".join(details)}
-</div>"""
+        """Keep provenance metadata without repeating labels in article bodies."""
+        values = {
+            "data-language": lang,
+            "data-note-type": article_type,
+            "data-evidence-status": evidence_status,
+            "data-published": pub_date,
+            "data-revised": rev_date,
+            "data-series": series,
+        }
+        attributes = " ".join(f'{key}="{html.escape(value, quote=True)}"' for key, value in values.items())
+        return f'<div class="note-provenance" hidden {attributes}></div>'
 
-    def _render_breadcrumbs_html(self, graph: SiteGraph, node_id: str, root_rel_prefix: str) -> str:
+    def _render_breadcrumbs_html(self, graph: SiteGraph, node_id: str, output_rel_path: str) -> str:
         trail = compute_breadcrumb_trail(graph, node_id)
         if len(trail) <= 2 and node_id in ("home", "research", "about", "notes"):
             return ""
-        items: list[str] = []
-        for idx, node in enumerate(trail):
-            if idx == len(trail) - 1:
-                items.append(f'<li aria-current="page"><strong>{format_escaped_tex(node.title)}</strong></li>')
-            else:
-                href = f"{root_rel_prefix}{node.rel_href}"
-                items.append(f'<li><a href="{html.escape(href)}">{format_escaped_tex(node.title)}</a></li>')
-                items.append('<li class="breadcrumb-sep" aria-hidden="true">/</li>')
+        if not trail:
+            return ""
+        from_dir = posixpath.dirname(output_rel_path) or "."
+        links = []
+        for node in trail[:-1]:
+            href = posixpath.relpath(node.rel_href, start=from_dir)
+            links.append(
+                f'<li><a href="{html.escape(href, quote=True)}">{format_escaped_tex(node.title)}</a></li>'
+            )
+        links.append(
+            f'<li class="sr-only" aria-current="page">{html.escape(trail[-1].title)}</li>'
+        )
         return (
-            '<nav class="breadcrumb-nav" aria-label="Breadcrumb">\n'
-            '  <ol class="breadcrumb-list">\n    '
-            + "\n    ".join(items)
-            + "\n  </ol>\n</nav>"
+            '<nav class="breadcrumb-nav" aria-label="Breadcrumb">'
+            '<ol class="breadcrumb-list">' + "\n".join(links) + '</ol></nav>'
         )
 
     def _render_sitemap_html(self, graph: SiteGraph, root_rel_prefix: str) -> str:
