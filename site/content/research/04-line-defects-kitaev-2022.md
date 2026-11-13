@@ -5,7 +5,7 @@ order: 40
 visible: true
 publication_id: "freitas2022linedefects"
 figures:
-  - src: "assets/img/flagship-linedefect-gap.svg"
+  - src: "assets/img/gallery/research/line-defect-gap.svg"
     alt: "Critical defect excitation gap and inset 1D counterpropagating Majorana band dispersions across the line-defect transition"
     kind: "flagship"
     max_width: "100%"

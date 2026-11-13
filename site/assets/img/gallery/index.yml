@@ -1,0 +1,32 @@
+schema_version: 1
+entries:
+  - id: kitaev-vortex-gauge-string
+    file: home/kitaev-vortex-gauge-string.svg
+    original: ../note-ch7-vortex-cluster.svg
+    pages: [home]
+    description: "Honeycomb vortex cluster with flipped gauge links; existing blue/pink figure"
+  - id: vortex-electric-polarization
+    file: research/vortex-electric-polarization.svg
+    original: ../res-vortex-polarization-clean.svg
+    pages: [research]
+    description: "Vortex polarization illustration for the extended Kitaev model"
+  - id: majorana-sts-staircase
+    file: research/majorana-sts-staircase.svg
+    original: ../flagship-sts-staircase.svg
+    pages: [research]
+    description: "Scanning-tunneling conductance staircase"
+  - id: impurity-spin-flip
+    file: research/impurity-spin-flip.svg
+    original: ../flagship-impurity-maps.svg
+    pages: [research]
+    description: "Local magnetic impurity tunneling maps"
+  - id: line-defect-gap
+    file: research/line-defect-gap.svg
+    original: ../flagship-linedefect-gap.svg
+    pages: [research]
+    description: "Majorana line-defect excitation gap"
+  - id: kitaev-mf-torus-geometry
+    file: feed/kitaev-mf-torus-geometry.svg
+    original: ../note-ch6-torus-top.svg
+    pages: [feed]
+    description: "Honeycomb torus geometry used in real-space mean-field notes"

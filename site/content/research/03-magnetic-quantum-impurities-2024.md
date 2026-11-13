@@ -5,7 +5,7 @@ order: 30
 visible: true
 publication_id: "bauer2024spinflip"
 figures:
-  - src: "assets/img/flagship-impurity-maps.svg"
+  - src: "assets/img/gallery/research/impurity-spin-flip.svg"
     alt: "Two-dimensional spatial scanning tunneling conductance maps across the local impurity spin-flip transition"
     kind: "flagship"
     max_width: "100%"
