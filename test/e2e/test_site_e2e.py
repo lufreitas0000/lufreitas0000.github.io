@@ -31,42 +31,50 @@ class TestSiteE2E(unittest.TestCase):
             self.assertIsNotNone(soup.find("main", id="main-content"))
             self.assertEqual(len(soup.find_all("h1")), 1, f"Expected 1 h1 in {html_file}")
 
-    def test_only_kitaev_mf_note_is_published(self) -> None:
+    def test_three_project_notes_are_published(self) -> None:
         feed_html = (PUBLIC_OUT / "notes" / "index.html").read_text(encoding="utf-8")
         soup = BeautifulSoup(feed_html, "html.parser")
         cards = soup.select(".feed-card")
-        self.assertEqual(len(cards), 1)
-        self.assertEqual(cards[0].get("data-kind"), "project")
-        self.assertIn("kitaev-mf", cards[0].get_text())
+        self.assertEqual(len(cards), 3)
+        self.assertTrue(all(card.get("data-kind") == "project" for card in cards))
         self.assertFalse(soup.select(".feed-tag-btn"))
 
-        note_path = PUBLIC_OUT / "notes" / "feed" / "kitaev-mf.html"
-        self.assertTrue(note_path.exists())
-        note = BeautifulSoup(note_path.read_text(encoding="utf-8"), "html.parser")
-        self.assertEqual(len(note.select("h1")), 1)
-        self.assertIn("kitaev-mf", note.select_one("h1").get_text())
-        self.assertTrue(note.select_one(".note-provenance").has_attr("hidden"))
-        self.assertIn(
-            "https://github.com/lufreitas0000/kitaev-mf",
-            [a.get("href") for a in note.find_all("a")],
-        )
-        crumbs = note.find("nav", attrs={"aria-label": "Breadcrumb"})
-        self.assertEqual(
-            [a["href"] for a in crumbs.find_all("a")],
-            ["../../index.html", "../index.html"],
-        )
-        self.assertIsNone(note.find("p", class_="credential-line"))
-        self.assertFalse((PUBLIC_OUT / "notes" / "feed" / "bosonize-lean.html").exists())
-        self.assertFalse((PUBLIC_OUT / "notes" / "feed" / "kitaev-derivation-jl.html").exists())
+        published = {
+            "kitaev-mf": "https://github.com/lufreitas0000/kitaev-mf",
+            "kitaev-derivation-jl": "https://github.com/lufreitas0000/KitaevDerivation.jl",
+            "bosonize-lean": "https://github.com/lufreitas0000/bosonize-lean",
+        }
+        for slug, source in published.items():
+            path = PUBLIC_OUT / "notes" / "feed" / f"{slug}.html"
+            self.assertTrue(path.exists(), path)
+            note = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+            self.assertEqual(len(note.find_all("h1")), 1)
+            self.assertIsNotNone(note.find("a", href=source))
+            self.assertTrue(note.select_one(".note-provenance").has_attr("hidden"))
+            crumbs = note.find("nav", attrs={"aria-label": "Breadcrumb"})
+            self.assertEqual(
+                [link["href"] for link in crumbs.find_all("a")],
+                ["../../index.html", "../index.html"],
+            )
+
+        julia = (PUBLIC_OUT / "notes" / "feed" / "kitaev-derivation-jl.html").read_text(encoding="utf-8")
+        self.assertIn("currently paused", julia)
+        self.assertIn("Lean 4", julia)
+        bosonize = (PUBLIC_OUT / "notes" / "feed" / "bosonize-lean.html").read_text(encoding="utf-8")
+        self.assertIn("finite energy cutoff", bosonize)
+        self.assertIn("infinite-volume limits", bosonize)
+        self.assertIn("https://github.com/yang-mills-group/YM", bosonize)
+
         self.assertFalse((PUBLIC_OUT / "notes" / "feed" / "open-followups-kitaev-defects-and-vortices.html").exists())
         self.assertFalse((PUBLIC_OUT / "notes" / "thesis-chapters.html").exists())
         self.assertFalse((PUBLIC_OUT / "notes" / "series").exists())
 
-        index_path = PUBLIC_OUT / "notes" / "search-index.json"
-        search_index = json.loads(index_path.read_text(encoding="utf-8"))
-        self.assertEqual([entry["id"] for entry in search_index], ["kitaev-mf"])
-        self.assertEqual(search_index[0]["kind"], "project")
-        self.assertTrue(search_index[0]["keywords"])
+        search_index = json.loads(
+            (PUBLIC_OUT / "notes" / "search-index.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(set(published), {entry["id"] for entry in search_index})
+        self.assertTrue(all(entry["keywords"] for entry in search_index))
+        self.assertTrue(all(entry["kind"] == "project" for entry in search_index))
 
     def test_kitaev_mf_hub_is_standalone_and_future_notes_are_not_linked(self) -> None:
         path = PUBLIC_OUT / "notes" / "feed" / "kitaev-mf.html"
