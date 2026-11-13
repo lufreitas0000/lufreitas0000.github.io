@@ -4,7 +4,7 @@ title: "Microscopic $t_{2g}^5$ superexchange and electric polarization around $\
 subtitle: "Self-contained derivation of how virtual hopping in spin-orbit coupled honeycomb magnets generates spin-dependent charge dipoles and orbital quadrupoles"
 date: "2026-10"
 order: 15
-visible: true
+visible: false
 kind: "expository-note"
 tags:
   - "kitaev-model"

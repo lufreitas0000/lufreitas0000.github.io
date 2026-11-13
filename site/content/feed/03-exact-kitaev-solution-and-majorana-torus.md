@@ -4,7 +4,7 @@ title: "Exact solution, $\mathbb{Z}_2$ gauge fluxes, and real-space Majorana mea
 subtitle: "From Kitaev's four-Majorana parton projection and topological Wilson loops to inhomogeneous Bogoliubov–de Gennes decoupling"
 date: "2026-09"
 order: 20
-visible: true
+visible: false
 kind: "expository-note"
 target_href: "thesis-chapters.html"
 tags:
