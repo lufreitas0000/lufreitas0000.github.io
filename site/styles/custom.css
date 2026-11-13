@@ -881,5 +881,123 @@ aside.page-toc {
   }
 }
 
-/* Home links remain a simple directory without unused description columns. */
+/* Compact note controls and responsive floating navigation */
+[hidden] { display: none !important; }
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+.floating-navigation {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 120;
+}
+.floating-control {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--rule-stone);
+  border-radius: 4px;
+  color: var(--ink-primary);
+  background: var(--bg-paper);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.floating-control:hover,
+.floating-control:focus-visible {
+  color: var(--bond-z-blue);
+  border-color: var(--bond-z-blue);
+}
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 120;
+}
+.quick-menu-panel {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  width: 12rem;
+  background: var(--bg-paper);
+  border: 1px solid var(--rule-stone);
+  padding: 0.65rem 0.9rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+.quick-menu-panel .site-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+.quick-menu-panel .site-nav a { display: block; }
+.feed-controls-wrapper {
+  padding: 0;
+  margin: 0 0 1rem;
+  border: none;
+}
+.feed-toolbar {
+  margin: 0;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--rule-stone);
+  border-bottom: 1px solid var(--rule-stone);
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.feed-filter-group {
+  flex: 1 1 auto;
+  min-width: 0;
+  align-items: center;
+}
+.feed-search-box {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+.feed-search-toggle {
+  border: 1px solid var(--rule-stone);
+  background: transparent;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  cursor: pointer;
+  color: var(--ink-secondary);
+}
+.feed-search-toggle:hover { color: var(--bond-z-blue); }
+.feed-search-box .feed-search-input {
+  flex: none;
+  width: min(16rem, 45vw);
+  height: 2.15rem;
+  min-height: 0;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.9rem;
+  background: transparent;
+}
+.feed-card[hidden] { display: none !important; }
+.feed-card { padding: 0.7rem 0; }
+.feed-card-title { font-size: 1.02rem; line-height: 1.35; }
+.feed-card-meta { margin: 0.2rem 0 0; color: var(--ink-muted); font-size: 0.83rem; }
+.feed-empty-notice { margin: 0.6rem 0; color: var(--ink-muted); }
+.note-provenance[hidden] { display: none; }
+@media (max-width: 720px) {
+  .site-header nav[aria-label="Primary"] { display: none; }
+  .site-header { padding-right: 4.2rem; }
+  .feed-toolbar { flex-wrap: wrap; gap: 0.55rem; }
+  .feed-search-box .feed-search-input { width: min(14rem, 65vw); }
+}
+@media print {
+  .floating-navigation, .back-to-top { display: none !important; }
+}
+
+/* Home links form a single-column directory, without unused descriptions. */
 .readme-dir-row { grid-template-columns: minmax(0, 1fr); padding: 0.65rem 0; }
