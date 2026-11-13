@@ -4,7 +4,9 @@ b9e033d5abb5a7508c6a346b9f16e34f41f98fc11633aeb7a74c7cf56411034b  ./.agents/rule
 b3208276d056ae2dd9b39cb05fe8034a4997bcb1414c6c8c926174d540509e7b  ./.agents/rules/03_website_editorial_and_privacy.md
 a998501bf6a2cf19ad28e17bca4225af8f38369876f6e5bddbdffdb5d0954653  ./.github/workflows/deploy_pages.yml
 fc25db697d00abe1be47da43320e40cb8a7e333c32e2dc805c08457a47b66400  ./.gitignore
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./.nojekyll
 3b7f3815c150814b7db6863b14ae8e5f0d85ff1d035d1088652e19bc9fccb621  ./AGENTS.md
+a061da1f438383bbc1291bc6f01de62243586a74c2ecf60cdf7409f69378346d  ./LICENSE
 11f38b22e56cbbfdc7005227b7d8f280564bb81d88e130a91b7785fe5c69f464  ./LOG_DISCOVERY_AND_PIVOTS.md
 9530d360290b82d77ace218efa6f62dbec1a535a253553b7fc3f1ac1903fa1f4  ./Makefile
 f0d598272154987175c50868c488b2915036fc92938bf70a35faff1c9bf7ca5c  ./PROJECT_STATE.yaml
@@ -75,7 +77,7 @@ a4ffc244fd6df3de3881158f53eb26701ee64697ebdabd328acad5d0f3349751  ./site/notes/t
 3439b6242ddcd72e83f36c7dabea06cf8247ffe6d721bc9b65727e499a0f75e7  ./site/references.bib
 a4de2f6ef026c8edc6e6474b60ff712e2d5f21c9c5b9402c4bfc681d21da984f  ./site/research.qmd
 a1224539c1ce3950434e4db5e6825758adfbcee2329363fa1c753769a6cbfb03  ./site/styles/custom.css
-b421452809435f197bffe9d3db5e03aa9630b1ab9b4a0e320c9b87b2746e9f9a  ./site/templates/base.html
+c12ed5a9cf5d8b73ed4d6758c12937f671de27c4ca44cdad470c451b4438b59f  ./site/templates/base.html
 7cf2082b025e8582dcd7787c64ee94b5e77ab2253c267d6d3bb2a86e76be761d  ./site/templates/feed_controls.html
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./src/web_engine/__init__.py
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./src/web_engine/app/__init__.py
