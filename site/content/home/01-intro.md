@@ -4,20 +4,20 @@ title: ""
 order: 10
 visible: true
 figures:
-  - src: "assets/img/flagship-vortex-charge.svg"
-    alt: "Real-space electric charge redistribution around a Z2 vortex in the extended Kitaev model"
+  - src: "assets/img/flagship-sts-map.svg"
+    alt: "Spatial tunneling response near a vortex-bound Majorana mode in a Kitaev spin liquid"
     kind: "flagship"
-    max_width: "245px"
+    max_width: "300px"
 directory_rows:
   - label: "Research →"
     href: "research.html"
-    description: "Published studies on vortex electric polarization, Majorana tunneling spectroscopy, magnetic quantum impurities, line defects, and UFRN theses."
+    description: ""
   - label: "Feed →"
     href: "notes/index.html"
-    description: "Unified blog feed collecting unpublished academic notes, reflections on academic and pop-culture texts, explanations of open-source projects on GitHub, and video scripts for <code>@lu.scientist</code>."
+    description: ""
   - label: "About Me &amp; CV →"
     href: "about.html"
-    description: "Mathematical and philosophical motivations, broader research horizons joining algebraic quantum field theory to quantum information and quantum matter, Lean 4 formalization, social and feminist epistemology, open-source projects, and my academic CV."
+    description: ""
 ---
 
-My interest in quantum many-body physics centers on how microscopic interactions and structural constraints organize collective behavior—connecting concrete lattice models in quantum spin systems and Kitaev spin liquids to emergent low-energy descriptions and mathematical principles that constrain which phases, excitations, and responses nature can support, while approaching science as social knowledge shaped by open reasoning and diverse perspectives.
+I study quantum many-body physics, with interests in symmetry, locality, and emergent phenomena.

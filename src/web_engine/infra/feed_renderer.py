@@ -12,13 +12,13 @@ from ..domain.models import FeedNode
 from .math_markdown import format_inline_tex_and_amp
 
 KIND_LABELS: dict[str, tuple[str, str, str]] = {
-    "note": ("Research Note", "pink", "Research Notes"),
-    "expository-note": ("Expository Note", "blue", "Expository Notes"),
-    "thesis-chapter": ("Expository Note", "blue", "Expository Notes"),
-    "reading": ("Reading & Reflection", "blue", "Readings & Reflections"),
-    "series": ("Reading & Reflection", "blue", "Readings & Reflections"),
-    "project": ("Open-Source (@github)", "blue", "Open-Source (@github)"),
-    "video": ("Video Script (@lu.scientist)", "pink", "Video Scripts (@lu.scientist)"),
+    "note": ("Research note", "pink", "Research Notes"),
+    "expository-note": ("Expository note", "blue", "Expository Notes"),
+    "thesis-chapter": ("Expository note", "blue", "Expository Notes"),
+    "reading": ("Reading", "blue", "Readings"),
+    "series": ("Reading", "blue", "Readings"),
+    "project": ("Project", "blue", "Projects"),
+    "video": ("Video", "pink", "Videos"),
 }
 
 
@@ -63,30 +63,19 @@ def render_feed_controls_and_cards(
             f'<button type="button" class="feed-filter-btn" data-filter="{html.escape(k)}" onclick="setFeedCategory(\'{html.escape(k)}\')">{html.escape(plural_label)}</button>'
         )
 
+    if not nodes:
+        return '<p class="feed-empty-notice">No notes published yet.</p>'
+
     cards: list[str] = []
     for n in nodes:
-        k_label, k_tone, _ = KIND_LABELS.get(n.kind, (n.kind.title(), "blue", n.kind.title() + "s"))
+        kind_label, _, _ = KIND_LABELS.get(n.kind, (n.kind.title(), "blue", n.kind.title() + "s"))
         href = n.target_href or f"feed/{n.node_id}.html"
-        tag_btns = " ".join(
-            f'<button type="button" class="feed-tag-btn" data-tag="{html.escape(t)}" onclick="toggleFeedTag(\'{html.escape(t)}\')" title="Filter posts by #{html.escape(t)}">#{html.escape(t)}</button>'
-            for t in n.tags
-        )
         raw_corpus = f"{n.title} {n.subtitle} {n.summary} {' '.join(n.tags)} {' '.join(n.keywords)} {n.kind}"
         search_corpus = re.sub(r"\s+", " ", raw_corpus).strip().lower()
-        tags_csv = ",".join(t.lower() for t in n.tags)
-
         cards.append(
-            f"""<article class="feed-card" data-kind="{html.escape(n.kind)}" data-tags="{html.escape(tags_csv)}" data-search="{html.escape(search_corpus)}">
-  <div class="feed-card-header">
-    <h3 class="feed-card-title"><a href="{html.escape(href)}">{format_inline_tex_and_amp(n.title)}</a></h3>
-  </div>
-  <div class="feed-card-meta">
-    <span class="margin-pill {k_tone}" style="margin-bottom:0;">{html.escape(k_label)}</span>
-    <span>{html.escape(n.date)}</span>
-    <span class="feed-tag-list">{tag_btns}</span>
-  </div>
-  <p style="margin-bottom:0.4rem;">{format_inline_tex_and_amp(n.summary)}</p>
-  <div><a href="{html.escape(href)}" style="font-size:0.9rem;font-weight:700;text-decoration:none;">Read post →</a></div>
+            f"""<article class="feed-card" data-kind="{html.escape(n.kind)}" data-search="{html.escape(search_corpus)}">
+  <h3 class="feed-card-title"><a href="{html.escape(href)}">{format_inline_tex_and_amp(html.escape(n.title))}</a></h3>
+  <div class="feed-card-meta">{html.escape(kind_label)} · {html.escape(n.date)}</div>
 </article>"""
         )
 

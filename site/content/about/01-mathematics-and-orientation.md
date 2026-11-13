@@ -1,6 +1,6 @@
 ---
 id: "biography-and-motivation"
-title: "Mathematics, Physics & Scientific Orientation"
+title: "Background"
 order: 10
 visible: true
 margin_notes:

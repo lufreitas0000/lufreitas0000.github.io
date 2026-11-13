@@ -42,6 +42,17 @@
       </nav>
     </div>
   </header>
+  <nav id="floating-navigation" class="floating-navigation" aria-label="Quick navigation" hidden>
+    <button type="button" id="quick-menu-toggle" class="floating-control" aria-label="Open navigation menu" aria-expanded="false" aria-controls="quick-menu-panel">
+      <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <div id="quick-menu-panel" class="quick-menu-panel" hidden>
+      <ul class="site-nav">{{NAV_ITEMS}}</ul>
+    </div>
+  </nav>
+  <button type="button" id="back-to-top" class="floating-control back-to-top" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 14 6-6 6 6"/></svg>
+  </button>
   <div class="page-shell single-col">
     <main id="main-content" class="reading-column" tabindex="-1">
 {{HEADER_BLOCK}}
@@ -64,5 +75,6 @@
     <div class="site-footer-inner license-notice">Text, notes, and figures are licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>; site code under the MIT License. Published articles remain under their publishers' terms.</div>
     {{SITEMAP_HTML}}
   </footer>
+  <script src="{{NAV_JS_SRC}}" defer></script>
 </body>
 </html>

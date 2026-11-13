@@ -11,6 +11,4 @@ figures:
     max_width: "100%"
 ---
 
-A local spectroscopic feature need not uniquely identify a fractionalized excitation, because measured spectral weights depend on both probe matrix elements and competing microscopic localization mechanisms. For a Kitaev spin liquid in a scanning tunneling geometry, we combined exact dynamical spin correlations of the solvable model with spin-anisotropic cotunneling form factors derived from a projected tip–spin-liquid–substrate Hamiltonian.
-
-This forward calculation predicts a position-dependent staircase in the differential tunneling conductance near vortex-bound Majorana zero modes, where low-bias steps reflect the Majorana zero mode together with the local flux excitation gap and higher-voltage steps arise from excited vortex configurations, providing spatial and voltage criteria to compare against conventional bound states.
+We combined exact dynamical spin correlations in the Kitaev model with spin-dependent cotunneling amplitudes derived from a projected tip–spin-liquid–substrate Hamiltonian. The resulting differential tunneling conductance exhibits a spatially dependent staircase near vortex-bound Majorana zero modes. Its voltage thresholds encode both the zero-mode contribution and changes in the flux sector, providing spatial and spectroscopic signatures for comparison with conventional bound states.

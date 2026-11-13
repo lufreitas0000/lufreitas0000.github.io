@@ -4,7 +4,7 @@ title: "Series: Papers worth understanding — Close readings in quantum matter 
 subtitle: "Constructive readings of foundational papers inspired by Pedro Vieira's Beautiful Papers course"
 date: "2026-08"
 order: 30
-visible: true
+visible: false
 kind: "reading"
 target_href: "series/papers-worth-understanding.html"
 tags:

@@ -11,6 +11,4 @@ figures:
     max_width: "100%"
 ---
 
-In a separate study of magnetic quantum impurities (adatom and substitutional spins) coupled to partially polarized two-dimensional van der Waals magnets lacking spin-rotation $U(1)$ symmetry, we combined continuum analysis, linear spin-wave $T$-matrix theory, and small-system exact diagonalization to show that the field-driven softening of an impurity-bound magnon across zero energy induces local spin-flip transitions with distinct bias- and field-dependent tunneling signatures.
-
-Juxtaposing this calculation with vortex tunneling spectroscopy highlights an essential diagnostic requirement: before interpreting a localized zero-bias or threshold signal as evidence for fractionalization, one must compare its spatial profile, bias-voltage structure, and magnetic-field evolution against concrete alternative bound-state mechanisms.
+We studied magnetic adatoms and substitutional impurities in partially polarized two-dimensional van der Waals magnets without spin-rotation $U(1)$ symmetry. Continuum analysis, spin-wave $T$-matrix calculations, and small-system exact diagonalization revealed field-driven local spin-flip transitions when an impurity-bound magnon softens through zero energy. Their distinct field- and voltage-dependent tunneling signatures provide a conventional bound-state mechanism against which proposed signatures of fractionalization must be compared.

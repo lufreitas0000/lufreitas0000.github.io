@@ -36,9 +36,12 @@ def assemble_site_graph(
         SiteNode(node_id="about", title="About Me", rel_href="about.html", parent_id="home", visible=True, kind="page"),
         SiteNode(node_id="working-with-me", title="Working With Me", rel_href="about/working-with-me.html", parent_id="about", visible=True, kind="subpage"),
         SiteNode(node_id="notes", title="Feed", rel_href="notes/index.html", parent_id="home", visible=True, kind="page"),
-        SiteNode(node_id="thesis-chapters", title="Expository Physics Notes", rel_href="notes/thesis-chapters.html", parent_id="notes", visible=True, kind="expository-note"),
-        SiteNode(node_id="series", title="Series: Papers worth understanding", rel_href="notes/series/papers-worth-understanding.html", parent_id="notes", visible=True, kind="series"),
     ]
+    aux_targets = {n.target_href for n in all_feed_nodes if n.target_href and (n.visible or include_dev_fixtures)}
+    if "thesis-chapters.html" in aux_targets:
+        dag_nodes.append(SiteNode(node_id="thesis-chapters", title="Expository Physics Notes", rel_href="notes/thesis-chapters.html", parent_id="notes", kind="expository-note"))
+    if "series/papers-worth-understanding.html" in aux_targets:
+        dag_nodes.append(SiteNode(node_id="series", title="Papers worth understanding", rel_href="notes/series/papers-worth-understanding.html", parent_id="notes", kind="series"))
     for fn in all_feed_nodes:
         if fn.target_href:
             continue
@@ -94,17 +97,15 @@ def build_site(
     for fn in visible_feed_nodes:
         if fn.target_href:
             continue
-        tags_str = " · ".join(f"#{t}" for t in fn.tags)
         meta_box = renderer.render_feed_metadata_box(fn)
         sec = ContentSection(
             section_id=fn.node_id,
-            title=fn.subtitle or "Entry Notes & Commentary",
+            title="",
             order=10,
             visible=True,
             body_markdown=fn.body_markdown,
             source_path=fn.source_path,
             sha256=fn.sha256,
-            citation_line_text=f"Category: {fn.kind.title()} · Tags: {tags_str}",
             figures=fn.figures,
         )
         feed_page = compose_page(
@@ -113,7 +114,7 @@ def build_site(
             slug=fn.node_id,
             output_rel_path=f"notes/feed/{fn.node_id}.html",
             title=fn.title,
-            subtitle=fn.subtitle,
+            subtitle="",
             raw_sections=(sec,),
             publications=pubs_map,
             lang=fn.lang,
@@ -139,7 +140,7 @@ def build_site(
             slug=post.slug,
             output_rel_path=f"notes/posts/{post.slug}.html",
             title=post.title,
-            subtitle=post.subtitle,
+            subtitle="",
             raw_sections=(),
             publications=pubs_map,
             lang=post.lang,
@@ -170,18 +171,10 @@ def build_site(
         + sum(1 for fn in all_feed_nodes if not fn.visible)
     )
 
-    res_lead = (
-        '<p>My published research examines how microscopic interactions, local perturbations, and gauge or '
-        "symmetry constraints govern low-energy excitations and their physical responses in quantum spin systems. "
-        'Open follow-up questions and self-contained expository derivations from my PhD and MSc research live on the <a href="notes/index.html">Feed</a> page.</p>'
-    )
+    res_lead = ""
     feed_index_html = renderer.render_unified_feed_index_html(visible_feed_nodes, root_rel_prefix="../")
-    notes_lead = (
-        '<p>This unified blog feed collects my unpublished academic notes, reflections on academic and pop-culture texts, '
-        'explanations of my open-source projects on <a href="https://github.com/lufreitas0000">GitHub</a>, and video scripts '
-        'for <a href="https://www.instagram.com/lu.scientist/"><code>@lu.scientist</code></a>.</p>\n'
-        + feed_index_html
-    )
+    notes_lead = feed_index_html
+
     ch_colophon = (
         '<div class="colophon-strip" role="region" aria-label="Topic navigation">\n'
         '  <a href="#ch2-kitaev">Exact Kitaev Solution &amp; Gauge Fluxes</a>\n  <span>·</span>\n'
@@ -189,12 +182,7 @@ def build_site(
         '  <a href="#ch6-kmf">Real-Space Majorana Mean-Field</a>\n  <span>·</span>\n'
         '  <a href="#ch7-vortices">Vortex Quadrupoles &amp; Local Bias</a>\n</div>'
     )
-    ch_lead = (
-        "<p>This page hosts modular expository notes adapted from chapters of my PhD thesis "
-        "(<em>Majorana mean-field theory with \\(\\mathbb{Z}_2\\) vortices: Electrical tests in the extended Kitaev model</em>, UFRN, 2024) "
-        "and MSc dissertation (<em>Gapless excitations in Kitaev materials with defects</em>, UFRN, 2019–2021), "
-        "preserving the full labeled diagrams alongside multi-line aligned equations.</p>"
-    )
+    ch_lead = ""
 
     composed_pages = [
         (
@@ -280,6 +268,10 @@ def build_site(
         ),
     ]
 
+    available_targets = {n.target_href for n in visible_feed_nodes if n.target_href}
+    if "thesis-chapters.html" not in available_targets:
+        composed_pages = [p for p in composed_pages if p[0].node_id != "thesis-chapters"]
+
     total_visible_sections = 0
     for page_spec, qmd_rel, css_rel, root_pref in composed_pages:
         total_visible_sections += len(page_spec.sections)
@@ -297,8 +289,9 @@ def build_site(
 
     aux_specs = [
         ("about", "working-with-me", "about/working-with-me.qmd", "about/working-with-me.html", "../styles/custom.css", "../"),
-        ("notes", "series", "notes/series/papers-worth-understanding.qmd", "notes/series/papers-worth-understanding.html", "../../styles/custom.css", "../../"),
     ]
+    if "series/papers-worth-understanding.html" in available_targets:
+        aux_specs.append(("notes", "series", "notes/series/papers-worth-understanding.qmd", "notes/series/papers-worth-understanding.html", "../../styles/custom.css", "../../"))
     for p_id, n_id, qmd_rel, rel_out, css_rel, root_pref in aux_specs:
         fm, body_md = repo.load_aux_page_source(qmd_rel)
         for token, replacement in partials.items():
