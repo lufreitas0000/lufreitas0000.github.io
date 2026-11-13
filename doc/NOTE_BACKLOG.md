@@ -4,7 +4,7 @@ Publish one complete, reviewed project note at a time. Drafts use `visible: fals
 
 | Project | Website note | Publication state |
 | --- | --- | --- |
-| [kitaev-mf](https://github.com/lufreitas0000/kitaev-mf) | `site/content/feed/06-kitaev-mf.md` | Published, introductory project note |
+| [kitaev-mf](https://github.com/lufreitas0000/kitaev-mf) | `site/content/feed/06-kitaev-mf.md` | Published, standalone research hub; future notes tracked in `doc/FEED_KITAEV_MF_SERIES.md` |
 | [KitaevDerivation.jl](https://github.com/lufreitas0000/KitaevDerivation.jl) | `site/content/feed/07-kitaev-derivation-jl.md` | Draft |
 | [bosonize-lean](https://github.com/lufreitas0000/bosonize-lean) | `site/content/feed/08-bosonize-lean.md` | Draft |
 

@@ -32,8 +32,10 @@ milestone_history:
 
 active_milestone:
   id: "M3.0"
-  description: "Develop remaining project notes individually and keep unpublished drafts hidden"
+  description: "Develop the kitaev-mf research hub and its independently verified companion articles"
   status: "ready"
   active_tasks:
+    - "Complete the standalone kitaev-mf research hub and register its future note sequence"
+    - "Review the numerical-labbook source discrepancies before quoting solver scorecards"
     - "Review and publish KitaevDerivation.jl note when technically complete"
     - "Review and publish bosonize-lean note when technically complete"
