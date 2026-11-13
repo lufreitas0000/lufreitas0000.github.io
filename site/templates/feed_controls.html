@@ -1,21 +1,19 @@
-<div class="feed-controls-wrapper" role="search" aria-label="Filter and search blog posts">
+<div class="feed-controls-wrapper" role="search" aria-label="Filter and search notes">
   <div class="feed-toolbar">
-    <div class="feed-filter-group" role="region" aria-label="Filter feed entries by content type (multi-select)">
-      <span class="feed-filter-label">Filter:</span>
+    <div class="feed-filter-group" role="group" aria-label="Filter by note type">
       {{FILTER_BUTTONS}}
     </div>
     <div class="feed-search-box">
-      <input type="search" id="feed-search-input" class="feed-search-input" placeholder="Search keywords or #tags..." aria-label="Search posts by keyword or tag" oninput="applyFeedSearchAndFilters()">
-      <span id="feed-count-status" class="feed-count-status" aria-live="polite">Showing {{TOTAL_COUNT}} of {{TOTAL_COUNT}} posts</span>
+      <button type="button" id="feed-search-toggle" class="feed-search-toggle" aria-label="Search notes" aria-controls="feed-search-input" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+      </button>
+      <input type="search" id="feed-search-input" class="feed-search-input" placeholder="Search notes" aria-label="Search notes by title or keyword" oninput="applyFeedSearchAndFilters()" hidden>
+      <span id="feed-count-status" class="sr-only" aria-live="polite">Showing {{TOTAL_COUNT}} of {{TOTAL_COUNT}} posts</span>
     </div>
-  </div>
-  <div id="feed-active-tag-banner" class="feed-active-tag-banner" style="display:none;">
-    <span>Active tags: <strong id="feed-active-tag-label"></strong></span>
-    <button type="button" class="feed-clear-btn" onclick="clearFeedTags()">Clear tags ×</button>
   </div>
 </div>
 <div class="feed-card-list" data-index-url="{{SEARCH_INDEX_URL}}">
 {{FEED_CARDS}}
 </div>
-<p id="feed-empty-notice" style="display:none;color:var(--ink-muted);margin-top:0.8rem;">No posts match your search or filter. <button type="button" class="feed-clear-btn" onclick="resetFeedSearchAndFilters()">Reset all filters</button></p>
+<p id="feed-empty-notice" hidden>No matching notes. <button type="button" class="feed-clear-btn" onclick="resetFeedSearchAndFilters()">Clear search and filters</button></p>
 <script src="{{FEED_JS_URL}}" defer></script>
