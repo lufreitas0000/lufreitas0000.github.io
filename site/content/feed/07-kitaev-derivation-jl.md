@@ -1,26 +1,29 @@
 ---
 id: "kitaev-derivation-jl"
-title: "KitaevDerivation.jl: Symbolic effective spin models"
+title: "KitaevDerivation.jl: Symbolic derivations and formal proofs"
 subtitle: ""
 date: "2026-11"
 order: 60
-visible: false
+visible: true
 kind: "project"
-evidence_status: "exploratory-draft"
+evidence_status: "paused"
 external_url: "https://github.com/lufreitas0000/KitaevDerivation.jl"
 tags:
   - "hubbard-kanamori"
   - "kitaev-heisenberg"
   - "symbolic-computation"
+  - "lean4"
 keywords:
   - "Julia"
   - "Schrieffer-Wolff"
   - "fermionic CAR"
-summary: "A Julia-based symbolic framework for deriving Kitaev-type spin interactions from multiorbital Hamiltonians."
+  - "computer algebra"
+  - "formal verification"
+summary: "A paused Julia symbolic derivation project, with a planned complementary Lean 4 proof track."
 ---
 
-[`KitaevDerivation.jl`](https://github.com/lufreitas0000/KitaevDerivation.jl) is a symbolic-computation project for organizing derivations from multiorbital Hubbard–Kanamori Hamiltonians to effective Kitaev–Heisenberg-type spin models. The intended pipeline treats fermionic anticommutation relations, local multiplet projectors, perturbative Schrieffer–Wolff transformations, and exchange-tensor extraction as explicit computational operations.
+I started [`KitaevDerivation.jl`](https://github.com/lufreitas0000/KitaevDerivation.jl) to explore symbolic derivations of effective Kitaev and extended Kitaev–Heisenberg spin interactions from multiorbital Hubbard–Kanamori Hamiltonians. The intended approach keeps fermionic anticommutation relations, local multiplet projectors, and perturbative transformations explicit, rather than relying on unrestricted symbolic matrix diagonalization.
 
-The emphasis is on preserving physical assumptions and checking intermediate algebra without relying on unrestricted dense symbolic diagonalization. The repository documents the proposed modules and verification requirements; those requirements should not be mistaken for completed analytical results.
+**The Julia development is currently paused.** I want to rewrite selected parts of the algebra in Lean 4 before resuming it, so the project can eventually pursue two complementary methods: Julia for symbolic computation and Lean for precise statements and machine-checked proofs. This remains a research and software-development direction, not a completed end-to-end derivation.
 
-[Source code and project scope](https://github.com/lufreitas0000/KitaevDerivation.jl)
+[GitHub repository](https://github.com/lufreitas0000/KitaevDerivation.jl)

@@ -44,6 +44,9 @@ active_milestone:
   id: "M3.2"
   description: "Develop one additional kitaev-mf companion note at a time"
   status: "ready"
+  completed_tasks:
+    - "Publish short KitaevDerivation.jl note, accurately identifying the Julia work as paused"
+    - "Publish short bosonize-lean note, distinguishing finite proofs from future continuum/infinite-volume goals"
   active_tasks:
     - "Resolve the exact-perturbation physical-parity and Feshbach-resolvent assumptions for KM-01"
     - "Reconcile solver benchmark provenance before publishing numerical performance claims"
