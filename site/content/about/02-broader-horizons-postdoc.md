@@ -1,6 +1,6 @@
 ---
 id: "future-horizons"
-title: "Broader Interests & Postdoctoral Research Horizons"
+title: "Research Interests"
 order: 20
 visible: true
 margin_notes:
@@ -12,7 +12,7 @@ margin_notes:
     body: "See <a href=\"about/working-with-me.html\">Working With Me</a> for my computational stack (Python, Julia, Lean 4) and scientific conventions."
 ---
 
-My published research is a concrete subset of a wider intellectual orientation. While my established research experience is in quantum spin systems, effective low-energy operators, dynamical correlations, and self-consistent mean-field and exact-diagonalization calculations, I am actively developing broader mathematical and structural interests where substantive connections across fields produce new physical understanding:
+My published work is in quantum spin systems, low-energy operators, and dynamical correlations. My broader interests include:
 
 **Operator Algebras, Locality & Joining Formal AQFT to QIQM:** I am interested in how microscopic locality, symmetry, and low-energy projection constraints shape emergent universality classes, boundary and defect phenomena, and entanglement structure. In particular, I want to understand how the algebraic formulation of local observables (von Neumann algebras and algebraic quantum field theory, AQFT) connects to quantum information and quantum matter (QIQM), and how coupling to an environment or conditioning on measurements reshapes many-body correlations and Lieb–Robinson propagation bounds.
 

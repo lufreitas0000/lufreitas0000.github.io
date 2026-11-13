@@ -1,6 +1,6 @@
 ---
 id: "outreach-and-climbing"
-title: "Science Communication & Rock Climbing"
+title: "Beyond Research"
 order: 35
 visible: true
 margin_notes:

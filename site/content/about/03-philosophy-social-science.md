@@ -1,6 +1,6 @@
 ---
 id: "philosophy-of-science"
-title: "History, Philosophy & Social Dimensions of Science"
+title: "Philosophy of Science"
 order: 30
 visible: true
 margin_notes:

@@ -4,7 +4,7 @@ title: "Open follow-up questions on line defects, operator realizability, and vo
 subtitle: "Unpublished questions and exploratory calculations extending published work in Kitaev spin liquids"
 date: "2026-11"
 order: 10
-visible: true
+visible: false
 kind: "note"
 tags:
   - "kitaev-model"

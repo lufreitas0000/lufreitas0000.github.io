@@ -1,6 +1,6 @@
 ---
 id: "cv"
-title: "Academic Chronology, Methods & Open CV"
+title: "Academic CV"
 order: 40
 visible: true
 include_education_table: true
@@ -16,4 +16,4 @@ margin_notes:
 
 **Methods & Scientific Computing:** My analytical and numerical toolkit spans exact diagonalization, real-space self-consistent Bogoliubov–de Gennes / Majorana mean-field solvers on torus geometries, spin-wave and $T$-matrix impurity scattering, perturbative Schrieffer–Wolff low-energy projections, and continuum bosonization / boundary conformal field theory (BCFT), complemented by a **Postgraduate Certificate in AI & Machine Learning** (XP Educação, `2026`).
 
-All degree records and international research appointments are summarized below:
+
