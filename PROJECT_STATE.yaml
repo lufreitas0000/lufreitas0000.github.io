@@ -24,3 +24,6 @@ active_milestone:
   description: "Finalize degree date conventions, align public academic profiles, and deploy to lufreitas0000.github.io"
   status: "ready"
   active_tasks: []
+
+  # November 2026 editorial and navigation update remains on a review branch.
+  # Public Feed has zero published notes pending one-at-a-time scientific review.
