@@ -167,6 +167,22 @@ class TestSiteE2E(unittest.TestCase):
         self.assertIsNotNone(soup.find("script", src="../../assets/js/kitaev_ubar.mjs"))
         self.assertTrue((path.parent / "../../assets/js/kitaev_ubar.mjs").resolve().is_file())
 
+    def test_jacobian_and_claim_ledger_have_accessible_static_fallbacks(self) -> None:
+        path = PUBLIC_OUT / "notes" / "feed" / "kitaev-mf.html"
+        soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+        jac = soup.find("figure", id="kmf-jacobian")
+        self.assertIsNotNone(jac)
+        img = jac.find("img")
+        self.assertFalse(img.has_attr("hidden"))
+        self.assertTrue((path.parent / img["src"]).resolve().is_file())
+        self.assertTrue(jac.find("canvas").has_attr("hidden"))
+        self.assertTrue(jac.find(class_="kmf-controls").has_attr("hidden"))
+        self.assertIsNotNone(soup.find("script", src="../../assets/js/kitaev_jacobian_toy.mjs"))
+        details = soup.select("details.kmf-claim-ledger")
+        self.assertEqual(len(details), 1)
+        self.assertIn("Uncontrolled approximation", details[0].get_text())
+        self.assertEqual(len(soup.select("details.kmf-figure-provenance")), 1)
+
     def test_home_personal_intro_and_gallery(self) -> None:
         import yaml
 

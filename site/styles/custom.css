@@ -1023,3 +1023,9 @@ aside.page-toc {
 .kmf-island th,.kmf-island td { border-bottom:1px solid var(--rule-soft); text-align:left; padding:.35rem .3rem; }
 .kmf-ubar-controls label { display:inline-block; font-size:.9rem; margin:.45rem .6rem .3rem 0; }
 .kmf-ubar-controls select { padding:.25rem .4rem; color:var(--ink-primary); background:var(--bg-paper); border:1px solid var(--rule-stone); font:inherit; }
+
+.kmf-claim-ledger, .kmf-figure-provenance { margin:1rem 0; padding:.55rem 0; border-top:1px solid var(--rule-soft); }
+.kmf-claim-ledger summary,.kmf-figure-provenance summary { cursor:pointer; color:var(--bond-z-blue); font-weight:600; }
+.kmf-claim-ledger table { border-collapse:collapse; width:100%; margin:.7rem 0; font-size:.86rem; }
+.kmf-claim-ledger th,.kmf-claim-ledger td { padding:.4rem .35rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--rule-soft); }
+.kmf-figure-provenance p,.kmf-claim-ledger p { font-size:.92rem; }

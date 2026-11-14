@@ -82,6 +82,24 @@ $$
 
 At zero modes or finite-size level crossings, occupations and physical parity require additional care. The simplest solver repeats $X_{n+1}=\Phi(X_n)$ (Picard iteration). Damping instead uses $X_{n+1}=X_n+\alpha R(X_n)$, where $0<\alpha\le1$. Local linear convergence is governed by the derivative of the iteration map; neither damping nor convergence is guaranteed throughout the full parameter space.
 
+
+<figure class="kmf-island" id="kmf-jacobian" aria-labelledby="kmf-jacobian-caption">
+<figcaption id="kmf-jacobian-caption">Why damping can stabilize a fixed-point iteration</figcaption>
+<p class="kmf-caption">A deliberately simple, solver-independent linear example: Φ(x) = Ax, where A = diag(−1.5, 0.4). Damping produces eigenvalues λ<sub>α</sub> = 1 − α + αλ. The blue circle is |λ| = 1; a strict spectral radius below one gives convergence for this linear iteration.</p>
+<div class="kmf-viewport">
+<img src="../../assets/img/islands/kitaev-mf-jacobian-toy.svg" alt="Static eigenvalue diagram at damping alpha = 0.5: eigenvalues −0.25 and 0.70 both inside the unit circle." loading="lazy" decoding="async">
+<canvas width="440" height="370" role="img" aria-label="Damped fixed-point Jacobian eigenvalues in the complex plane" hidden></canvas>
+</div>
+<div class="kmf-controls" hidden>
+<label for="kmf-alpha">Damping α: <output for="kmf-alpha">0.50</output></label>
+<input id="kmf-alpha" type="range" min="0.05" max="1" step="0.05" value="0.5" aria-describedby="kmf-jacobian-readout">
+<p class="kmf-readout" id="kmf-jacobian-readout" aria-live="polite"></p>
+</div>
+<p class="kmf-caption">At α = 1, the eigenvalue −1.5 is outside the unit disc; for 0 &lt; α &lt; 0.8 both eigenvalues lie strictly inside it. This is a mathematical toy, not numerical evidence about a Kitaev mean-field Jacobian.</p>
+</figure>
+<script type="module" src="../../assets/js/kitaev_jacobian_toy.mjs"></script>
+
+
 The code also investigates **Anderson acceleration / DIIS**, **Broyden updates**, and **Jacobian-free Newton–Krylov** methods. DIIS combines a history of residuals; Broyden approximates the inverse response of $R$; limited-memory variants avoid storing a dense Jacobian. In large real-space problems, evaluating $\Phi$ itself is expensive, motivating real skew-symmetric linear algebra and matrix-sign purification of Gaussian covariances. Near a vanishing spectral gap, these spectral algorithms need conditioning and zero-mode safeguards.
 
 Finding $R(X_*)\simeq0$ does **not** prove that $X_*$ is the global minimum of the mean-field energy, that it satisfies every physical constraint, or that the Gaussian state accurately represents the interacting spin ground state. Multiple self-consistent solutions can coexist. Their energies, local stability, admissibility, and dependence on initial conditions must be examined separately.
@@ -148,6 +166,31 @@ In the labbook's ferromagnetic, flux-free gauge convention, $U_b^{00}=-\bar U$. 
 **Is a physical prediction robust?** Compare independent initial states and solver families, scan system size and boundary conditions, inspect competing stationary branches, and check observables against perturbation theory or exact diagonalization where possible. Spin-correlation sum rules and physically projected flux/parity sectors matter as much as convergence speed. An approximation without a uniform error bound remains uncontrolled even after excellent numerical validation.
 
 The project's [Living Lab Book](https://lufreitas0000.github.io/kitaev-mf/kitaev-mf-labbook.pdf) develops these checks in detail, from covariance positivity and spectral projectors to fixed-point basins and real-space purification. Its numerical tables are *regime-specific evidence*, not universal solver rankings or proofs of physical accuracy.
+
+
+<details class="kmf-claim-ledger">
+<summary>Claims, evidence and reproducibility</summary>
+<table>
+<thead><tr><th scope="col">Statement</th><th scope="col">Status</th><th scope="col">Independent check or counterexample</th></tr></thead>
+<tbody>
+<tr><td>Zeros of the zero-field structure factor for the specified couplings</td><td>Exact mathematical result</td><td>Substitute the claimed momenta into f and check the relevant boundary cases.</td></tr>
+<tr><td>Wick factorization for the chosen Gaussian state</td><td>Mathematical property of the ansatz</td><td>Check CAR and quasifree hypotheses; generic interacting states need not satisfy Wick factorization.</td></tr>
+<tr><td>Finite-grid values approaching Ū</td><td>Numerical evidence</td><td>Recompute the specified midpoint rule; refine N or use independent quadrature. No certified error bound is claimed by the widget.</td></tr>
+<tr><td>Finite-field Gaussian mean-field predictions</td><td>Uncontrolled approximation</td><td>Compare observable-specific results against exact limits, perturbative coefficients, system sizes, and competing stationary branches.</td></tr>
+</tbody>
+</table>
+<p>The research workflow connects literature and hypotheses, laboratory checks, and published notes. A discrepancy can change any of these; self-consistency alone does not justify a physical prediction.</p>
+</details>
+
+
+
+<details class="kmf-figure-provenance">
+<summary>Figure and calculation provenance</summary>
+<p><strong>Dispersion:</strong> exact flux-free zero-field formula, J<sub>x</sub> = J<sub>y</sub> = J, 0 ≤ J<sub>z</sub>/J ≤ 2; no random seeds. <a href="https://github.com/lufreitas0000/lufreitas0000.github.io/blob/main/site/assets/js/kitaev_dispersion.mjs">Source code</a> and <a href="https://github.com/lufreitas0000/lufreitas0000.github.io/blob/main/test/js/kitaev_dispersion.test.mjs">reference tests</a>. The static SVG uses J<sub>z</sub> = J.</p>
+<p><strong>Ū quadrature:</strong> exact isotropic benchmark; midpoint grid N × N, no seeds or fitted parameters. <a href="https://github.com/lufreitas0000/lufreitas0000.github.io/blob/main/site/assets/js/kitaev_ubar.mjs">Quadrature source</a> and <a href="https://github.com/lufreitas0000/lufreitas0000.github.io/blob/main/test/js/kitaev_ubar.test.mjs">deterministic tests</a>; reproduce with <code>node --test test/js/kitaev_ubar.test.mjs</code>.</p>
+<p><strong>Jacobian:</strong> exact illustrative map A = diag(−1.5, 0.4), initial alpha 0.5; no Kitaev numerical data. <a href="https://github.com/lufreitas0000/lufreitas0000.github.io/blob/main/site/assets/js/kitaev_jacobian_toy.mjs">Visualization source</a> and <a href="https://github.com/lufreitas0000/lufreitas0000.github.io/blob/main/test/js/kitaev_jacobian_toy.test.mjs">mathematical checks</a>.</p>
+</details>
+
 
 ## Physics beyond the integrable limit {#directions}
 
