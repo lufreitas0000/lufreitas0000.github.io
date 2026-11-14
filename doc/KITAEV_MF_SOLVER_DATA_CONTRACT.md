@@ -18,26 +18,26 @@ are **TODO(Lu)**. Do not infer values from prior benchmark runs.
 
 One versioned JSON file per fully declared experimental campaign:
 
-- \`publication_status\`: \`draft\` or \`reviewed\`; the validator does not
-  certify physical correctness. Only \`reviewed\` data are candidates
+- `publication_status`: `draft` or `reviewed`; the validator does not
+  certify physical correctness. Only `reviewed` data are candidates
   for a public article and require a scientific-review reference.
-- \`provenance\`: exact 40-character upstream solver \`source_commit\`,
-  experimental \`protocol_commit\`, executable \`reproduction_command\`,
-  \`h_units\`, initial-state distribution, residual definition and
-  method-specific frozen \`solver_configs\`.
-- \`h_grid\`: ascending grid within user-declared [0,1] field domain;
-  \`seeds\`: a precommitted list of distinct integers.
-- \`runs\`: exactly one run for every (field, seed, solver). For each:
-  \`initial_state_id\` shared across methods at fixed (field, seed),
-  \`branch_id\`, \`segment_id\`, \`converged\`, categorized
-  \`failure_reason\` (if not converged), \`map_evaluations\`, *raw*
-  unpadded \`residual_history\`. Future observables may carry named
+- `provenance`: exact 40-character upstream solver `source_commit`,
+  experimental `protocol_commit`, executable `reproduction_command`,
+  `h_units`, initial-state distribution, residual definition and
+  method-specific frozen `solver_configs`.
+- `h_grid`: ascending grid within user-declared [0,1] field domain;
+  `seeds`: a precommitted list of distinct integers.
+- `runs`: exactly one run for every (field, seed, solver). For each:
+  `initial_state_id` shared across methods at fixed (field, seed),
+  `branch_id`, `segment_id`, `converged`, categorized
+  `failure_reason` (if not converged), `map_evaluations`, *raw*
+  unpadded `residual_history`. Future observables may carry named
   units and independent validation metadata.
-- \`scientific_review\` for reviewed data: review reference, held-out
+- `scientific_review` for reviewed data: review reference, held-out
   interpolation-error report, and explicit Lu-approved thresholds.
   Validation checks *presence*, never infers approval from CI.
 
-The validator \`scripts/validate_kmf_solver_grid.py\` enforces syntactic,
+The validator `scripts/validate_kmf_solver_grid.py` enforces syntactic,
 paired-design and provenance consistency. It cannot check whether a
 claimed source commit actually generated the data, whether a raw history
 was fabricated, or whether a mean-field solution is physically correct.
@@ -45,9 +45,9 @@ Scientific audit and independent reproduction remain necessary.
 
 ## Interpolation — candidate only
 
-\`test/support/kitaev_grid_interpolation.mjs\` exports a pure
+`test/support/kitaev_grid_interpolation.mjs` exports a pure
 segment-filtered candidate linear interpolator. It requires explicit
-\`branch_id\` and \`segment_id\`, prohibits extrapolation and
+`branch_id` and `segment_id`, prohibits extrapolation and
 cross-segment evaluation, and reports source grid nodes. This is **not
 loaded by the website**.
 
