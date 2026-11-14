@@ -103,6 +103,24 @@ $$
 
 In the labbook's ferromagnetic, flux-free gauge convention, $U_b^{00}=-\bar U$. Other exact checks include band folding, the anisotropic one-dimensional zigzag limit, and isolated-bond dimers. These constrain the implementation in special regimes; they do not establish the accuracy of an arbitrary finite-field mean-field solution.
 
+
+<figure id="kmf-dispersion" class="kmf-island" aria-labelledby="kmf-dispersion-caption">
+<figcaption id="kmf-dispersion-caption">Zero-field structure factor: dimensionless r = |f(k)|</figcaption>
+<p class="kmf-caption">J<sub>x</sub> = J<sub>y</sub> = J; vary 0 ≤ J<sub>z</sub> ≤ 2J. The static view shows J<sub>z</sub> = J. Colors share the fixed range r = 0–4.</p>
+<div class="kmf-viewport">
+<img src="../../assets/img/islands/kitaev-mf-dispersion-isotropic.svg" alt="Isotropic heatmap of r = |f| with Dirac zeros at (1/3, 2/3) and (2/3, 1/3)." decoding="async" loading="lazy">
+<canvas width="510" height="495" role="img" aria-label="Dimensionless r = |f| heatmap" hidden></canvas>
+</div>
+<div class="kmf-controls" hidden>
+<label for="kmf-jz-ratio">J<sub>z</sub>/J: <output for="kmf-jz-ratio">1.00</output></label>
+<input id="kmf-jz-ratio" type="range" min="0" max="2" step="0.02" value="1" aria-describedby="kmf-dispersion-readout">
+<p class="kmf-readout" id="kmf-dispersion-readout" aria-live="polite"></p>
+</div>
+<p class="kmf-caption">Exact zero-field flux-free structure factor, not the finite-field mean-field excitation energy.</p>
+</figure>
+<script type="module" src="../../assets/js/kitaev_dispersion.mjs"></script>
+
+
 **Is a physical prediction robust?** Compare independent initial states and solver families, scan system size and boundary conditions, inspect competing stationary branches, and check observables against perturbation theory or exact diagonalization where possible. Spin-correlation sum rules and physically projected flux/parity sectors matter as much as convergence speed. An approximation without a uniform error bound remains uncontrolled even after excellent numerical validation.
 
 The project's [Living Lab Book](https://lufreitas0000.github.io/kitaev-mf/kitaev-mf-labbook.pdf) develops these checks in detail, from covariance positivity and spectral projectors to fixed-point basins and real-space purification. Its numerical tables are *regime-specific evidence*, not universal solver rankings or proofs of physical accuracy.
