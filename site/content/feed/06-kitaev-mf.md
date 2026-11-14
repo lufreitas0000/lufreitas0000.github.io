@@ -101,7 +101,31 @@ $$
 \simeq 0.5248657458506.
 $$
 
-In the labbook's ferromagnetic, flux-free gauge convention, $U_b^{00}=-\bar U$. Other exact checks include band folding, the anisotropic one-dimensional zigzag limit, and isolated-bond dimers. These constrain the implementation in special regimes; they do not establish the accuracy of an arbitrary finite-field mean-field solution.
+In the labbook's ferromagnetic, flux-free gauge convention, $U_b^{00}=-\bar U$. Other exact checks include band folding, the anisotropic one-dimensional zigzag limit, and isolated-bond dimers.
+
+
+<figure id="kmf-ubar" class="kmf-island" aria-labelledby="kmf-ubar-caption">
+<figcaption id="kmf-ubar-caption">Exact-limit check: numerical quadrature for Ū</figcaption>
+<p class="kmf-caption">The midpoint rule approximates the integral above on an N × N grid, with k<sub>a</sub> = (n<sub>a</sub> + 1/2)/N. It is a numerical approximation to a known exact-limit quantity, not a mean-field solver benchmark.</p>
+<table>
+<thead><tr><th scope="col">N</th><th scope="col">Midpoint Ū</th><th scope="col">Absolute difference</th></tr></thead>
+<tbody>
+<tr><td>8</td><td>0.5248951470</td><td>2.94 × 10<sup>−5</sup></td></tr>
+<tr><td>16</td><td>0.5248532248</td><td>1.25 × 10<sup>−5</sup></td></tr>
+<tr><td>32</td><td>0.5248651506</td><td>5.95 × 10<sup>−7</sup></td></tr>
+<tr><td>64</td><td>0.5248656070</td><td>1.39 × 10<sup>−7</sup></td></tr>
+<tr><td>128</td><td>0.5248657324</td><td>1.34 × 10<sup>−8</sup></td></tr>
+</tbody>
+</table>
+<div class="kmf-ubar-controls" hidden>
+<label for="kmf-ubar-N">Compute another midpoint approximation: </label>
+<select id="kmf-ubar-N"><option>8</option><option>16</option><option>32</option><option selected>64</option><option>96</option><option>128</option><option>256</option></select>
+<p class="kmf-ubar-result kmf-readout" aria-live="polite"></p>
+</div>
+<p class="kmf-caption">Reference Ū = 0.5248657458506. The error need not decrease monotonically with N; the integral has zeros where |f| is not smooth. The static table remains visible without JavaScript.</p>
+</figure>
+<script type="module" src="../../assets/js/kitaev_ubar.mjs"></script>
+ These constrain the implementation in special regimes; they do not establish the accuracy of an arbitrary finite-field mean-field solution.
 
 
 <figure id="kmf-dispersion" class="kmf-island" aria-labelledby="kmf-dispersion-caption">

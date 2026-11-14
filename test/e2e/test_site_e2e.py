@@ -156,6 +156,17 @@ class TestSiteE2E(unittest.TestCase):
             self.assertNotIn('id="kmf-dispersion"', html)
             self.assertNotIn("kitaev_dispersion.mjs", html)
 
+    def test_ubar_quadrature_has_static_table_and_optional_controls(self) -> None:
+        path = PUBLIC_OUT / "notes" / "feed" / "kitaev-mf.html"
+        soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+        island = soup.find("figure", id="kmf-ubar")
+        self.assertIsNotNone(island)
+        self.assertGreaterEqual(len(island.select("tbody tr")), 5)
+        self.assertTrue(island.find(class_="kmf-ubar-controls").has_attr("hidden"))
+        self.assertIn("0.5248657458506", island.get_text())
+        self.assertIsNotNone(soup.find("script", src="../../assets/js/kitaev_ubar.mjs"))
+        self.assertTrue((path.parent / "../../assets/js/kitaev_ubar.mjs").resolve().is_file())
+
     def test_home_personal_intro_and_gallery(self) -> None:
         import yaml
 
