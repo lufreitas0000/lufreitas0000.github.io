@@ -133,6 +133,29 @@ class TestSiteE2E(unittest.TestCase):
             )
         )
 
+    def test_kitaev_dispersion_local_fallback_and_controls(self) -> None:
+        article_path = PUBLIC_OUT / "notes" / "feed" / "kitaev-mf.html"
+        soup = BeautifulSoup(article_path.read_text(encoding="utf-8"), "html.parser")
+        island = soup.find("figure", id="kmf-dispersion")
+        self.assertIsNotNone(island)
+        image = island.find("img")
+        self.assertFalse(image.has_attr("hidden"))
+        self.assertTrue((article_path.parent / image["src"]).resolve().is_file())
+        self.assertTrue(island.find("canvas").has_attr("hidden"))
+        self.assertTrue(island.find(class_="kmf-controls").has_attr("hidden"))
+        slider = island.find("input", id="kmf-jz-ratio")
+        self.assertEqual(
+            (slider["min"], slider["max"], slider["step"], slider["value"]),
+            ("0", "2", "0.02", "1"),
+        )
+        script = soup.find("script", src="../../assets/js/kitaev_dispersion.mjs")
+        self.assertEqual(script.get("type"), "module")
+        self.assertTrue((article_path.parent / script["src"]).resolve().is_file())
+        for page in ("index.html", "research.html", "about.html"):
+            html = (PUBLIC_OUT / page).read_text(encoding="utf-8")
+            self.assertNotIn('id="kmf-dispersion"', html)
+            self.assertNotIn("kitaev_dispersion.mjs", html)
+
     def test_home_personal_intro_and_gallery(self) -> None:
         import yaml
 

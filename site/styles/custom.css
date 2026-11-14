@@ -1001,3 +1001,20 @@ aside.page-toc {
 
 /* Home links form a single-column directory, without unused descriptions. */
 .readme-dir-row { grid-template-columns: minmax(0, 1fr); padding: 0.65rem 0; }
+
+/* Optional Kitaev island; sitewide layout remains unchanged. */
+.kmf-island { margin:1.1rem 0 1.4rem; padding:.85rem 0; border-top:1px solid var(--rule-stone); border-bottom:1px solid var(--rule-soft); }
+.kmf-island figcaption { font-weight:700; margin:0 0 .4rem; }
+.kmf-island .kmf-caption { color:var(--ink-secondary); font-size:.93rem; margin:.25rem 0 .65rem; }
+.kmf-island .kmf-viewport { max-width:32rem; }
+.kmf-island .kmf-viewport img, .kmf-island .kmf-viewport canvas { display:block; width:100%; height:auto; }
+.kmf-island [hidden] { display:none !important; }
+.kmf-island .kmf-controls { max-width:32rem; margin:.75rem 0; }
+.kmf-island .kmf-controls label { font-size:.95rem; display:inline-flex; gap:.6rem; align-items:baseline; }
+.kmf-island .kmf-controls output { font:.9rem var(--font-mono); }
+.kmf-island .kmf-controls input[type="range"] { display:block; width:100%; accent-color:var(--bond-z-blue); margin-top:.3rem; }
+.kmf-island .kmf-readout { font-size:.89rem; color:var(--ink-secondary); margin:.4rem 0; min-height:1.3em; }
+@media print {
+  .kmf-island .kmf-controls,.kmf-island .kmf-viewport canvas { display:none !important; }
+  .kmf-island .kmf-viewport img[hidden] { display:block !important; }
+}
