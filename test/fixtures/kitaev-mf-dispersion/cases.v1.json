@@ -1,64 +1,66 @@
 {
   "schema_version": 1,
   "publication_status": "unpublished-fixture",
-  "notation": {
+  "symbols": {
+    "couplings": "J_x=J_y=J>0, 0<=J_z<=2J",
     "structure_factor": "f",
     "walk_endpoint": "Z=f",
     "radial_modulus": "r=|Z|=|f|"
   },
-  "physical_quantity": "dimensionless radial modulus r",
-  "momentum": "k1,k2 in [0,1); theta_a=2*pi*k_a",
-  "coupling": "j_gamma=J_gamma/J_ref > 0",
-  "structure_factor": "f(k;j)=jz+jx*exp(2*pi*i*k1)+jy*exp(2*pi*i*k2)",
+  "structure_factor": "f(k;J_z/J)=J_z/J+exp(2*pi*i*k1)+exp(2*pi*i*k2)",
+  "momentum": "k1,k2 in [0,1)",
+  "plotted_quantity": "dimensionless r=|f|",
+  "color_range": [
+    0,
+    4
+  ],
   "cases": [
     {
-      "id": "isotropic",
-      "j": [
-        1,
-        1,
-        1
+      "ratio_Jz_over_J": 0,
+      "zero_set": "line",
+      "roots": [],
+      "example_line_point": [
+        0.17,
+        0.67
       ],
-      "zero_count": 2,
+      "range_min": 0,
+      "range_max": 2
+    },
+    {
+      "ratio_Jz_over_J": 0.5,
+      "zero_set": "two-points",
       "roots": [
         [
-          0.3333333333333333,
+          0.29021531162758313,
+          0.7097846883724168
+        ],
+        [
+          0.7097846883724168,
+          0.29021531162758313
+        ]
+      ],
+      "range_min": 0,
+      "range_max": 2.5
+    },
+    {
+      "ratio_Jz_over_J": 1,
+      "zero_set": "two-points",
+      "roots": [
+        [
+          0.33333333333333337,
           0.6666666666666666
         ],
         [
           0.6666666666666666,
-          0.3333333333333333
+          0.33333333333333337
         ]
       ],
-      "min_r": 0
+      "range_min": 0,
+      "range_max": 3
     },
     {
-      "id": "weighted-strict",
-      "j": [
-        0.8,
-        1.2,
-        1
-      ],
-      "zero_count": 2,
-      "roots": [
-        [
-          0.26994654383738415,
-          0.615026728081308
-        ],
-        [
-          0.7300534561626159,
-          0.384973271918692
-        ]
-      ],
-      "min_r": 0
-    },
-    {
-      "id": "jz-1p5",
-      "j": [
-        1,
-        1,
-        1.5
-      ],
-      "zero_count": 2,
+      "ratio_Jz_over_J": 1.5,
+      "zero_set": "two-points",
       "roots": [
         [
           0.3849732719186921,
@@ -69,68 +71,20 @@
           0.3849732719186921
         ]
       ],
-      "min_r": 0
+      "range_min": 0,
+      "range_max": 3.5
     },
     {
-      "id": "jz-merger",
-      "j": [
-        1,
-        1,
-        2
-      ],
-      "zero_count": 1,
+      "ratio_Jz_over_J": 2,
+      "zero_set": "merged",
       "roots": [
         [
           0.5,
           0.5
         ]
       ],
-      "min_r": 0
-    },
-    {
-      "id": "jz-gapped",
-      "j": [
-        1,
-        1,
-        2.5
-      ],
-      "zero_count": 0,
-      "roots": [],
-      "min_r": 0.5,
-      "min_at": [
-        0.5,
-        0.5
-      ]
-    },
-    {
-      "id": "jx-gapped",
-      "j": [
-        2.5,
-        1,
-        1
-      ],
-      "zero_count": 0,
-      "roots": [],
-      "min_r": 0.5,
-      "min_at": [
-        0.5,
-        0
-      ]
-    },
-    {
-      "id": "jy-gapped",
-      "j": [
-        1,
-        2.5,
-        1
-      ],
-      "zero_count": 0,
-      "roots": [],
-      "min_r": 0.5,
-      "min_at": [
-        0,
-        0.5
-      ]
+      "range_min": 0,
+      "range_max": 4
     }
   ]
 }
