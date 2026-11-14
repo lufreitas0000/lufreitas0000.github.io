@@ -13,6 +13,7 @@ cd ../website-preview
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install PyYAML Markdown beautifulsoup4
+node --version  # use the version specified in .node-version
 make verify
 make preview PORT=8001
 ```
@@ -41,3 +42,8 @@ Before publishing:
 
 The preview procedure gives a manual review opportunity; it is not
 a substitute for scientific or browser accessibility testing.
+
+The static website requires no Node.js at runtime. Node.js is used only to
+validate the pure browser math; `make verify` runs both Python and Node tests.
+CI uses exactly the version in `.node-version`. Inside WSL, `nvm install`
+and `nvm use` can use the same version.

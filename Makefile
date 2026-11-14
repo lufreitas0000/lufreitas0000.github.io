@@ -1,5 +1,6 @@
 .DEFAULT_GOAL := help
 PYTHON ?= python3
+JS_RUNTIME ?= node
 PYTHONPATH := src
 
 .PHONY: help build verify serve preview new-post clean-build
@@ -7,7 +8,7 @@ PYTHONPATH := src
 help:
 	@echo "Targets:"
 	@echo "  make build                     Build public site into build/_site/"
-	@echo "  make verify                    Build public + fixture previews and run all tests"
+	@echo "  make verify                    Build public + fixture previews and run Python + JavaScript tests"
 	@echo "  make serve                     Preview build/_site/ at http://localhost:8000"
 	@echo "  make preview PORT=8001         Bind a local-only worktree preview server"
 	@echo "  make new-post SLUG=...         Scaffold a new Feed Markdown post"
@@ -19,6 +20,7 @@ build:
 verify:
 	@PYTHONPATH=$(PYTHONPATH) "$(PYTHON)" -m web_engine.app.cli --out-dir build/_site --verify-fixtures
 	@PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=$(PYTHONPATH) "$(PYTHON)" -m unittest discover -s test -p "test_*.py" -v
+	@$(JS_RUNTIME) --test test/js/*.test.mjs
 
 serve: build
 	@echo "Serving http://localhost:8000 (Ctrl+C to stop)"
