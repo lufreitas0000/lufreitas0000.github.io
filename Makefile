@@ -2,13 +2,13 @@
 PYTHON ?= python3
 PYTHONPATH := src
 
-.PHONY: help build verify serve new-post clean-build
+.PHONY: help build verify serve preview new-post clean-build
 
 help:
 	@echo "Targets:"
 	@echo "  make build                     Build public site into build/_site/"
 	@echo "  make verify                    Build public + fixture previews and run all tests"
-	@echo "  make serve                     Preview build/_site/ at http://localhost:8000"
+	@echo "  make serve                     Preview build/_site/ at http://localhost:8000\n\t@echo "  make preview PORT=8001         Bind a local-only worktree preview server""
 	@echo "  make new-post SLUG=...         Scaffold a new Feed Markdown post"
 	@echo "  make clean-build               Remove ephemeral build/ and cache directories"
 
@@ -30,3 +30,9 @@ new-post:
 clean-build:
 	@rm -rf build .pytest_cache .mypy_cache .ruff_cache
 	@find . -type d -name "__pycache__" -exec rm -rf {} +
+
+PORT ?= 8001
+
+preview: build
+	@echo "Local preview at http://127.0.0.1:$(PORT)/notes/feed/kitaev-mf.html (Ctrl+C to stop)"
+	@"$(PYTHON)" -m http.server "$(PORT)" --bind 127.0.0.1 --directory build/_site
