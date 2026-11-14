@@ -1,7 +1,7 @@
 schema_version: 1
 project_name: "personal-website"
 active_phase: "Phase 3: Editorial Maintenance & Project Notes"
-current_milestone: "M3.0"
+current_milestone: "M3.4"
 
 milestone_history:
   - id: "M1.0"
@@ -40,14 +40,36 @@ milestone_history:
       - "test/e2e/test_site_e2e.py"
     validation: "make verify (24 tests), branch-only GitHub Actions"
 
+  - id: "M3.2"
+    name: "Publish concise Julia and Lean project notes"
+    status: "completed"
+    evidence:
+      - "site/content/feed/07-kitaev-derivation-jl.md"
+      - "site/content/feed/08-bosonize-lean.md"
+    validation: "make verify"
+  - id: "M3.3"
+    name: "Pilot optional interactive Kitaev publishing"
+    status: "completed"
+    acceptance: "Dimensionless Jz dispersion, exact Ubar quadrature, mathematical Jacobian toy, static fallbacks, claim ledger and immutable provenance; no global layout change"
+    evidence:
+      - "site/content/feed/06-kitaev-mf.md"
+      - "site/assets/js/kitaev_dispersion.mjs"
+      - "site/assets/js/kitaev_ubar.mjs"
+      - "site/assets/js/kitaev_jacobian_toy.mjs"
+      - "site/assets/data/islands/kitaev-ubar-midpoint.csv"
+    validation: "make verify, Node mathematical tests, and production Pages deployment"
+
 active_milestone:
-  id: "M3.2"
-  description: "Develop one additional kitaev-mf companion note at a time"
-  status: "ready"
+  id: "M3.4"
+  description: "Validate paired solver campaigns before publishing any interpolation or trajectory figure"
+  status: "waiting-on-scientific-specification"
   completed_tasks:
-    - "Publish short KitaevDerivation.jl note, accurately identifying the Julia work as paused"
-    - "Publish short bosonize-lean note, distinguishing finite proofs from future continuum/infinite-volume goals"
+    - "Add unpublished paired-data validator and branch-safe interpolation candidate"
+    - "Add WSL local worktree preview target"
+    - "Include pinned Node test suite in make verify and production CI"
   active_tasks:
-    - "Resolve the exact-perturbation physical-parity and Feshbach-resolvent assumptions for KM-01"
-    - "Reconcile solver benchmark provenance before publishing numerical performance claims"
-    - "Keep the KitaevDerivation.jl and bosonize-lean drafts unpublished until independently reviewed"
+    - "Lu to specify h units and precommitted h grid, initial-state ensemble and seeds"
+    - "Lu to define observable, residual, stopping criteria and numerical acceptance thresholds"
+    - "Independently rerun and audit Kitaev solver campaigns with branch labels and held-out errors"
+    - "Develop the fixed-point methods lab as separate self-contained notes after scientific review"
+    - "Resolve the exact-perturbation parity/resolvent assumptions for KM-01"

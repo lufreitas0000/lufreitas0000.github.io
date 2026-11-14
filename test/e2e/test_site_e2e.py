@@ -183,6 +183,33 @@ class TestSiteE2E(unittest.TestCase):
         self.assertIn("Uncontrolled approximation", details[0].get_text())
         self.assertEqual(len(soup.select("details.kmf-figure-provenance")), 1)
 
+    def test_immutable_figure_provenance_and_csv_download(self) -> None:
+        from csv import DictReader
+
+        path = PUBLIC_OUT / "notes" / "feed" / "kitaev-mf.html"
+        soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+        source = soup.select_one("details.kmf-figure-provenance")
+        self.assertIsNotNone(source)
+        links = [a.get("href") for a in source.find_all("a")]
+        for sha in (
+            "aa5dddc31f86fec607ebe095830c5ba95a2ccff7",
+            "a19dd702295698c37e089749942fc3ee98ed006c",
+            "86f4ca92935e4e84b4b49634caf7c178c582c805",
+        ):
+            self.assertTrue(any("/blob/" + sha + "/" in link for link in links))
+        csv_link = source.find("a", href="../../assets/data/islands/kitaev-ubar-midpoint.csv")
+        self.assertIsNotNone(csv_link)
+        data_path = (path.parent / csv_link["href"]).resolve()
+        with data_path.open(encoding="utf-8", newline="") as stream:
+            rows = list(DictReader(stream))
+        self.assertEqual([r["N"] for r in rows], ["8", "16", "32", "64", "96", "128", "256"])
+        for row in rows:
+            self.assertAlmostEqual(
+                abs(float(row["midpoint_ubar"]) - float(row["reference_ubar"])),
+                float(row["absolute_difference"]),
+                delta=1e-12,
+            )
+
     def test_home_personal_intro_and_gallery(self) -> None:
         import yaml
 
