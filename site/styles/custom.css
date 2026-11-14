@@ -1018,3 +1018,8 @@ aside.page-toc {
   .kmf-island .kmf-controls,.kmf-island .kmf-viewport canvas { display:none !important; }
   .kmf-island .kmf-viewport img[hidden] { display:block !important; }
 }
+
+.kmf-island table { width:100%; border-collapse:collapse; margin:.65rem 0; font-variant-numeric:tabular-nums; font-size:.85rem; }
+.kmf-island th,.kmf-island td { border-bottom:1px solid var(--rule-soft); text-align:left; padding:.35rem .3rem; }
+.kmf-ubar-controls label { display:inline-block; font-size:.9rem; margin:.45rem .6rem .3rem 0; }
+.kmf-ubar-controls select { padding:.25rem .4rem; color:var(--ink-primary); background:var(--bg-paper); border:1px solid var(--rule-stone); font:inherit; }
