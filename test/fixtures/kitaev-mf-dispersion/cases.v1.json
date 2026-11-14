@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "publication_status": "unpublished-fixture",
+  "notation": {
+    "structure_factor": "f",
+    "walk_endpoint": "Z=f",
+    "radial_modulus": "r=|Z|=|f|"
+  },
+  "physical_quantity": "dimensionless radial modulus r",
+  "momentum": "k1,k2 in [0,1); theta_a=2*pi*k_a",
+  "coupling": "j_gamma=J_gamma/J_ref > 0",
+  "structure_factor": "f(k;j)=jz+jx*exp(2*pi*i*k1)+jy*exp(2*pi*i*k2)",
+  "cases": [
+    {
+      "id": "isotropic",
+      "j": [
+        1,
+        1,
+        1
+      ],
+      "zero_count": 2,
+      "roots": [
+        [
+          0.3333333333333333,
+          0.6666666666666666
+        ],
+        [
+          0.6666666666666666,
+          0.3333333333333333
+        ]
+      ],
+      "min_r": 0
+    },
+    {
+      "id": "weighted-strict",
+      "j": [
+        0.8,
+        1.2,
+        1
+      ],
+      "zero_count": 2,
+      "roots": [
+        [
+          0.26994654383738415,
+          0.615026728081308
+        ],
+        [
+          0.7300534561626159,
+          0.384973271918692
+        ]
+      ],
+      "min_r": 0
+    },
+    {
+      "id": "jz-1p5",
+      "j": [
+        1,
+        1,
+        1.5
+      ],
+      "zero_count": 2,
+      "roots": [
+        [
+          0.3849732719186921,
+          0.615026728081308
+        ],
+        [
+          0.615026728081308,
+          0.3849732719186921
+        ]
+      ],
+      "min_r": 0
+    },
+    {
+      "id": "jz-merger",
+      "j": [
+        1,
+        1,
+        2
+      ],
+      "zero_count": 1,
+      "roots": [
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "min_r": 0
+    },
+    {
+      "id": "jz-gapped",
+      "j": [
+        1,
+        1,
+        2.5
+      ],
+      "zero_count": 0,
+      "roots": [],
+      "min_r": 0.5,
+      "min_at": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "jx-gapped",
+      "j": [
+        2.5,
+        1,
+        1
+      ],
+      "zero_count": 0,
+      "roots": [],
+      "min_r": 0.5,
+      "min_at": [
+        0.5,
+        0
+      ]
+    },
+    {
+      "id": "jy-gapped",
+      "j": [
+        1,
+        2.5,
+        1
+      ],
+      "zero_count": 0,
+      "roots": [],
+      "min_r": 0.5,
+      "min_at": [
+        0,
+        0.5
+      ]
+    }
+  ]
+}
