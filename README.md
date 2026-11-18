@@ -1,5 +1,10 @@
 # Lu Freitas — Personal Research Website
 
+**Goal:** Publish verified academic profile, research notes, interactive scientific widgets, and visual gallery cleanly to `https://lufreitas0000.github.io/` via static Hexagonal builds.
+**Scope & Non-Goals:** Owns static web engine (`src/web_engine/`), page templates (`site/`), solver data contracts/fixtures, and verification suite (`make verify`).
+**Definition of Done (DoD):** `make verify` passes all unit/integration/e2e tests with zero unpublished draft leaks, accurate academic metadata, and green GitHub Pages deploy.
+**Next Steps:** Finalize M2.0 degree date conventions and public profile copy, run `make verify`, and deploy `main` to GitHub Pages.
+
 Static research website (`https://lufreitas0000.github.io/`, repo `lufreitas0000/lufreitas0000.github.io`) built with a Hexagonal Architecture Python engine (`src/web_engine/`) and modular Markdown/YAML content (`site/`).
 
 ## Quick Commands (WSL / Linux)
