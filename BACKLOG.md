@@ -1,6 +1,6 @@
 # Research and engineering idea backlog — personal-website
 
-**Authority:** Non-committal local exploration queue (`IDEA-NNN`), distinct from `HORIZON.md` and `CURRENT_SPRINT.md`. Cross-project proposals live in [`/home/lucas/Projects/docs/NEXT_PROJECTS_INCUBATOR.md`](file:///home/lucas/Projects/docs/NEXT_PROJECTS_INCUBATOR.md).
+**Authority:** Non-committal local exploration queue (`IDEA-NNN`), distinct from `HORIZON.md` and `CURRENT_SPRINT.md`. Cross-project proposals live in [`/home/lu/Projects/docs/NEXT_PROJECTS_INCUBATOR.md`](file:///home/lu/Projects/docs/NEXT_PROJECTS_INCUBATOR.md).
 
 ## IDEA-001 — Add JSON-LD schema metadata and publication BIB export to academic CV page
 Status: inbox

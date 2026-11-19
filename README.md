@@ -3,7 +3,7 @@
 **Goal:** Publish verified academic profile, research notes, interactive scientific widgets, and visual gallery cleanly to `https://lufreitas0000.github.io/` via static Hexagonal builds.
 **Scope & Non-Goals:** Owns static web engine (`src/web_engine/`), page templates (`site/`), solver data contracts/fixtures, and verification suite (`make verify`).
 **Definition of Done (DoD):** `make verify` passes all unit/integration/e2e tests with zero unpublished draft leaks, accurate academic metadata, and green GitHub Pages deploy.
-**Next Steps:** Finalize M2.0 degree date conventions and public profile copy, run `make verify`, and deploy `main` to GitHub Pages.
+**Next Steps:** Specify M3.4 magnetic-field units/grid/seeds and solver residual tolerances, audit paired Kitaev solver campaigns, and resolve KM-01 parity/resolvent assumptions before publishing new figures or series notes.
 
 Static research website (`https://lufreitas0000.github.io/`, repo `lufreitas0000/lufreitas0000.github.io`) built with a Hexagonal Architecture Python engine (`src/web_engine/`) and modular Markdown/YAML content (`site/`).
 

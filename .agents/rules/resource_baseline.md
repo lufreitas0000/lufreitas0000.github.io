@@ -56,7 +56,7 @@ To maintain an empirical baseline of development velocity across nonlinear resea
    * Verification outcomes across all gates (`commit_guards`, `ingest_validate`, `verify_commands`).
 
 2. **Automated Yield Reporting:**
-   * Running `make yield-report` compiles `runs.jsonl`, `.agentctl/ledger/jules_sessions.json`, and git commits into [`orchestrator/benchmarks/YIELD_REPORT.md`](file:///home/lucas/Projects/orchestrator/benchmarks/YIELD_REPORT.md).
+   * Running `make yield-report` compiles `runs.jsonl`, `.agentctl/ledger/jules_sessions.json`, and git commits into [`orchestrator/benchmarks/YIELD_REPORT.md`](file:///home/lu/Projects/orchestrator/benchmarks/YIELD_REPORT.md).
    * Yield metrics tracked include:
      $$\text{Yield}_{\text{theorems}} = \frac{\text{Theorems Proved}}{\text{Total Tokens (M)}}, \quad \text{Yield}_{\text{cost}} = \frac{\text{Proved Theorems}}{\text{Total USD Spent}}, \quad \text{Yield}_{\text{Jules}} = \frac{\text{Accepted Chapters}}{\text{Sessions Completed}}$$
 
