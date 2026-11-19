@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: Multi-backend compute routing across local Ollama, agentctl complimentary pools, Gemini MCP, and Colab L4/G4.
+---
+<!-- @CANONICAL-RULE: DO NOT EDIT DIRECTLY. MANAGED BY project-governance -->
 # Workspace Resource Routing & Offloading Policy
 
 This document establishes the resource selection criteria and offloading protocols across the workspace. Agents, scripts, and subagents must consult this policy before selecting an execution backend or dispatching computational work.

@@ -1,3 +1,8 @@
+---
+trigger: always_on
+description: Personal website atomic publishing, privacy guardrails, and Git safety.
+---
+<!-- @LOCAL-OVERRIDE: repo-specific customization -->
 # Rule 01: Repository Safety and Atomic Publishing
 
 1. Never execute destructive Git operations (`git reset --hard`, `git push --force`, `git clean -fdx`) without explicit user authorization.

@@ -1,3 +1,8 @@
+---
+trigger: always_on
+description: Personal website static template separation and workspace hygiene.
+---
+<!-- @LOCAL-OVERRIDE: repo-specific customization -->
 # Rule 00: Workspace Hygiene and Repository Layout
 
 1. Inspect `git status --short --branch` before editing. Preserve unrelated user changes.

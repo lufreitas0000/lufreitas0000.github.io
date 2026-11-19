@@ -1,3 +1,8 @@
+---
+trigger: always_on
+description: Personal website public identity, privacy token exclusions, and anti-fabrication policy.
+---
+<!-- @LOCAL-OVERRIDE: repo-specific customization -->
 # Rule 03: Website Editorial & Privacy Hygiene
 
 1. **Identity & Contact:** Display name is **Lu Freitas**; earlier peer-reviewed articles are cited as **L. R. D. Freitas** / **Lucas R. D. Freitas** with discreet continuity note on `About Me` only. Public email is `lu.rdf@icloud.com` (footer only).

@@ -1,3 +1,8 @@
+---
+trigger: always_on
+description: Federation hub sprint authority, non-vacuity checks, and mandatory uv hardlinked Python environments.
+---
+<!-- @CANONICAL-RULE: DO NOT EDIT DIRECTLY. MANAGED BY project-governance -->
 # Workspace architecture and development scope
 
 `workspace.toml` is the repository inventory and stack/tier authority.

@@ -1,3 +1,8 @@
+---
+trigger: always_on
+description: Personal website HTML/link/schema TDD contract verification.
+---
+<!-- @LOCAL-OVERRIDE: repo-specific customization -->
 # Rule 02: TDD and Contract Verification
 
 1. Pure `domain/` validators (`contracts.py`) and `services/` (`pipeline.py`, `dag.py`, `build_site.py`) must be tested in `test/unit/` without disk I/O using in-memory fake ports.

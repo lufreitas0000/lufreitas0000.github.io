@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: Compute telemetry ledgers, admission caps, and empirical yield reporting.
+---
+<!-- @CANONICAL-RULE: DO NOT EDIT DIRECTLY. MANAGED BY project-governance -->
 # Workspace Resource Baseline, Quotas & Allocation Directives
 
 This document establishes the canonical theoretical resource breakdown, daily admission ceilings, and adaptive delegation directives across the workspace. All agent instances, automated pipelines (`agentctl`), and human-in-the-loop operators must adhere to these baselines.
