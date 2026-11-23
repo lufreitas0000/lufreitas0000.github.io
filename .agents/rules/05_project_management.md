@@ -200,6 +200,15 @@ A deterministic, dependency-light helper may check presence/structure, IDEA ID u
 
 Use `python3 scripts/planning_records.py` in this repository as a reference tool for the adopted Markdown format; invoking it against another repository is opt-in. The helper's explicit `log-entry --apply` may insert a user-supplied five-column entry, but the investigator/reviewer must author and check its physical interpretation. When a change materially affects the active milestone, scientific assumptions, or next actions, obey Rule 06's **same-commit** state/roadmap/evidence discipline. A generic validation check is not a substitute for a project's existing `make verify`, Lean locks, scientific review, or owner's threshold decision.
 
+## 12. Cyclic Blue–Red Automation Lifecycle, Federation Subprojects & Staging Debt Escrow
+
+When a repository runs bounded autonomous development as a subproject `X` under a Federation (`Y` $\in$ `QSL`, `QMB`, ...), planning records bind directly to the short-lived Blue/Red automation contract (Rule 09 §7):
+
+1. **Subproject Branch & Contract (`AUTOMATION_CONTRACT.yaml`):** Every automated subproject runs on its own feature/research branch (`X`) governed by a single declarative `AUTOMATION_CONTRACT.yaml` (`templates/AUTOMATION_CONTRACT.yaml.tmpl`) recording `federation`, `subproject`, `branch`, `turn` (`blue` | `red`), `paused`, `max_uows`, `uows_completed`, `definition_of_done`, `stop_conditions`, and the cross-family `model_policy`.
+2. **Read-Only Coordinator & GitHub Control Plane:** The interactive Federation Coordinator (`federation-coordinator` skill) stays **100% read-only on scientific code**. While automations run, it controls queues and pause latches exclusively via GitHub Issues/labels (`uow:approved`, `uow:blue`, `uow:red`, `automation:paused`, `pivot:proposed`) so there is zero Git contention. It edits `AUTOMATION_CONTRACT.yaml`, `CURRENT_SPRINT.md`, `KNOWLEDGE_MAP.md` seed, or local `sidecar.json` templates **only while paused** at `/plan` or pivot checkpoints.
+3. **Smooth Pivots Without Lost Provenance:** Whenever Blue or Red detects an anomaly, scope saturation ($\ge 85\%$), or a paradigm pivot, it trips `automation_gate.py pause --repo <path> --reason ... --notify`, logs a 5-column row in `LOG_DISCOVERY_AND_PIVOTS.md`, and hands control back to the Coordinator + PI to re-plan the next short-lived automation cycle cleanly.
+4. **Staging Debt Escrow (`foundation_escrow`):** Uphill shared foundation abstractions (temporarily increasing $\operatorname{Tok}(L)$ before legacy files migrate) are permitted *only* on a non-`main` branch under an explicit escrow record (`doc/governance/escrow.json` or `AUTOMATION_CONTRACT.yaml`) with hard horizon **`H = 1..3` sprints** and `>= 2` named consumer modules. If net Pareto compression does not materialize within `H` sprints, `uow.py check` flags the expired escrow for mandatory pruning or owner review.
+
 ## PG-10 compatibility
 
 [PG-10](10_atomic_unit_of_work.md) adds lawful transition and repository-first

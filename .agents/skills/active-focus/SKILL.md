@@ -20,8 +20,8 @@ Before proposing or executing code or proof tasks, always read `$HOME/Projects/A
 Work is strictly partitioned into three concurrent tracks:
 
 1. **Priority 1:** Read the latest project-specific direction in the cockpit.
-   Bosonize-Lean CH19/A08 and finite CH20 are promoted (`research/qft-duality/bosonize-lean`);
-   `research/qsl/` (`kitaev-mf` single-main reconciled) and `research/qmb/finite-QMB` run under their own owner directions. Historical
+   Bosonize-Lean CH19/A08 and finite CH20 are promoted (`research/qmb/bosonize-lean`);
+   `research/qsl/` (`kitaev-mf` single-main reconciled) and `research/qmb/finite-QMB` run under their own owner directions (`research/qft/` Tier-3 frozen). Historical
    infrastructure/standby snapshots must not override later user instructions.
    External dispatch and proof work need authorization within the current scope.
 

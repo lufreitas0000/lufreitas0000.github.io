@@ -14,7 +14,7 @@ Git repositories, never automatically submodules of the hub.
 ## Current allocation
 
 Read ACTIVE_FOCUS.md for the latest project-specific authorization; dated
-infrastructure snapshots do not determine current chapter status. 
+infrastructure snapshots do not determine current chapter status.
 
 ## Domain and verification contracts
 .
@@ -44,4 +44,3 @@ All Python virtual environments across repositories and Git worktrees **must** b
 - **Same-ext4 hardlinking:** Keeping environments under `/home/lu/Projects/...` hardlinks identical wheel files (e.g. multi-GB PyTorch/CUDA libraries) from `~/.cache/uv` instead of duplicating physical storage.
 - **Immutable `site-packages/`:** Never edit files in-place inside `.venv/lib*/python*/site-packages/` (since hardlinked inodes are shared with `~/.cache/uv`); install repo packages cleanly in editable mode or via `uv sync`.
 - **Custom C++/CUDA extensions:** Only pass `--no-build-isolation` if a local compiled extension requires headers from the active environment.
-
