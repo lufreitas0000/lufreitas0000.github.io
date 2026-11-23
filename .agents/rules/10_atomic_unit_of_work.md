@@ -74,8 +74,8 @@ Rule 01 procedure.
 
 ## Reference and boundaries
 
-[Operational toolkit](../governance/README.md), [glossary](../docs/pg10/GLOSSARY.md),
-and [approved plan](../docs/PG10_IMPLEMENTATION_PLAN_PROPOSED.md).
+[Operational toolkit](../governance/README.md), [glossary](../../meta/project-governance/docs/pg10/GLOSSARY.md),
+and [approved plan](../../meta/project-governance/docs/PG10_IMPLEMENTATION_PLAN_PROPOSED.md).
 D0–D1 is the initial minimal delivery. Compatibility expansion, event persistence,
 Git mutation tooling, hub aggregation and fleet migration are later decisions.
 The global toolkit is not a required directory layout or runtime dependency
@@ -84,7 +84,7 @@ for every child. Adoption must preserve existing accepted scientific thresholds.
 ## Central implementation availability — 2026-11-15
 
 The owner subsequently authorized central completion beyond the original D0–D1
-boundary. [Current workflow](../docs/pg10/CENTRAL_WORKFLOW.md) specifies native-v2
+boundary. [Current workflow](../../meta/project-governance/docs/pg10/CENTRAL_WORKFLOW.md) specifies native-v2
 compatibility, optional immutable observation/UoW bundles, reproducible distribution,
 staged Git checkpoints, separate publication and hub integration. Native scientific
 records and reserved acceptance remain authoritative. Event adoption is explicit
