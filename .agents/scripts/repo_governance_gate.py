@@ -227,6 +227,13 @@ def _lineage_family(lineage: str) -> str:
     low = lineage.strip().lower()
     if "argon" in low:
         raise ValueError(f"Banned Argon model lineage is forbidden by Rule 09 §2.1: {lineage!r}")
+    for prefixes, family in (
+        (("gpt-", "openai", "o3", "o4"), "openai"),
+        (("gemini", "google"), "google"),
+        (("claude", "anthropic"), "anthropic"),
+    ):
+        if low.startswith(prefixes):
+            return family
     return low
 
 

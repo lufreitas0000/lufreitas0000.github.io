@@ -9,6 +9,12 @@ We are building **scientific intelligence** (compact, general, intuitive knowled
 
 ---
 
+## QSL local-first pilot
+
+For an explicitly adopted local-first district, the district ledger and its bound gate control turns, claims and pause. Native schedulers follow the district binding. GitHub records mirror the local result. The legacy Issue-based admission procedure continues in districts whose contracts use it.
+
+A single model may verify and approve a bounded R0/R1 packet against an unchanged contract, with local verification and an atomic commit. Apply the existing independent W4/W5 requirements to scientific work that calls for those roles. Changes to shared governance require an independent plan referee and PI adoption.
+
 ## 1. Scientific Blue/Red Nomenclature & Workflow Roles (`Coordinator` + `W0–W5`)
 
 We deliberately adapt the **Blue Team / Red Team** terminology for theoretical physics and formal mathematics (distinct from cybersecurity jargon):
