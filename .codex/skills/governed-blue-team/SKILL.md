@@ -77,3 +77,10 @@ Activate this skill whenever executing **Blue-Team constructive implementation o
    ```
 4. **Update Continuous Deliverables Atomically:** Update `KNOWLEDGE_MAP.md` (if concepts/claims/pivots moved), `CHANGELOG.md`, `PROJECT_STATE.yaml` / `CURRENT_SPRINT.md`; if a note/labbook PDF was built, upload to `wip-notes` (`--clobber`) and post a 3-minute digest comment on the Pinned `Living R&D Digest` Issue.
 5. Run `PYTHONDONTWRITEBYTECODE=1 python3 -B /home/lu/Projects/scripts/uow.py check --repo <repo>`, commit with GH007 identity (`lufreitas0000` / `220090559+lufreitas0000@users.noreply.github.com`), push branch `X`, hand turn to Red Team (`automation_gate.py complete --repo <repo_path> --role blue --uow-id <UOW-ID> --flip-to red`), and **exit cleanly** after this single UoW.
+
+---
+
+## 4. Standardized Chat Reply Contract (`SKIP` & 5-Field `TLDT`)
+
+- **No-Op (`proceed: false`):** Strictly 1 line (`<= 140` chars): `🟦 [<State>/<District>] · 🟡 SKIP (<reason>) · Next: <role> (<uow>) · 0% burn`.
+- **Completed/Paused:** Strictly `<= 12`-line 5-field `TLDT` (`Done [SA1]+Epistemic Tag+SHA+Checks`, `Who`, `Decision & Owner` with `⭐ PI: None` or exact choice, `Next [SA3]`, `Horizon`). Never dump raw test logs in chat; use `⛔` (never `🔴`) for blocked/paused states.

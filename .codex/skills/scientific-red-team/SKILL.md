@@ -70,3 +70,10 @@ Always declare which Red-Team mode your session is running in:
 - **Zero-Diamond Linear Topology Rule:** Never let Blue keep advancing onto sibling commits while a `Mode R-Upgrade` PR is open against `<stage_branch>` (which causes diamond merge conflicts in `PROJECT_STATE.yaml` / `KNOWLEDGE_MAP.md` / `.tex`). Scheduled `<Y>-<X>-red` sidecars run strictly `Mode R-Audit` by default (`--red-mode audit`); whenever `Mode R-Upgrade` opens a stacked PR targeting `<stage_branch>` (NEVER `main`), **immediately call `automation_gate.py pause --repo <repo_path> --reason "R-Upgrade PR #<N> open against <stage_branch>" --notify`** until that PR is merged or closed into `<stage_branch>`.
 - **Backwards Compatibility:** Preserve public function/class signatures while adding exact analytical symmetry/categorical reductions, flagship TikZ mental-image figures, and upgraded `_vX.Y.pdf` notes; queue breaking cross-stage consolidations as atomic cluster-move Issues for the next Sleep cycle.
 - **Verification & Front-3 Publishing:** Run full repo verification (`make verify` / `lake build` + standalone `repo_governance_gate.py` + LaTeX 0 errors + visual PDF inspection), log passive Pre-/Post-$\Delta\mathbf{I}$ (`compression_audit.py log-uow`), write a valid `W5_red_team` JSON record in `doc/reviews/`, upload upgraded `_vX.Y.pdf` to `wip-notes` (`--clobber` + `gh release edit wip-notes`), update `KNOWLEDGE_MAP.md` and the Pinned `Living R&D Digest` Issue, and open the stacked PR against `<stage_branch>` (**merge-gating `main`**).
+
+---
+
+## 3. Standardized Chat Reply Contract (`SKIP` & 5-Field `TLDT`)
+
+- **No-Op (`proceed: false`):** Strictly 1 line (`<= 140` chars): `🟥 [<State>/<District>] · 🟡 SKIP (<reason>) · Next: <role> (<uow>) · 0% burn`.
+- **Completed/Paused:** Strictly `<= 12`-line 5-field `TLDT` (`Done [SA1]+non-LLM anchor+SHA`, `Who`, `Decision & Owner` highlighting `🟥` dissent or `⭐ PI: None`, `Next [SA3]`, `Horizon`). Use `⛔` (never `🔴`) for blocked/paused states so `🟥` remains unambiguously Red Team.

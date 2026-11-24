@@ -68,8 +68,8 @@ Run deterministic telemetry (`compression_audit.py audit "<codex_red_worktree>" 
 ## 3. Step 2 — Local Review Deposit, Pause Precedence & Idempotent Sync
 
 1. **Write Attributed `W5_red_team` Review Locally (Outside Blue's Working Tree):**
-   Write `<local_review_out>` (`.runtime/<district>/reviews/w5_<uow_slug>_<sha12>.json`, validated against `repo_governance_gate.py:validate_review_json`, recording exact `candidate_commit: "<candidate_sha>"`, `author_lineage`, `reviewer_lineage`, `verdict`, `prior_art_sources`, `compression_assessment`, `mental_image_assessment`, and `findings`) plus markdown RFC `/tmp/w5_<uow_slug>_rfc.md`.
-   If the reviewer and candidate author share a provider family, use the District coordinator to route the packet to a different family before a claim is acquired.
+   Write `<local_review_out>` (`.runtime/<district>/reviews/w5_<uow_slug>_<sha12>.json`, validated against `repo_governance_gate.py:validate_review_json`, recording `"review_scope": "inner_dev"` for per-UoW Gemini sub-lineage audits on `research/*` or `"review_scope": "release_main"` for cross-vendor Milestone Release-Candidate audits targeting `main`, exact `candidate_commit: "<candidate_sha>"`, `author_lineage`, `reviewer_lineage`, `verdict`, `prior_art_sources`, `compression_assessment`, `mental_image_assessment`, and `findings`) plus markdown RFC `/tmp/w5_<uow_slug>_rfc.md`.
+   For `inner_dev`, enforce distinct sub-lineage (`google-neon` $\neq$ `google-carbon`/`google-hydrogen`); for `release_main` (PRs to `main`), enforce distinct provider family (`google` $\neq$ `openai`/`anthropic`). If ineligible, stop before acquiring a claim.
 2. **Complete Locally (Enforcing Pause Precedence on Blockers or Checkpoints) & Sync:**
    - If `verdict` is `"REJECT"` / `"PIVOT"` (or `is_cycle_checkpoint` is `true`, e.g., `UOW-06`), pass `--pause-reason "<why>"` so `paused: true` is recorded locally **before** any subsequent scheduled turn can advance!
    ```bash
@@ -82,3 +82,17 @@ Run deterministic telemetry (`compression_audit.py audit "<codex_red_worktree>" 
      --summary "Completed W5 audit <uow_id>: verdict=<verdict>."
    ```
    *(If GitHub is offline, `complete` saves the review and turn transition locally and queues an idempotent `pending_sync` entry that publishes the Issue RFC once when online; re-running after local completion never duplicates the review.)*
+
+---
+
+## 4. Standardized Chat Reply Contract (`SKIP` & 5-Field `TLDT`)
+
+- **No-Op / Wrong-Turn (`proceed: false`, Type A1 — Strictly 1 line, `<= 140` chars):**
+  `🟥 [<State>/<District>] · 🟡 SKIP (<reason>) · Next: <next_role> (<uow_id>) · 0% burn`
+- **Completed / Paused Audit (Type A2 — 5-Field TLDT, `<= 12` lines, zero raw log dumps; use `⛔ PAUSED` on blockers, never `🔴`):**
+  - Header: `🟥 [<State>/<Municipality>/<District>] · <uow_id> · <🟢 PASS|🟠 DECIDE|⛔ PAUSED>`
+  - **Done (SA1):** 1–2 plain-language sentences (verdict + key physics/compression finding + non-LLM anchor) · SHA `<sha12>`
+  - **Who:** Audited `🟦 <author>` · Auditor `🟥 <reviewer_model>` (`<review_scope>`) · Burn `<pool delta>`
+  - **Decision & Owner:** `<🟪 Coord|🟨 Board|⭐ PI>` — `⭐ PI: None` *(or explicit dissent / `Type-1` ruling needed)*
+  - **Next (SA3):** `<next_uow_id>` (`<next_role>`, auto or paused)
+  - **Horizon:** `<k/N>` UoWs · Review `[file](file://...)`

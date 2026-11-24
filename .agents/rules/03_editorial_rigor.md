@@ -120,6 +120,24 @@ Because R&D has no "end", deliverable knowledge is produced **continuously insid
 2. **GitHub Live Reading Hub (`wip-notes` Pre-Release + Pinned `Living R&D Digest` Issue + Front-3 PR Cards):** Refreshed at every compiled note, stage PR, or Red-Team checkpoint following [`../docs/WIP_SCIENCE_COMMUNICATION.md`](../../meta/project-governance/docs/WIP_SCIENCE_COMMUNICATION.md) (keeping binary PDFs out of Git history per Rule 01 Tier 4).
 3. **Per-UoW ACID Knowledge Stamp (`CHANGELOG.md` + `governance/info_telemetry.jsonl`):** Every UoW atomically records *Ideas & Contracts Evolved*, *Code & Artifacts Changed*, *Pre-/Post-UoW Passive $\Delta\mathbf{I}$ Vector* (Rule 09 §8), and updated deliverable links.
 
+### 1.5 Compressed Human-Agent Communication, Chat Reply Contracts (`A–G`) & Automated TLDT
+
+Human working memory holds $\sim 4 \pm 1$ chunks while 24/7 agent shifts produce high-rate entropy ($H_T$). All agent replies and telemetry follow [FEDERATION_VOCABULARY.md](../../meta/project-governance/docs/FEDERATION_VOCABULARY.md) (v2.0) and obey **BLUF** (conclusion first), **2-level NN/g progressive disclosure** (terse summary in chat; full derivations/logs in linked files), and **explicit `Agent vs. ⭐ PI` ownership**:
+
+1. **6+4 Orthogonal Visual Grammar (WCAG 1.4.1 — Shape + Hue + Text Label):**
+   - **Authority Tokens:** `⭐` Sovereign PI (`Lu`) · `💫` Union (`projects-hub`) · `🟨` Decision Board (`UBD-*`/`DEC-*`) · `🟪` Coordinator/Supervisor · `🟦` Blue Team (`W2–W4`) · `🟥` Red Team (`W0/W5`).
+   - **Health Tokens:** `🟢` Go/Done/Pass (`⭐ PI: None`) · `🟡` Hold/Skip/Watch · `🟠` Decide (choice queued) · `⛔` Blocked/Paused/Algedonic (never use `🔴` for errors, avoiding collision with `🟥`).
+   - Ban decorative emoji clutter (`🚀`, `🔥`, `✨`, `🎯`) in operational headers; confine repo badges (`🔷`, `🌊`, etc.) to `notify_registry.toml` push titles.
+2. **Standardized Reply Budgets (`A–G`, Opt-In `"expand"` / `"deep dive"`):**
+   - **Type A1 (Automated `SKIP`):** Strictly 1 line (`<= 140` chars): `<RoleEmoji> [<State>/<District>] · 🟡 SKIP (<reason>) · Next: <role> (<uow>) · 0% burn`.
+   - **Type A2 (Automated Shift Complete/Pause — 5-Field TLDT, `<= 12` lines, Endsley SA1–SA3):** Header `<RoleEmoji> [<State>/<Municipality>/<District>] · <UoW_ID> · <🟢 PASS|🟠 DECIDE|⛔ PAUSED>`, then: `Done (SA1)` (plain summary + epistemic tag + SHA + checks), `Who` (author + distinct-lineage audit + quota delta), `Decision & Owner` (`⭐ PI: None` or 1-line choice), `Next (SA3)`, `Horizon` (`k/N` UoWs + linked dossier).
+   - **Type B (Side Question / `@[Quote]`):** `<= 150` words — bold 1-line Verdict, `Why` with inline jargon decoding, exact anchor, and explicit `Agent vs. ⭐ You (PI)` split.
+   - **Type C (`🟪` Coordinator Check-in):** `<= 250` words (`4` lines on recurring `schedule` ticks) splitting `🟪 Autonomous` / `🟨 Board` / `⭐ Needs You`.
+   - **Type D (`🟨` Board Decision Card):** `<= 220` words/item — SBAR + Mental Image + non-LLM anchors + `🟥` dissent + Options with `(Recommended)` + 1-word reply code (`UBD-NNN: A|B|HOLD`).
+   - **Type E (`/plan` / `/goal`):** Write depth into artifacts/`meta/` files; chat reply stays `<= 300` words BLUF + clickable links + numbered `⭐` choices.
+   - **Type F (Interactive Working Session):** `<= 200` words default unless asked to expand; never paste `>6`-line command walls without stating why the agent could not run them and the single PI action required.
+   - **Type G (Internal Subagent/Swarm):** Machine-compact parent report only; zero user-facing clutter.
+
 ## 2. Mathematical claims, idealizations, and provenance
 
 1. State definitions, domains, idealizations (mean-field, finite-size cluster, perturbative order, gauge sector, regulator), and boundary conditions before relying on them.

@@ -54,4 +54,13 @@ The Coordinator enforces `Spiral-3F` both locally (per-UoW contract) and globall
   2. Enforce immediate local pause (`paused: true` + `notify.py --type action`) on invariant failures, broken MCPs, scope saturation (`>= 85%`), or `max_uows` completion.
 - **Post-Task / Checkpoint (Accountability & Compression):**
   1. Verify that every completed UoW makes **four facts** discoverable from Municipality/State files alone: *(i) what was authorized*, *(ii) what was delivered and at which 40-hex commit SHA*, *(iii) what the independent distinct-lineage reviewer (`W4`/`W5`) concluded (including warnings/dissent)*, and *(iv) who owns the next decision*.
-  2. Inspect longitudinal epiplexity `compression_audit.py trajectory --repo <repo> --markdown` passively (**never** locally optimized), flush any `pending_sync` items to GitHub once online, refresh State/Union status (`DISTRICT_STATUS.md` / `uow.py sync-hub`), and record a concise **pilot retrospective + skill revision note** before arming the next cycle.
+  2. Inspect longitudinal epiplexity `compression_audit.py trajectory --repo <repo> --markdown` passively (**never** locally optimized), flush any `pending_sync` items to GitHub once online, refresh State/Union status (`DISTRICT_STATUS.md` / `uow.py sync-hub` / `federation_board.py collect-seats`), and record a concise **pilot retrospective + skill revision note** before arming the next cycle.
+
+---
+
+## 3. Standardized Communication, Semiotics & Board Integration
+
+Use the canonical **6+4 tokens** (`⭐` PI · `💫` Union · `🟨` Board · `🟪` Coord · `🟦` Blue · `🟥` Red; `🟢` Go · `🟡` Hold · `🟠` Decide · `⛔` Blocked — never `🔴` for errors) per `docs/FEDERATION_VOCABULARY.md`:
+- **Interactive Check-In (Type C, `<= 250` words unless `"expand"`):** Lead with `🟪 [<State>] · <🟢|🟠|⛔>`, summarize deltas since last check, split ownership into `🟪 Autonomous` / `🟨 Board` / `⭐ Needs You (PI)`, and link `DISTRICT_STATUS.md`.
+- **Recurring `schedule` Watchdog Tick (Strictly 4 lines, `<= 450` chars):** `🟪 [<State> Tick · HH:MM · Health]`, `Pulse`, `Latest` (1-line TLDT), `⭐ PI Action` (`None` or 1-line escalation).
+- **Board Escalation (Type D, `<= 220` words):** Route reversible cross-State/`Type-2` trade-offs to `🟨 Union Board` (`federation_board.py propose` / `record-debate` for consent + 48h veto) and package `Type-1` / `R3` choices with `(Recommended)` + 1-word reply code (`UBD-NNN: A|B|HOLD`) for `⭐ PI`.

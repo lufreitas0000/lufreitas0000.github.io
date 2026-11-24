@@ -69,7 +69,7 @@ Use native application accounts for shifts. For approved API work, use agentctl 
 1. **Repository & Modularity Verification:**
    Run `make verify` (or `lake build`), standalone `python3 -B .agents/scripts/repo_governance_gate.py --repo <repo_path>`, and `python3 -B /home/lu/Projects/scripts/uow.py check --repo <repo_path>`.
 2. **Commit the verified candidate.** Record passive compression telemetry and update the required scientific records. Commit the scoped changes using the repository Git identity and record its full SHA.
-3. **Obtain the review for the committed SHA.** For R2/R3, hand a separate provider family the exact committed candidate and independent verification commands. Record `W4_insider`, the UoW ID, `candidate_commit`, author and reviewer lineages, and an explicit verdict. Write the record to the district's local evidence directory. Hold subsequent candidate edits until the handoff is resolved.
+3. **Obtain the review for the committed SHA.** For R2/R3 on a development branch (`review_scope: "inner_dev"`), hand a distinct model sub-lineage (`gemini-4-carbon-high` or `gemini-4-hydrogen-xhigh` from Pool A against `Neon`, or `claude-sonnet-5-5-high` / `claude-opus-5-5-medium` only when explicitly routed by `w4_routing`) the exact committed candidate and independent verification commands. Record `W4_insider`, `"review_scope": "inner_dev"`, the UoW ID, `candidate_commit`, author and reviewer lineages, and an explicit verdict in the district's local evidence directory. Keep the primary repository checkout permanently on clean `main` and perform all Blue edits strictly inside the district's isolated `<dev_worktree>` (`research/<track>`). Hold subsequent candidate edits until the handoff is resolved.
 4. **Local Completion + Offline-Tolerant GitHub Sync + `[COMPLETE]` Stream:**
    ```bash
    PYTHONDONTWRITEBYTECODE=1 python3 -B "<district_gate>" \
@@ -83,3 +83,17 @@ Use native application accounts for shifts. For approved API work, use agentctl 
    For R0/R1 packets that permit single-model verification, omit the independent review file and record the verification evidence in the local receipt. If completion is refused, pause with the owner token and record the reason.
 
    *(If GitHub is temporarily unreachable during `complete`, local state + `CANDIDATE_SHA` are already durably saved for Red Team to fetch locally from `<repo_path>`, and `pending_sync` will push/comment once on recovery.)*
+
+---
+
+## 4. Standardized Chat Reply Contract (`SKIP` & 5-Field `TLDT`)
+
+- **No-Op / Wrong-Turn (`proceed: false`, Type A1 — Strictly 1 line, `<= 140` chars):**
+  `🟦 [<State>/<District>] · 🟡 SKIP (<reason>) · Next: <next_role> (<uow_id>) · 0% burn`
+- **Completed / Paused Shift (Type A2 — 5-Field TLDT, `<= 12` lines, zero raw log dumps):**
+  - Header: `🟦 [<State>/<Municipality>/<District>] · <uow_id> · <🟢 PASS|🟠 DECIDE|⛔ PAUSED>`
+  - **Done (SA1):** 1–2 plain-language sentences + `[PROOF|NUMERIC|APPROX|CONJECTURE]` · SHA `<sha12>` · Checks `<oracle/tests>`
+  - **Who:** Author `<model>` · Audit `<W4 model|R0/R1 single>` · Burn `<pool delta>`
+  - **Decision & Owner:** `<🟪 Coord|🟨 Board|⭐ PI>` — `⭐ PI: None` *(or 1-line choice)*
+  - **Next (SA3):** `<next_uow_id>` (`<next_role>`, auto or paused)
+  - **Horizon:** `<k/N>` UoWs · Milestone `<name>` · Dossier `[DISTRICT_STATUS.md](file://...)`

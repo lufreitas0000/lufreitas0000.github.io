@@ -231,16 +231,44 @@ def _lineage_family(lineage: str) -> str:
         (("gpt-", "openai", "o3", "o4"), "openai"),
         (("gemini", "google"), "google"),
         (("claude", "anthropic"), "anthropic"),
+        (("qwen",), "qwen"),
     ):
         if low.startswith(prefixes):
             return family
     return low
 
 
-def validate_review_json(data: dict[str, Any], source: str = "<record>") -> None:
+def _sub_lineage(lineage: str) -> str:
+    """Distinct intra-vendor sub-lineage for `inner_dev` review_scope (bans Argon)."""
+    fam = _lineage_family(lineage)
+    low = lineage.strip().lower()
+    if fam == "google":
+        if "neon" in low:
+            return "google-neon"
+        if "hydrogen" in low:
+            return "google-hydrogen"
+        if "flash" in low:
+            return "google-flash"
+        if "carbon" in low or low == "gemini-pro-orchestrator":
+            return "google-carbon"
+    return fam
+
+
+def validate_review_json(
+    data: dict[str, Any],
+    source: str = "<record>",
+    *,
+    require_cross_vendor: bool | None = None,
+) -> None:
     kind = str(data.get("review_kind", "W4_insider"))
     if kind not in {"W4_insider", "W0_gate", "W5_red_team"}:
         raise ValueError(f"{source}: unsupported review_kind {kind!r}")
+
+    scope = str(data.get("review_scope") or "").strip().lower()
+    if scope and scope not in {"inner_dev", "release_main"}:
+        raise ValueError(f"{source}: unsupported review_scope {scope!r}")
+    strict_vendor = (require_cross_vendor is True) or (require_cross_vendor is None and scope != "inner_dev")
+    cmp_fn = _lineage_family if strict_vendor else _sub_lineage
 
     if kind == "W0_gate":
         revs = data.get("reviewers")
@@ -253,7 +281,7 @@ def validate_review_json(data: dict[str, Any], source: str = "<record>") -> None
             lin = str(r.get("model_lineage") or "").strip()
             if not lin:
                 raise ValueError(f"{source}: W0_gate reviewer missing model_lineage")
-            lins.add(_lineage_family(lin))
+            lins.add(cmp_fn(lin))
         if len(lins) < 2:
             raise ValueError(f"{source}: W0_gate requires >= 2 distinct model lineages; got {sorted(lins)}")
         return
@@ -272,14 +300,14 @@ def validate_review_json(data: dict[str, Any], source: str = "<record>") -> None
     if kind == "W5_red_team":
         if not raw_author_lin or not raw_rev_lin:
             raise ValueError(f"{source}: W5_red_team requires non-empty author_lineage and reviewer_lineage")
-        if _lineage_family(raw_author_lin) == _lineage_family(raw_rev_lin):
+        if cmp_fn(raw_author_lin) == cmp_fn(raw_rev_lin):
             raise ValueError(f"{source}: W5_red_team requires distinct author_lineage and reviewer_lineage ({raw_rev_lin!r})")
         sources = data.get("prior_art_sources")
         if not isinstance(sources, list) or len(sources) == 0:
             raise ValueError(f"{source}: W5_red_team requires non-empty prior_art_sources list")
     else:
         # W4_insider: enforce distinct lineages when declared; accept legacy schema_version=1 records that declare distinct author_agent != reviewer_agent
-        if raw_author_lin and raw_rev_lin and _lineage_family(raw_author_lin) == _lineage_family(raw_rev_lin):
+        if raw_author_lin and raw_rev_lin and cmp_fn(raw_author_lin) == cmp_fn(raw_rev_lin):
             raise ValueError(f"{source}: W4_insider requires distinct author_lineage and reviewer_lineage ({raw_rev_lin!r})")
         if not (raw_author_lin and raw_rev_lin) and not (author_agent and rev_agent):
             raise ValueError(f"{source}: W4_insider requires distinct author/reviewer lineages or agents")
@@ -406,6 +434,7 @@ def evaluate_repository(
     # 4. Validate doc/reviews/*.json if present
     reviews_dir = repo / "doc" / "reviews"
     valid_w5_approvals: list[str] = []
+    cross_vendor_w5_approvals: list[str] = []
     if reviews_dir.is_dir():
         for rfile in sorted(reviews_dir.glob("*.json")):
             rel_r = rfile.relative_to(repo).as_posix()
@@ -418,6 +447,10 @@ def evaluate_repository(
                     verdict = str(rdata.get("verdict") or rdata.get("disposition") or "").upper()
                     if verdict in APPROVING_W5_VERDICTS:
                         valid_w5_approvals.append(rel_r)
+                        raw_a = str(rdata.get("author_lineage") or rdata.get("producer_lineage") or "")
+                        raw_r = str(rdata.get("reviewer_lineage") or "")
+                        if raw_a and raw_r and _lineage_family(raw_a) != _lineage_family(raw_r):
+                            cross_vendor_w5_approvals.append(rel_r)
             except Exception as exc:
                 errors.append(f"[REVIEW-RECORD-INVALID] {exc}")
 
@@ -430,10 +463,10 @@ def evaluate_repository(
                     f"[MAIN-GATE-KNOWLEDGE-MAP] PR targeting '{canonical_branch}' ({sci_diff_lines} scientific diff lines) "
                     f"requires root KNOWLEDGE_MAP.md (or 'skip-w5-chore' label for pure CI/chore fixes)."
                 )
-            if not valid_w5_approvals:
+            if not cross_vendor_w5_approvals:
                 errors.append(
                     f"[MAIN-GATE-W5-REQUIRED] PR targeting '{canonical_branch}' ({sci_diff_lines} scientific diff lines) "
-                    f"requires >= 1 valid cross-family W5_red_team JSON record in doc/reviews/ with approving verdict."
+                    f"requires >= 1 valid cross-vendor W5_red_team JSON record in doc/reviews/ with approving verdict."
                 )
 
     return {
@@ -444,6 +477,7 @@ def evaluate_repository(
         "canonical_branch": canonical_branch,
         "scientific_diff_lines": sci_diff_lines,
         "valid_w5_records": valid_w5_approvals,
+        "cross_vendor_w5_records": cross_vendor_w5_approvals,
         "errors": errors,
         "warnings": warnings,
     }

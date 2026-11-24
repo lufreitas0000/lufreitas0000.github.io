@@ -49,6 +49,20 @@ Naive differential ratios ($\mathcal{I} = \Delta\text{Scope}/(\Delta\text{Cost}\
    - **Staging Debt Escrow (`foundation_escrow`):** Permitted *only* on a non-`main` staging branch (`target_branch != main`) for uphill shared foundations, with hard horizon **`H = 1..3` sprints**, `>= 2` named downstream consumer modules, and verified **forgetful inheritance** (zero Lean typeclass diamonds). Automatically pruned if net Pareto descent does not materialize by sprint $t + H$.
    - **Wake / Discovery Mode (new universal physics/math):** Unanimous `APPROVE` across $\ge 2$ distinct lineages with explicit boolean confirmations `not_already_in_mathlib_or_repo: true`, `uses_canonical_universal_language: true`, and (for physical conjectures/models) `lakatos_regime_checked: true`.
 
+### 1.2 Unified Federation Decision Board (`🟨`), 4-Tier Door × Risk Authority & Double-Linking
+
+To prevent cognitive collapse as automated shifts outpace human bandwidth, each active State **double-links** (`🟪 Coordinator` + `🟥 Red Auditor`) into one Files-First **Union Decision Board (`🟨`)** (`meta/board/BOARD_AGENDA.md` + `governance/board/seats/*.json`) governed by Door reversibility (`Type-1` irreversible vs. `Type-2` reversible) and risk (`R0–R3`):
+
+| Tier | Scope & Door × Risk | Decider (`D`) | Gate & Verification | PI Surface |
+| :---: | :--- | :---: | :--- | :--- |
+| **Tier 0** | Single-UoW `Type-2` (`R0–R1`), unchanged contracts | 🟦 Blue / Gate | `make verify` + `uow.py check` | Silent (`uow_stream.py` + 5-field TLDT) |
+| **Tier 1** | Single-State `Type-2` (`R1–R2`): auto-kill/adopt additive pilot, queue tuning | 🟪 Coordinator + 🟥 Red | Distinct-lineage `W4`/`W5` PASS; `touches_conventions_or_hc == false` | Silent (`feed_notify` + `BOARD DECIDED`) |
+| **Tier 2** | Cross-State `Type-2` (`R2`) or contested pilot (`has_tradeoffs`) | 🟨 Union Board *(Consent)* | $\ge 2$ distinct lineages (`Argon` banned), non-LLM anchor, **0 reasoned `🟥` objections** | `🟨 BOARD DECIDED` + **48h async `⭐ PI` veto hatch** |
+| **Tier 3** | `Type-1` or `R3`: `HC-*` thresholds, `CONVENTIONS.md`, `main` merges, Tier-3 unfreeze, public release, paid spend, unresolved `🟥` dissent | ⭐ Sovereign PI (`Lu`) | `🟨` Board packages MADR 4.0.0 Pros/Cons + `(Recommended)` + 1-word reply code | `⭐ YOU DECIDE` in `BOARD_AGENDA.md` + `notify.py --type action` |
+
+- **⛔ Algedonic Bypass:** Broken MCPs, invariant/conservation failures, or `>= 4h` stalls bypass Tier 1–3, latch local `paused: true`, and alert via `notify.py --type action`.
+- **Anti-Atrophy Weekly Ritual:** `meta/board/WEEKLY_MENTAL_IMAGE_DIGEST.md` synthesizes one falsifiable Mental Image paragraph per active State (`SC-04`) plus 7-day Board outcomes for a 20-minute Sunday assimilation review.
+
 ---
 
 ## 2. Dimension 2: Scientific Risk Levels (`R0–R3`) & Cross-Family Model Matrix
@@ -70,7 +84,7 @@ To eliminate single-model monoculture and decouple Gemini Pool A from the Claude
 | :--- | :--- | :--- | :--- |
 | **Federation Coordinator (Interactive)** | `gemini-pro-orchestrator-neon` | `gemini-4-neon-high` / `xhigh` | 100% read-only on scientific code; talks directly with PI. |
 | **Blue Team Automation (`<Y>-<X>-blue`)** | `gemini-4-neon-high` (R2) / `gemini-4-neon-medium` (R1) | `gemini-pro-orchestrator-neon` (multi-file UoW) | Built-in `W4` insider MUST use a distinct lineage (`gemini-4-carbon-high` or `claude-opus-5-5-medium`). |
-| **Red Team Automation (`<Y>-<X>-red`)** | **`claude-opus-5-5-high`** (alternating with **`gemini-4-carbon-high`**) | `gemini-pro-orchestrator` (*Orchestrator Carbon*) | True cross-family orthogonality against Blue (`Neon`); separate Claude quota pool. |
+| **Red Team Automation (`<Y>-<X>-red`)** | **`gemini-4-carbon-high`** / **`gemini-4-hydrogen-xhigh`** (`inner_dev` Pool A compute probes) | Concise **`claude-sonnet-5-5-high`** / **`claude-opus-5-5-medium`** (`<= 20`-step pre-computed dossier `release_main` sign-off) + **`gpt-6.2-sol`** (`2×/day` read-only Layer-4 GitHub Digest supervision) | **Two-Tier Independence:** `inner_dev` on `research/*` requires distinct sub-lineage (`google-neon` $\neq$ `google-carbon`/`google-hydrogen`, `review_scope: "inner_dev"`); PRs targeting `main` (`release_main`) require cross-vendor `W5_red_team` (`google` $\neq$ `anthropic`/`openai`). Pool A executes all code/tests/probes; scarce Pool B/C review compact pre-computed dossiers only. |
 | **Banned Everywhere** | **`gemini-4-argon-*` / `gemini-pro-orchestrator-argon`** | — | Permanently banned for cost-benefit; rejected mechanically by `epistemic_gate.py`, `review_record.py`, and `repo_governance_gate.py`. |
 
 **In-Session Cross-Lineage Dispatch (`swarm` vs. `invoke_subagent`):** Antigravity's `invoke_subagent` only accepts generic tiers (`inherit`, `flash_lite`, `flash`, `pro`); `.agents/agents/{physics-referee,red-team-auditor}.md` set `model: inherit` (never `model: pro`, avoiding unintended generic pro-tier or Argon routing), which inherits the *current* session's model. Therefore, from inside a `Neon` Blue session, distinct-lineage `W4`/`W5` reviewers **must** be dispatched via `swarm(action="add", model="claude-opus-5-5-medium" | "gemini-4-carbon-high", workspace="inherit")`, paired `<Y>-<X>-red` sidecars (`agentapi new-conversation --model=...`), or `orchestrator/agentctl`—never via same-lineage `invoke_subagent`.
