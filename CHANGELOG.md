@@ -4,6 +4,13 @@ All notable changes and conceptual evolutions are recorded here per Unit of Work
 
 ## [Unreleased]
 
+### [2026-11-26] [Planning] — Register evidence-gated spectral geometry digest series
+#### Ideas & Contracts Evolved
+- Recorded the owner-requested editorial series as future work, with independent scientific review, explicit disclosure clearance, and the existing publication gate. No changes to the current scientific sprint.
+
+#### Code & Artifacts Changed
+- Updated `doc/NOTE_BACKLOG.md` and `HORIZON.md` to reference Issue #13. No website content, engine, or deployment changes.
+
 ### [2026-11-19] [M3.4-U1] [Actor: Antigravity] — Reconcile CURRENT_SPRINT/HORIZON/README with M3.4 and /home/lu/Projects Federation cutover
 #### Ideas & Contracts Evolved
 - Aligned sprint and horizon records with authoritative `M3.4` (`waiting-on-scientific-specification`) and `doc/FEED_KITAEV_MF_SERIES.md` / `doc/NOTE_BACKLOG.md` without modifying site code, content, or scientific thresholds.

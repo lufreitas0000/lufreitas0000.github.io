@@ -9,6 +9,7 @@
 - `KM-01`..`KM-08` companion series notes ([doc/FEED_KITAEV_MF_SERIES.md](doc/FEED_KITAEV_MF_SERIES.md)) and promoted project notes ([doc/NOTE_BACKLOG.md](doc/NOTE_BACKLOG.md)) post-acceptance.
 
 ## Horizon 3 — Strategic Backlog & Deferrals
+- Spectral geometry and random-walk research digests (owner-requested, gated on independent evidence and disclosure review; see [publication backlog](doc/NOTE_BACKLOG.md) and [Issue #13](https://github.com/lufreitas0000/lufreitas0000.github.io/issues/13)). No change to M3.4 or the KM series.
 - Fixed-point methods lab self-contained notes after scientific review (`PROJECT_STATE.yaml`) and portfolio showcase linked back from hub `PORTFOLIO_STATUS.md` / `NP-007`.
 
 ## Adaptation Ledger
@@ -16,3 +17,4 @@
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-11-18 | Ad-hoc planning/branch layout | Workspace-wide PG-10 + single-`main` + UoW governance standardization | Adopted `HORIZON.md`, UoW dual-section `CHANGELOG.md`, and standardized Goal/Scope/DoD/Next Steps | [CHANGELOG.md](CHANGELOG.md) |
 | 2026-11-19 | Seeded `M2.0` sprint/horizon docs with `/home/lucas/Projects` paths | `PROJECT_STATE.yaml` had already advanced through `M3.3` into `M3.4` (`waiting-on-scientific-specification`) and hub cut over to `/home/lu/Projects` | Reconciled `CURRENT_SPRINT.md`, `HORIZON.md`, `README.md`, and `BACKLOG.md` to authoritative `M3.4` and `/home/lu/Projects` paths | [CHANGELOG.md](CHANGELOG.md) |
+| 2026-11-26 | Existing project-note queue | Owner requested short research digests alongside readable analytical and computational PDFs | Registered a gated future editorial workstream without changing current sprint or committing to publication | [Issue #13](https://github.com/lufreitas0000/lufreitas0000.github.io/issues/13) |
